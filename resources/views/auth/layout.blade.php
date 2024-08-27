@@ -30,7 +30,7 @@
     <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
     <meta name="description" content="" />
-
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/Backend/assets/img/favicon/favicon.ico" />
 

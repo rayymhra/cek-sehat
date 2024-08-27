@@ -2,14 +2,17 @@
 
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
-Route::get('/app', function () {
-    return view('Backend.dashboard');
+
+Route::get('/', function () {
+    return view('Frontend.main');
 });
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+Route::get('/dashboard', [\App\Http\Controllers\AuthController::class, 'dahboard']);
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/register', function () {
     return view('auth.ragister');
