@@ -3,7 +3,8 @@
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use Illuminate\Container\Attributes\Auth;
+use App\Http\Controllers\ForgetController;
 
 Route::get('/', function () {
     return view('Frontend.main');
@@ -18,6 +19,4 @@ Route::get('/register', function () {
     return view('auth.ragister');
 });
 
-Route::get('/forget', function () {
-    return view('auth.forget');
-});
+route::get('/forget', [ForgetController::class, 'showForgetForm'])->name('forget');
