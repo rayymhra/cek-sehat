@@ -9,6 +9,15 @@ use App\Http\Controllers\ForgetController;
 Route::get('/', function () {
     return view('Frontend.main');
 });
+Route::get('/pusat-kesehatan', function () {
+    return view('Frontend.pusat-kesehatan');
+});
+Route::get('/penyakit', function () {
+    return view('Frontend.penyakit');
+});
+Route::get('/info-obat', function () {
+    return view('Frontend.info-obat');
+});
 
 Route::get('/dashboard', [\App\Http\Controllers\AuthController::class, 'dahboard']);
 
