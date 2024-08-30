@@ -103,6 +103,7 @@
         /* categories */
         .category-section-top {
             padding: 40px 0;
+            padding-top: 0;
             background-color: #ffffff;
         }
 
@@ -128,6 +129,13 @@
             font-size: 16px;
             font-weight: 500;
             color: #333;
+        }
+
+
+        /* steps by step */
+        .steps-section {
+            padding: 40px 0;
+            background-color: #f6f6f6;
         }
 
         
@@ -229,7 +237,7 @@
     {{-- category --}}
     <div class="category-section-top">
         <div class="container">
-            <h2 class="text-center mb-4">Health Categories</h2>
+            <h2 class="text-center mb-4">Kategori Kesehatan</h2>
             <div class="row">
                 <div class="col-md-4 col-lg-3 mb-4">
                     <div class="category-card text-center">
@@ -274,6 +282,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+
+    <div class="steps-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Cara Mengecek Penyakit di Cek Sehat</h2>
+            
         </div>
     </div>
 
