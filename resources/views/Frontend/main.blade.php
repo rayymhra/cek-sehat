@@ -19,92 +19,131 @@
 
         /* light color: #1aa6b7 */
         /* primary color: #127681 */
-        /* secondary color: #e63946 */
+        /* dark color: #3a3a3a */
 
         * {
             font-family: "Montserrat", sans-serif;
         }
 
-        .btn-primary {
-            background-color: #1aa6b7;
-            outline: none;
-            border: none;
+        .container {
+            /* margin-right: 75px;
+            margin-left: 75px; */
         }
 
-        .btn-primary:hover {
-            background-color: #127681;
+        .form-control {
+            border-radius: 50px;
         }
 
-        .btn-primary:active {
-            background-color: #e63946;
+        /* btn in navbar */
+        @media {
+            .btn-primary {
+                background-color: #1aa6b7;
+                /* border: none; */
+                border-color: #1aa6b7;
+            }
+
+            .btn-primary:hover {
+                background-color: #127681;
+                border-color: #127681;
+            }
+
+            .btn-primary:active {
+                background-color: #e63946;
+            }
+
+            .btn {
+                margin-right: 10px;
+                font-size: 15px;
+                border-radius: 50px;
+            }
+
+            .btn:active {
+                background-color: #e63946;
+            }
+
+            .btn-outline-primary {
+                border-color: #1aa6b7;
+                color: #1aa6b7
+            }
+
+            .btn-outline-primary:hover {
+                background-color: #1aa6b7;
+            }
         }
 
-        .btn {
-            margin-right: 10px;
-            font-size: 15px
+
+        /* title */
+        .title {
+            font-size: 23px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #3a3a3a;
         }
-
-        .btn:active {
-            background-color: #e63946;
-        }
-
-        .btn-outline-primary {
-            border-color: #1aa6b7;
-            color: #1aa6b7
-        }
-
-        .btn-outline-primary:hover {
-            background-color: #1aa6b7;
-        }
-
-
 
 
 
 
         /* NAVBAR */
-        .navbar-nav .nav-link {
-            margin-right: 15px;
-            color: #333;
-            transition: color 0.3s ease-in-out;
-            font-size: 15px
-        }
+        @media {
 
-        .navbar-nav .nav-link:hover {
-            color: #127681;
-        }
+            /* sticky */
+            .navbar {
+                position: -webkit-sticky;
+                /* For Safari */
+                position: sticky;
+                top: 0;
+                z-index: 10000000000000000000000000000000;
+                /* Ensure the navbar stays on top of other content */
+                border-bottom: 1px solid #ddd;
+                /* Optional: Adds a border at the bottom */
+            }
 
-        .navbar-nav .nav-item:hover {
-            display: block;
+            .navbar-nav .nav-link {
+                margin-right: 15px;
+                color: #333;
+                transition: color 0.3s ease-in-out;
+                font-size: 15px
+            }
+
+            .navbar-nav .nav-link:hover {
+                color: #127681;
+            }
+
+            .navbar-nav .nav-item:hover {
+                display: block;
+            }
+
         }
 
 
 
 
         /* CAROUSEL */
+        @media {
+            .cItem {
+                height: 400px;
+            }
 
-        .cItem {
-            height: 400px;
+            .cImg {
+                filter: brightness(0.6);
+                height: 400px;
+                object-fit: cover;
+            }
+
+            .carousel-text {
+                font-weight: 600;
+            }
+
+            .cr-search {
+                position: absolute;
+                bottom: 100px;
+                width: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 100000;
+            }
         }
 
-        .cImg {
-            filter: brightness(0.6);
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .carousel-text {
-            font-weight: 600;
-        }
-
-        .cr-search {
-            position: absolute;
-            bottom: 100px;
-            width: 50%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 100000;
-        }
 
 
 
@@ -112,34 +151,39 @@
 
 
         /* categories */
-        .category-section-top {
-            padding: 40px 0;
-            background-color: #ffffff;
+        @media {
+            .category-section-top {
+                padding: 40px 0;
+                background-color: #ffffff;
+                margin-top: 60px;
+                padding-top: 0;
+            }
+
+            .category-card {
+                background: #f6f6f6;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                padding: 10px;
+                transition: box-shadow 0.3s ease;
+            }
+
+            .category-card:hover {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .category-card img {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 5px;
+            }
+
+            .category-title {
+                font-size: 16px;
+                font-weight: 500;
+                color: #333;
+            }
         }
 
-        .category-card {
-            background: #f6f6f6;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .category-card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .category-card img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 5px;
-        }
-
-        .category-title {
-            font-size: 16px;
-            font-weight: 500;
-            color: #333;
-        }
 
 
 
@@ -147,61 +191,102 @@
 
 
         /* steps by step */
-        .step-section {
-            background-color: #f8f9fa;
-            padding: 40px 0;
-        }
+        @media {
+            .steps-section {
+                background-color: #f8f9fa;
+                padding: 40px 0;
+            }
 
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 30px;
-        }
+            .section-title {
+                text-align: center;
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
 
-        .steps-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-        }
+            .timeline-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                /* justify-content: center;
+                align-items: center; */
+            }
 
-        .step {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            width: 300px;
-        }
+            .timeline-step {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #ffffff;
+                /* border-radius: 10px; */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                position: relative;
 
-        .step-icon {
-            font-size: 3rem;
-            color: #007bff;
-            margin-bottom: 15px;
-        }
+            }
 
-        .step-title {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .step-description {
-            font-size: 1rem;
-            color: #555555;
-        }
-
-        @media (max-width: 768px) {
-            .steps-container {
+            .step-number {
+                display: flex;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
+                margin-right: 20px;
+                font-weight: bold;
+                color: #127681;
             }
 
-            .step {
-                width: 100%;
-                max-width: 400px;
+            .step-number .step-text {
+                font-size: 1rem;
+                text-transform: uppercase;
+            }
+
+            .step-number .step-digit {
+                font-size: 2rem;
+            }
+
+            .step-icon {
+                width: 60px;
+                height: 60px;
+                background-color: #1aa6b7;
+                color: #ffffff;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                margin-right: 20px;
+            }
+
+            .step-content {
+                flex: 1;
+            }
+
+            .step-title {
+                font-size: 1.3rem;
+                margin-bottom: 5px;
+            }
+
+            .step-description {
+                font-size: 1 rem;
+                color: #555555;
+                margin-bottom: 0;
+            }
+
+            @media (max-width: 768px) {
+                .timeline-step {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .step-icon {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+
+                .step-number {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
             }
         }
-
 
 
 
@@ -209,273 +294,385 @@
 
 
         /* common */
-        .symptoms-conditions-section {
-            background-color: #f4f6f8;
-            padding: 50px 0;
-        }
+        @media {
+            .symptoms-conditions-section {
+                background-color: #ffffff;
+                padding: 50px 0;
+            }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #333;
-        }
+            .comparison-table {
+                width: 100%;
+                border-collapse: collapse;
+                position: relative;
+            }
 
-        .content-wrapper {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-        }
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #dddddd;
+                vertical-align: top;
+                position: relative;
+            }
 
-        .symptoms,
-        .conditions {
-            flex: 1;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
+            .comparison-table th {
+                background-color: #1aa6b7;
+                font-size: 1.3rem;
+                color: #ffffff;
+                text-align: center;
+                font-weight: 600;
+            }
 
-        .sub-title {
-            font-size: 1.8rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
+            .comparison-table td {
+                background-color: #ffffff;
+                font-size: 1.5rem;
+                color: #333;
+            }
 
-        .item-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+            .item-title {
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
 
-        .item {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+            .item-description {
+                font-size: 1rem;
+            }
 
-        .item-icon {
-            font-size: 2.5rem;
-            color: #007bff;
-            margin-right: 20px;
-        }
+            .symptoms-image,
+            .conditions-image {
+                max-width: 100%;
+                height: auto;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
 
-        .item-content {
-            flex: 1;
-        }
+            .comparison-table .image-cell {
+                text-align: center;
+                width: 150px;
+            }
 
-        .item-title {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
+            .comparison-table .image-cell img {
+                max-width: 100%;
+                height: 100px;
+                padding: 0 !important;
+                object-fit: cover;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
 
-        .item-description {
-            font-size: 1rem;
-            color: #666;
-        }
+            @media (max-width: 768px) {
 
-        @media (max-width: 768px) {
-            .content-wrapper {
-                flex-direction: column;
-                gap: 20px;
+                .comparison-table th,
+                .comparison-table td {
+                    display: block;
+                    width: 100%;
+                    padding: 15px;
+                }
+
+                .comparison-table th {
+                    position: sticky;
+                    top: 0;
+                    background-color: #f4f4f4;
+                    z-index: 1;
+                }
+
+                .comparison-table::before {
+                    display: none;
+                }
             }
         }
+
 
 
 
 
         /* advice */
-        .advice-section {
-            background-color: #f4f6f8;
-            padding: 50px 0;
-        }
+        @media {
+            .advice-section {
+                background-color: #f6f6f6;
+                padding: 50px 0;
+            }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #333;
-        }
-
-        .advice-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .advice-item {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .advice-icon {
-            font-size: 3rem;
-            color: #007bff;
-            margin-right: 20px;
-        }
-
-        .advice-content {
-            flex: 1;
-        }
-
-        .advice-title {
-            font-size: 1.8rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .advice-description {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        @media (max-width: 768px) {
             .advice-wrapper {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
                 gap: 20px;
             }
 
             .advice-item {
-                flex-direction: column;
-                align-items: flex-start;
+                background-color: #1aa6b7;
+                border-radius: 8px;
+                overflow: hidden;
+                text-align: center;
+                color: #ffffff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
 
-            .advice-icon {
-                margin-bottom: 15px;
+            .advice-item img {
+                /* width: 100%;
+                height: 150px;
+                object-fit: cover;
+                Ensure image covers the space without stretching */
+
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 8px 8px 0 0;
+            }
+
+            .advice-title {
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin: 15px 0 10px 0;
+                color: #ffffff;
+            }
+
+            .advice-description {
+                font-size: 1rem;
+                color: #ffffff;
+                padding: 0 10px 20px 10px;
+            }
+
+            @media (max-width: 1024px) {
+                .advice-wrapper {
+                    grid-template-columns: repeat(2, 1fr);
+                    /* Adjust to two columns on smaller screens */
+                }
+            }
+
+            @media (max-width: 768px) {
+                .advice-wrapper {
+                    grid-template-columns: 1fr;
+                    /* Adjust to one column on mobile screens */
+                }
             }
         }
+
 
 
 
 
         /* education */
-        .educational-resources-section {
-            background-color: #f4f6f8;
-            padding: 50px 0;
-        }
+        @media {
+            .educational-resources-section {
+                background-color: #ffffff;
+                padding: 50px 0;
+            }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
+            .resource-card {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                /* Two columns: resources list on the left, large image on the right */
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                gap: 30px;
+            }
 
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: #666;
-        }
-
-        .resources-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .resource-item {
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .resource-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .resource-title a {
-            font-size: 1.6rem;
-            color: #007bff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .resource-title a:hover {
-            color: #0056b3;
-        }
-
-        .resource-description {
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.6;
-            margin-top: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .resources-wrapper {
-                grid-template-columns: 1fr;
+            .resource-list {
+                display: flex;
+                flex-direction: column;
                 gap: 20px;
+            }
+
+            .resource-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                /* padding: 10px 0; */
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .resource-item:last-child {
+                border-bottom: none;
+                /* Remove the bottom border from the last item */
+            }
+
+            .resource-title a {
+                font-size: 1.4rem;
+                color: #1aa6b7;
+                text-decoration: none;
+                transition: color 0.3s ease;
+                flex-grow: 1;
+            }
+
+            .resource-title a:hover {
+                color: #127681;
+            }
+
+            .resource-link-icon {
+                font-size: 1.5rem;
+                color: #1aa6b7;
+                margin-left: 10px;
+            }
+
+            .resource-image {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                /* Add a subtle shadow to the image */
+            }
+
+            @media (max-width: 1024px) {
+                .resource-card {
+                    grid-template-columns: 1fr;
+                    /* Stack the resources and image on smaller screens */
+                }
+
+                .resource-image {
+                    margin-top: 30px;
+                    /* Add spacing between the resources and image when stacked */
+                }
             }
         }
 
 
 
         /* faq */
-        .faqs-section {
-            background-color: #f4f6f8;
-            padding: 50px 0;
-        }
+        @media {
+            .faqs-section {
+                background-color: #f6f6f6;
+                padding: 50px 0;
+            }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #333;
-        }
+            .section-title {
+                text-align: center;
+                font-size: 2 rem;
+                margin-bottom: 40px;
+                color: #333;
+            }
 
-        .faq-wrapper {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+            .faq-wrapper {
+                max-width: 800px;
+                margin: 0 auto;
+            }
 
-        .faq-item {
-            margin-bottom: 30px;
-        }
+            .faq-item {
+                margin-bottom: 10px;
+                border-bottom: 1px solid #ddd;
+                /* Add border between items */
+            }
 
-        .faq-question {
-            font-size: 1.5rem;
-            color: #007bff;
-            cursor: pointer;
-            margin-bottom: 10px;
-            transition: color 0.3s ease;
-        }
-
-        .faq-question:hover {
-            color: #0056b3;
-        }
-
-        .faq-answer {
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.6;
-            margin-left: 20px;
-            display: none;
-            /* Initially hidden */
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
-            /* Show answer when active */
-        }
-
-        @media (max-width: 768px) {
             .faq-question {
+                font-size: 1.5rem;
+                color: #1aa6b7;
+                background: none;
+                border: none;
+                cursor: pointer;
+                text-align: left;
+                padding: 15px;
+                width: 100%;
+                border-radius: 8px;
+                transition: color 0.3s ease, background-color 0.3s ease;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .faq-question:hover {
+                color: #127681;
+                background-color: #e9ecef;
+            }
+
+            .faq-question .chevron {
                 font-size: 1.2rem;
+                transition: transform 0.3s ease;
+            }
+
+            .faq-item.active .faq-question .chevron {
+                transform: rotate(180deg);
+                /* Rotate chevron when active */
             }
 
             .faq-answer {
-                font-size: 0.95rem;
+                font-size: 1rem;
+                color: #3a3a3a;
+                line-height: 1.6;
+                padding: 0 15px;
+                display: none;
+                transition: max-height 0.3s ease, padding 0.3s ease;
+                overflow: hidden;
+            }
+
+            .faq-item.active .faq-answer {
+                display: block;
+            }
+        }
+
+
+
+        /* footer */
+        @media {
+            .footer-section {
+                background-color: #1aa6b7;
+                color: #ffffff;
+                padding: 50px 0;
+            }
+
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
+            .footer-logo img {
+                max-width: 150px;
+            }
+
+            .footer-links,
+            .footer-contact {
+                flex: 1;
+                margin: 0 20px;
+            }
+
+            .footer-links h4,
+            .footer-contact h4 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                color: #ffffff;
+            }
+
+            .footer-links ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .footer-links ul li {
+                margin-bottom: 10px;
+            }
+
+            .footer-links ul li a {
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-links ul li a:hover {
+                color: #d1e0e0;
+            }
+
+            .footer-contact p {
+                margin: 10px 0;
+            }
+
+            .footer-contact a {
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-contact a:hover {
+                color: #d1e0e0;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .footer-bottom p {
+                margin: 0;
+                font-size: 1rem;
             }
         }
     </style>
@@ -526,9 +723,9 @@
             <div class="carousel-item active cItem">
                 <img src="{{ asset('assets/Frontend/img/c1.jpg') }}" class="d-block w-100 cImg" alt="...">
                 <div class="carousel-caption top-0 mt-4 d-none d-md-block">
-                    <p class="mt-4 text-uppercase cr-artikel">Artikel</p>
-                    <h1 class="carousel-text text-uppercase">How to lower or eliminate your risk of knee
-                        arthritis</h1>
+                    <p class="mt-4 text-uppercase cr-artikel">selamat datang</p>
+                    <h1 class="carousel-text text-uppercase">Pahami gejala Anda dan jelajahi kemungkinan kondisi di Cek
+                        Sehat</h1>
                 </div>
             </div>
 
@@ -536,9 +733,8 @@
             <div class="carousel-item cItem">
                 <img src="{{ asset('assets/Frontend/img/c2.jpg') }}" class="d-block w-100 cImg" alt="...">
                 <div class="carousel-caption top-0 mt-4 d-none d-md-block">
-                    <p class="mt-4 text-uppercase cr-artikel">Artikel</p>
-                    <h1 class="carousel-text text-uppercase">How to lower or eliminate your risk of knee
-                        arthritis</h1>
+                    <p class="mt-4 text-uppercase cr-artikel">selamat datang</p>
+                    <h1 class="carousel-text text-uppercase">Tetap Terinformasi dengan Berita Kesehatan Terbaru</h1>
                 </div>
             </div>
 
@@ -546,9 +742,8 @@
             <div class="carousel-item cItem">
                 <img src="{{ asset('assets/Frontend/img/c3.jpg') }}" class="d-block w-100 cImg" alt="...">
                 <div class="carousel-caption top-0 mt-4 d-none d-md-block">
-                    <p class="mt-4 text-uppercase cr-artikel">Artikel</p>
-                    <h1 class="carousel-text text-uppercase">How to lower or eliminate your risk of knee
-                        arthritis</h1>
+                    <p class="mt-4 text-uppercase cr-artikel">selamat datang</p>
+                    <h1 class="carousel-text text-uppercase">Kesehatan Anda dalam Genggaman Tangan</h1>
                 </div>
             </div>
         </div>
@@ -576,7 +771,7 @@
     {{-- category --}}
     <div class="category-section-top">
         <div class="container">
-            <h2 class="text-center mb-4">Info Kesehatan</h2>
+            <h2 class="text-center mb-5 title">Info Kesehatan</h2>
             <div class="row">
                 <div class="col-md-4 col-lg-3 mb-4">
                     <div class="category-card text-center">
@@ -632,117 +827,144 @@
 
 
 
-    {{-- how it works --}}
+    {{-- step by step --}}
     <div class="steps-section">
         <div class="container">
-            <h2 class="section-title">Bagaimana Cara Kerjanya: Panduan Langkah Demi Langkah</h2>
-            <div class="steps-container">
+            <h2 class="title text-center mb-5">Cara Mengecek Penyakit di Cek Sehat</h2>
+            <div class="timeline-container">
                 <!-- Step 1 -->
-                <div class="step">
-                    <i class="fas fa-search step-icon"></i>
-                    <h3 class="step-title">Langkah 1: Masukkan Gejala Anda</h3>
-                    <p class="step-description">Gunakan kotak pencarian untuk memasukkan gejala yang Anda alami.</p>
+                <div class="timeline-step">
+                    <div class="step-number">
+                        <div class="step-text">Step</div>
+                        <div class="step-digit">1</div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Masukkan Gejala Anda</h3>
+                        <p class="step-description">Gunakan kotak pencarian untuk memasukkan gejala yang Anda alami.
+                        </p>
+                    </div>
                 </div>
                 <!-- Step 2 -->
-                <div class="step">
-                    <i class="fas fa-list step-icon"></i>
-                    <h3 class="step-title">Langkah 2: Lihat Daftar Kemungkinan Kondisi</h3>
-                    <p class="step-description">Setelah Anda mengirimkan gejala, sistem akan menampilkan daftar
-                        kemungkinan kondisi yang sesuai.</p>
+                <div class="timeline-step">
+                    <div class="step-number">
+                        <div class="step-text">Step</div>
+                        <div class="step-digit">2</div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Lihat Daftar Kemungkinan Kondisi</h3>
+                        <p class="step-description">Setelah Anda mengirimkan gejala, sistem akan menampilkan daftar
+                            kemungkinan kondisi yang sesuai.</p>
+                    </div>
                 </div>
                 <!-- Step 3 -->
-                <div class="step">
-                    <i class="fas fa-book-open step-icon"></i>
-                    <h3 class="step-title">Langkah 3: Pelajari Lebih Lanjut</h3>
-                    <p class="step-description">Klik pada setiap kondisi untuk membaca lebih lanjut tentang gejala,
-                        penyebab, dan langkah-langkah penanganan awal yang dapat Anda ambil.</p>
+                <div class="timeline-step">
+                    <div class="step-number">
+                        <div class="step-text">Step</div>
+                        <div class="step-digit">3</div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Pelajari Lebih Lanjut</h3>
+                        <p class="step-description">Klik pada setiap kondisi untuk membaca lebih lanjut tentang gejala,
+                            penyebab, dan langkah-langkah penanganan awal yang dapat Anda ambil.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 
 
 
     {{-- common --}}
     <div id="symptoms-conditions" class="symptoms-conditions-section">
         <div class="container">
-            <h2 class="section-title">Gejala Umum dan Kondisi Kemungkinan</h2>
-            <div class="content-wrapper">
-                <div class="symptoms">
-                    <h3 class="sub-title">Gejala Umum</h3>
-                    <div class="item-list">
-                        <div class="item">
-                            <div class="item-icon">
-                                <i class="fas fa-cough"></i>
-                            </div>
+            <h2 class="title text-center mb-5">Gejala Umum dan Kondisi Kemungkinan</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Gejala Umum</th>
+                        <th></th>
+                        <th>Kondisi Kemungkinan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
                             <div class="item-content">
                                 <h4 class="item-title">Batuk</h4>
                                 <p class="item-description">Batuk adalah refleks tubuh untuk membersihkan saluran
                                     pernapasan dari iritan.</p>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-icon">
-                                <i class="fas fa-temperature-high"></i>
-                            </div>
-                            <div class="item-content">
-                                <h4 class="item-title">Demam</h4>
-                                <p class="item-description">Demam merupakan peningkatan suhu tubuh, sering kali sebagai
-                                    respons terhadap infeksi.</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-icon">
-                                <i class="fas fa-dizzy"></i>
-                            </div>
-                            <div class="item-content">
-                                <h4 class="item-title">Pusing</h4>
-                                <p class="item-description">Pusing dapat disebabkan oleh berbagai faktor, termasuk
-                                    dehidrasi atau gangguan keseimbangan.</p>
-                            </div>
-                        </div>
-                        <!-- Add more symptoms as needed -->
-                    </div>
-                </div>
-                <div class="conditions">
-                    <h3 class="sub-title">Kondisi Kemungkinan</h3>
-                    <div class="item-list">
-                        <div class="item">
-                            <div class="item-icon">
-                                <i class="fas fa-virus"></i>
-                            </div>
+                        </td>
+                        <td class="image-cell">
+                            <img src="{{ asset('assets/Frontend/img/batuk.jpg') }}" alt="Batuk"
+                                class="symptoms-image">
+                        </td>
+                        <td>
                             <div class="item-content">
                                 <h4 class="item-title">Flu</h4>
                                 <p class="item-description">Flu sering disertai dengan batuk, demam, dan nyeri otot.
                                 </p>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-icon">
-                                <i class="fas fa-lungs"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item-content">
+                                <h4 class="item-title">Demam</h4>
+                                <p class="item-description">Demam merupakan peningkatan suhu tubuh, sering kali sebagai
+                                    respons terhadap infeksi.</p>
                             </div>
+                        </td>
+                        <td class="image-cell">
+                            <img src="{{ asset('assets/Frontend/img/demam.jpg') }}" alt="Demam"
+                                class="symptoms-image">
+                        </td>
+                        <td>
                             <div class="item-content">
                                 <h4 class="item-title">Bronkitis</h4>
-                                <p class="item-description">Bronkitis menyebabkan batuk yang berlangsung lama dan
-                                    sering disertai sesak napas.</p>
+                                <p class="item-description">Biasanya, Demam Berkepanjangan disebabkan oleh infeksi
+                                    kronis, seperti tuberkulosis paru atau bronkitis.</p>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-icon">
-                                <i class="fas fa-headache"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item-content">
+                                <h4 class="item-title">Pusing</h4>
+                                <p class="item-description">Pusing dapat disebabkan oleh berbagai faktor, termasuk
+                                    dehidrasi atau gangguan keseimbangan.</p>
                             </div>
+                        </td>
+                        <td class="image-cell">
+                            <img src="{{ asset('assets/Frontend/img/pusing.jpg') }}" alt="Pusing"
+                                class="symptoms-image">
+                        </td>
+                        <td>
                             <div class="item-content">
                                 <h4 class="item-title">Migrain</h4>
                                 <p class="item-description">Migrain adalah jenis sakit kepala yang parah dan sering
                                     kali disertai mual.</p>
                             </div>
-                        </div>
-                        <!-- Add more conditions as needed -->
-                    </div>
-                </div>
-            </div>
+                        </td>
+                    </tr>
+                    <!-- Add more symptom-condition pairs as needed -->
+                </tbody>
+            </table>
         </div>
     </div>
+
+
 
 
 
@@ -750,124 +972,199 @@
     {{-- advice --}}
     <div id="advice" class="advice-section">
         <div class="container">
-            <h2 class="section-title">Saran Kesehatan</h2>
+            <h2 class="title text-center mb-5">Saran Kesehatan</h2>
             <div class="advice-wrapper">
                 <div class="advice-item">
-                    <div class="advice-icon">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <div class="advice-content">
-                        <h3 class="advice-title">Konsultasi dengan Spesialis</h3>
-                        <p class="advice-description">
-                            Jika Anda mengalami gejala yang tidak biasa atau berkelanjutan, penting untuk berkonsultasi
-                            dengan spesialis yang tepat untuk mendapatkan diagnosis dan perawatan yang akurat.
-                        </p>
-                    </div>
+                    <img src="{{ asset('assets/Frontend/img/konsultasi.png') }}" alt="Image 1">
+                    <h3 class="advice-title">Konsultasi dengan Spesialis</h3>
+                    <p class="advice-description">
+                        Jika Anda mengalami gejala yang tidak biasa atau berkelanjutan, penting untuk berkonsultasi
+                        dengan spesialis yang tepat untuk mendapatkan diagnosis dan perawatan yang akurat.
+                    </p>
                 </div>
                 <div class="advice-item">
-                    <div class="advice-icon">
-                        <i class="fas fa-clinic-medical"></i>
-                    </div>
-                    <div class="advice-content">
-                        <h3 class="advice-title">Kunjungi Klinik Terdekat</h3>
-                        <p class="advice-description">
-                            Untuk gejala yang memerlukan perhatian segera, seperti demam tinggi atau kesulitan bernapas,
-                            kunjungi klinik terdekat untuk pemeriksaan lebih lanjut dan penanganan awal.
-                        </p>
-                    </div>
+                    <img src="{{ asset('assets/Frontend/img/klinik.png') }}" alt="Image 2">
+                    <h3 class="advice-title">Kunjungi Klinik Terdekat</h3>
+                    <p class="advice-description">
+                        Untuk gejala yang memerlukan perhatian segera, seperti demam tinggi atau kesulitan bernapas,
+                        kunjungi klinik terdekat untuk pemeriksaan lebih lanjut dan penanganan awal.
+                    </p>
                 </div>
                 <div class="advice-item">
-                    <div class="advice-icon">
-                        <i class="fas fa-pills"></i>
-                    </div>
-                    <div class="advice-content">
-                        <h3 class="advice-title">Gunakan Obat yang Dianjurkan</h3>
-                        <p class="advice-description">
-                            Apabila gejala ringan dan Anda sudah mengetahui kondisi yang mendasarinya, gunakan
-                            obat-obatan yang dianjurkan oleh dokter atau apoteker untuk mengatasi gejala tersebut.
-                        </p>
-                    </div>
+                    <img src="{{ asset('assets/Frontend/img/obat.png') }}" alt="Image 3">
+                    <h3 class="advice-title">Gunakan Obat yang Dianjurkan</h3>
+                    <p class="advice-description">
+                        Apabila gejala ringan dan Anda sudah mengetahui kondisi yang mendasarinya, gunakan obat-obatan
+                        yang dianjurkan oleh dokter atau apoteker untuk mengatasi gejala tersebut.
+                    </p>
                 </div>
-                <!-- Add more advice items as needed -->
+                <div class="advice-item">
+                    <img src="{{ asset('assets/Frontend/img/istirahat.png') }}" alt="Image 4">
+                    <h3 class="advice-title">Pentingnya Istirahat</h3>
+                    <p class="advice-description">
+                        Istirahat yang cukup sangat penting untuk pemulihan dari penyakit. Pastikan Anda mendapatkan
+                        waktu tidur yang cukup setiap hari.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
+
 
 
 
     {{-- education --}}
     <div id="educational-resources" class="educational-resources-section">
         <div class="container">
-            <h2 class="section-title">Sumber Daya Edukasi</h2>
-            <p class="section-subtitle">Artikel dan Panduan: Konten terkait gejala dan penyakit</p>
-            <div class="resources-wrapper">
-                <div class="resource-item">
-                    <h3 class="resource-title"><a href="#">Panduan Gejala Umum</a></h3>
-                    <p class="resource-description">Pelajari lebih lanjut tentang gejala umum yang sering dialami dan
-                        langkah-langkah yang dapat diambil.</p>
+            <h2 class="title text-center mb-5">Sumber Daya Edukasi</h2>
+            <div class="resource-card">
+                <div class="resource-list">
+                    <div class="resource-item">
+                        <h3 class="resource-title"><a href="#">Panduan Gejala Umum</a></h3>
+                        <a href=""><i class="fas fa-link resource-link-icon"></i></a>
+
+                    </div>
+                    <div class="resource-item">
+                        <h3 class="resource-title"><a href="#">Informasi Penyakit Kronis</a></h3>
+                        <a href=""><i class="fas fa-link resource-link-icon"></i></a>
+                    </div>
+                    <div class="resource-item">
+                        <h3 class="resource-title"><a href="#">Tips Menjaga Kesehatan Mental</a></h3>
+                        <a href=""><i class="fas fa-link resource-link-icon"></i></a>
+                    </div>
+                    <div class="resource-item">
+                        <h3 class="resource-title"><a href="#">Kapan Harus Menemui Dokter?</a></h3>
+                        <a href=""><i class="fas fa-link resource-link-icon"></i></a>
+                    </div>
+                    <div class="resource-item">
+                        <h3 class="resource-title"><a href="#">Kapan Harus Menemui Dokter?</a></h3>
+                        <a href=""><i class="fas fa-link resource-link-icon"></i></a>
+                    </div>
                 </div>
-                <div class="resource-item">
-                    <h3 class="resource-title"><a href="#">Informasi Penyakit Kronis</a></h3>
-                    <p class="resource-description">Informasi lengkap tentang penyakit kronis, penyebabnya, dan cara
-                        penanganannya.</p>
+                <div>
+                    <img src="{{ asset('assets/Frontend/img/education.jpg') }}" alt="Educational Resources Image"
+                        class="resource-image">
                 </div>
-                <div class="resource-item">
-                    <h3 class="resource-title"><a href="#">Tips Menjaga Kesehatan Mental</a></h3>
-                    <p class="resource-description">Panduan untuk menjaga kesehatan mental Anda dalam situasi yang
-                        menantang.</p>
-                </div>
-                <div class="resource-item">
-                    <h3 class="resource-title"><a href="#">Kapan Harus Menemui Dokter?</a></h3>
-                    <p class="resource-description">Tanda-tanda dan gejala yang menunjukkan bahwa Anda perlu segera
-                        menemui dokter.</p>
-                </div>
-                <!-- Add more resource items as needed -->
             </div>
         </div>
     </div>
+
+
 
 
 
     {{-- faq --}}
     <div id="faqs" class="faqs-section">
         <div class="container">
-            <h2 class="section-title">Pertanyaan yang Sering Diajukan (FAQs)</h2>
+            <h2 class="title text-center mb-5">Pertanyaan yang Sering Diajukan (FAQs)</h2>
             <div class="faq-wrapper">
-                <div class="faq-item">
-                    <h3 class="faq-question">Bagaimana cara menggunakan alat pemeriksa gejala?</h3>
+                <div class="faq-item" data-index="0">
+                    <button class="faq-question">
+                        Bagaimana cara menggunakan alat pemeriksa gejala?
+                        <i class="chevron fas fa-chevron-down"></i>
+                    </button>
                     <p class="faq-answer">Cukup masukkan gejala yang Anda alami ke dalam kolom pencarian, dan sistem
                         kami akan memberikan daftar kemungkinan kondisi yang terkait dengan gejala tersebut.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Apakah hasil pemeriksaan gejala ini akurat?</h3>
+                <div class="faq-item" data-index="1">
+                    <button class="faq-question">
+                        Apakah hasil pemeriksaan gejala ini akurat?
+                        <i class="chevron fas fa-chevron-down"></i>
+                    </button>
                     <p class="faq-answer">Alat ini memberikan informasi berdasarkan data yang tersedia, namun tidak
                         dapat menggantikan diagnosis medis profesional. Kami menyarankan Anda untuk berkonsultasi dengan
                         dokter jika Anda memiliki kekhawatiran kesehatan.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Apa yang harus saya lakukan jika hasilnya menunjukkan kondisi serius?</h3>
+                <div class="faq-item" data-index="2">
+                    <button class="faq-question">
+                        Apa yang harus saya lakukan jika hasilnya menunjukkan kondisi serius?
+                        <i class="chevron fas fa-chevron-down"></i>
+                    </button>
                     <p class="faq-answer">Jika alat ini menunjukkan kondisi yang serius, segera hubungi dokter atau
                         pusat kesehatan terdekat untuk mendapatkan bantuan medis lebih lanjut.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Apakah data saya aman saat menggunakan alat ini?</h3>
+                <div class="faq-item" data-index="3">
+                    <button class="faq-question">
+                        Apakah data saya aman saat menggunakan alat ini?
+                        <i class="chevron fas fa-chevron-down"></i>
+                    </button>
                     <p class="faq-answer">Kami sangat menjaga privasi dan keamanan data Anda. Informasi yang Anda
                         masukkan tidak akan disimpan atau dibagikan tanpa izin Anda.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Apakah alat ini dapat digunakan untuk mendiagnosis anak-anak?</h3>
+                <div class="faq-item" data-index="4">
+                    <button class="faq-question">
+                        Apakah alat ini dapat digunakan untuk mendiagnosis anak-anak?
+                        <i class="chevron fas fa-chevron-down"></i>
+                    </button>
                     <p class="faq-answer">Alat ini dapat digunakan untuk semua usia, namun kami sangat menyarankan
                         konsultasi langsung dengan dokter anak untuk diagnosa yang lebih tepat pada anak-anak.</p>
                 </div>
-                <!-- Add more FAQ items as needed -->
             </div>
         </div>
     </div>
 
 
+    {{-- footer --}}
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{ asset('assets/Frontend/img/cek sehat white.png') }}" alt="Logo" />
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Navigasi</h4>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#symptoms">Gejala</a></li>
+                        <li><a href="#advice">Saran</a></li>
+                        <li><a href="#educational-resources">Sumber Daya</a></li>
+                        <li><a href="#faqs">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Hubungi Kami</h4>
+                    <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+                    <p>Telepon: +62 123 456 789</p>
+                    <p>Alamat: Jl. Contoh No.123, Jakarta, Indonesia</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cek Sehat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+
+    {{-- faq --}}
+    <script>
+        document.querySelectorAll('.faq-question').forEach((button) => {
+            button.addEventListener('click', () => {
+                const faqItem = button.closest('.faq-item');
+                const answer = faqItem.querySelector('.faq-answer');
+
+                // Toggle the active class and answer visibility
+                if (faqItem.classList.contains('active')) {
+                    faqItem.classList.remove('active');
+                    answer.style.display = 'none';
+                } else {
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').style.display = 'none';
+                    });
+                    faqItem.classList.add('active');
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
+
+
 
 </body>
 
