@@ -9,15 +9,18 @@ use App\Http\Controllers\ForgetController;
 Route::get('/', function () {
     return view('Frontend.main');
 });
-Route::get('/pusat-kesehatan', function () {
-    return view('Frontend.pusat-kesehatan');
-});
+Route::get('/info-sehat', function () {
+    return view('Frontend.info-sehat');
+})->name('info-sehat');
 Route::get('/penyakit', function () {
     return view('Frontend.penyakit');
-});
+})->name('penyakit');
 Route::get('/info-obat', function () {
     return view('Frontend.info-obat');
-});
+})->name('info-obat');
+Route::get('/login-style', function () {
+    return view('Frontend.login-style');
+})->name('login-style');
 
 
 // route for artikel

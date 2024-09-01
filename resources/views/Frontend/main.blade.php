@@ -85,34 +85,77 @@
 
         /* NAVBAR */
         @media {
-
-            /* sticky */
             .navbar {
                 position: -webkit-sticky;
-                /* For Safari */
                 position: sticky;
                 top: 0;
                 z-index: 10000000000000000000000000000000;
-                /* Ensure the navbar stays on top of other content */
                 border-bottom: 1px solid #ddd;
-                /* Optional: Adds a border at the bottom */
             }
 
             .navbar-nav .nav-link {
                 margin-right: 15px;
                 color: #333;
                 transition: color 0.3s ease-in-out;
-                font-size: 15px
+                font-size: 15px;
             }
 
             .navbar-nav .nav-link:hover {
                 color: #127681;
             }
 
-            .navbar-nav .nav-item:hover {
+            /* Dropdown */
+            .dropdown:hover .dropdown-menu {
                 display: block;
             }
 
+            .dropdown-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 1000;
+                float: left;
+                min-width: 160px;
+                padding: .5rem 0;
+                margin: .125rem 0 0;
+                font-size: .875rem;
+                color: #333;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: .25rem;
+                box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+            }
+
+            .dropdown-item {
+                display: block;
+                width: 100%;
+                padding: .25rem 1.5rem;
+                clear: both;
+                font-weight: 400;
+                color: #333;
+                text-align: inherit;
+                white-space: nowrap;
+                background-color: transparent;
+                border: 0;
+                transition: color .15s ease-in-out, background-color .15s ease-in-out;
+            }
+
+            .dropdown-item:hover {
+                background-color: #f8f9fa;
+                color: #127681;
+            }
+
+            .dropdown-menu .dropdown-item:active {
+                background-color: #3a3a3a;
+                color: #fff;
+            }
+
+            @media (max-width: 767px) {
+                .navbar-nav {
+                    margin-top: 1rem;
+                }
+            }
         }
 
         /* search modal */
@@ -731,8 +774,6 @@
                 font-size: 1rem;
             }
         }
-
-        
     </style>
 </head>
 
@@ -751,14 +792,22 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="searchIcon"><i class='bx bx-search'></i></a>
-
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('artikel') }}">ARTIKEL</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">INFO KESEHATAN</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="infoKesehatanDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            INFO KESEHATAN
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="infoKesehatanDropdown">
+                            <li><a class="dropdown-item" href="#">Fokus Sehat</a></li>
+                            <li><a class="dropdown-item" href="#">Ragam Penyakit</a></li>
+                            <li><a class="dropdown-item" href="#">Ragam Obat</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="btn btn-outline-primary" href="#">LOGIN</a></li>
-                    <li class="nav-item"><a class="btn btn-primary" href="#">TULIS ARTIKEL <i
-                                class='bx bxs-edit'></i></a></li>
+                    <li class="nav-item"><a class="btn btn-primary" href="#">TULIS ARTIKEL <i class='bx bxs-edit'></i></a></li>
                 </ul>
             </div>
         </div>
