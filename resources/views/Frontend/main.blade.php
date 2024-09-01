@@ -30,6 +30,7 @@
             margin-left: 75px; */
         }
 
+        /* search */
         .form-control {
             border-radius: 50px;
         }
@@ -675,6 +676,62 @@
                 font-size: 1rem;
             }
         }
+
+        /* search modal */
+        @media {
+            .search-modal {
+                display: none;
+                position: fixed;
+                z-index: 100000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                overflow: auto;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .search-modal-content {
+                position: relative;
+                margin: 15% auto;
+                padding: 20px;
+                width: 80%;
+                max-width: 600px;
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            .close-search {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-size: 28px;
+                font-weight: bold;
+                color: #333;
+                cursor: pointer;
+            }
+
+            .search-bar {
+                width: 100%;
+                padding: 15px;
+                font-size: 1.2rem;
+                border: 2px solid #ddd;
+                border-radius: 8px;
+                outline: none;
+            }
+
+            .search-bar:focus {
+                border-color: #127681;
+            }
+
+            .search-results {
+                margin-top: 20px;
+                font-size: 1rem;
+                color: #333;
+            }
+        }
     </style>
 </head>
 
@@ -706,6 +763,15 @@
         </div>
     </nav>
 
+
+    {{-- search modal --}}
+    <div id="searchModal" class="search-modal">
+        <div class="search-modal-content">
+            <span id="closeSearch" class="close-search">&times;</span>
+            <input type="text" id="searchInput" class="search-bar" placeholder="Cari gejala...">
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </div>
 
 
 
@@ -1162,6 +1228,47 @@
                 }
             });
         });
+    </script>
+
+    {{-- search modal --}}
+    <script>
+        document.getElementById('searchIcon').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('searchModal').style.display = 'flex';
+        });
+
+        document.getElementById('closeSearch').addEventListener('click', function() {
+            document.getElementById('searchModal').style.display = 'none';
+        });
+
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const query = this.value;
+
+            if (query.length > 2) {
+                // Update URL without reloading the page
+                const newUrl = window.location.origin + window.location.pathname + '?search=' + encodeURIComponent(
+                    query);
+                window.history.pushState({
+                    path: newUrl
+                }, '', newUrl);
+
+                // Simulate search result fetching
+                document.getElementById('searchResults').innerHTML = '<p>Mencari gejala: ' + query +
+                    '</p><p>Hasil pencarian akan muncul di sini...</p>';
+
+                // In real implementation, perform an AJAX request to fetch results
+            } else {
+                document.getElementById('searchResults').innerHTML = '';
+            }
+        });
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('searchModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
     </script>
 
 
