@@ -19,6 +19,25 @@ Route::get('/info-obat', function () {
     return view('Frontend.info-obat');
 });
 
+
+// route for artikel
+Route::get('/artikel', function () { //semua artikel
+    return view('Frontend.artikel');
+})->name('artikel');
+
+Route::get('/medis', function () { // artikel medis
+    return view('Frontend.medis');
+})->name('medis');
+
+Route::get('/love', function () { // artikel s6 & lov
+    return view('Frontend.love');
+})->name('love');
+
+Route::get('/lifestyle', function () { // artikel lifestyle
+    return view('Frontend.lifestyle');
+})->name('lifestyle');
+
+
 Route::get('/dashboard', [\App\Http\Controllers\AuthController::class, 'dahboard']);
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

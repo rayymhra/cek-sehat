@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -114,6 +113,62 @@
                 display: block;
             }
 
+        }
+
+        /* search modal */
+        @media {
+            .search-modal {
+                display: none;
+                position: fixed;
+                z-index: 100000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                overflow: auto;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .search-modal-content {
+                position: relative;
+                margin: 15% auto;
+                padding: 20px;
+                width: 80%;
+                max-width: 600px;
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            .close-search {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-size: 28px;
+                font-weight: bold;
+                color: #333;
+                cursor: pointer;
+            }
+
+            .search-bar {
+                width: 100%;
+                padding: 15px;
+                font-size: 1.2rem;
+                border: 2px solid #ddd;
+                border-radius: 8px;
+                outline: none;
+            }
+
+            .search-bar:focus {
+                border-color: #127681;
+            }
+
+            .search-results {
+                margin-top: 20px;
+                font-size: 1rem;
+                color: #333;
+            }
         }
 
 
@@ -677,61 +732,7 @@
             }
         }
 
-        /* search modal */
-        @media {
-            .search-modal {
-                display: none;
-                position: fixed;
-                z-index: 100000;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.8);
-                overflow: auto;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .search-modal-content {
-                position: relative;
-                margin: 15% auto;
-                padding: 20px;
-                width: 80%;
-                max-width: 600px;
-                background-color: white;
-                border-radius: 8px;
-            }
-
-            .close-search {
-                position: absolute;
-                top: 10px;
-                right: 20px;
-                font-size: 28px;
-                font-weight: bold;
-                color: #333;
-                cursor: pointer;
-            }
-
-            .search-bar {
-                width: 100%;
-                padding: 15px;
-                font-size: 1.2rem;
-                border: 2px solid #ddd;
-                border-radius: 8px;
-                outline: none;
-            }
-
-            .search-bar:focus {
-                border-color: #127681;
-            }
-
-            .search-results {
-                margin-top: 20px;
-                font-size: 1rem;
-                color: #333;
-            }
-        }
+        
     </style>
 </head>
 
@@ -753,7 +754,7 @@
 
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">ARTIKEL</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('artikel') }}">ARTIKEL</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">INFO KESEHATAN</a></li>
                     <li class="nav-item"><a class="btn btn-outline-primary" href="#">LOGIN</a></li>
                     <li class="nav-item"><a class="btn btn-primary" href="#">TULIS ARTIKEL <i
