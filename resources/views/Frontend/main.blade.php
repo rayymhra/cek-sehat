@@ -634,13 +634,6 @@
                 padding: 50px 0;
             }
 
-            .section-title {
-                text-align: center;
-                font-size: 2 rem;
-                margin-bottom: 40px;
-                color: #333;
-            }
-
             .faq-wrapper {
                 max-width: 800px;
                 margin: 0 auto;
@@ -653,7 +646,7 @@
             }
 
             .faq-question {
-                font-size: 1.5rem;
+                font-size: 19px;
                 color: #1aa6b7;
                 background: none;
                 border: none;
@@ -796,18 +789,18 @@
                     <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('artikel') }}">ARTIKEL</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="infoKesehatanDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            INFO KESEHATAN
+                        <a class="nav-link" href="{{ route('info-sehat') }}" id="infoKesehatanDropdown">
+                            INFO SEHAT
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="infoKesehatanDropdown">
-                            <li><a class="dropdown-item" href="#">Fokus Sehat</a></li>
+                            <li><a class="dropdown-item" href="{{ route('fokus-sehat') }}">Fokus Sehat</a></li>
                             <li><a class="dropdown-item" href="#">Ragam Penyakit</a></li>
                             <li><a class="dropdown-item" href="#">Ragam Obat</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="btn btn-outline-primary" href="#">LOGIN</a></li>
-                    <li class="nav-item"><a class="btn btn-primary" href="#">TULIS ARTIKEL <i class='bx bxs-edit'></i></a></li>
+                    <li class="nav-item"><a class="btn btn-primary" href="#">TULIS ARTIKEL <i
+                                class='bx bxs-edit'></i></a></li>
                 </ul>
             </div>
         </div>
@@ -887,7 +880,7 @@
     {{-- category --}}
     <div class="category-section-top">
         <div class="container">
-            <h2 class="text-center mb-5 title">Info Kesehatan</h2>
+            <h2 class="text-center mb-5 title">fokus Sehat</h2>
             <div class="row">
                 <div class="col-md-4 col-lg-3 mb-4">
                     <div class="category-card text-center">
@@ -1253,9 +1246,9 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+
 
     {{-- faq --}}
     <script>
@@ -1319,6 +1312,39 @@
                 modal.style.display = 'none';
             }
         };
+    </script>
+
+    {{-- navbar hover --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const infoSehatLink = document.getElementById("infoKesehatanDropdown");
+
+            infoSehatLink.addEventListener("click", function(event) {
+                if (window.innerWidth >= 768) { // Only prevent default on desktop screens
+                    event.preventDefault(); // Prevent default click behavior
+                    window.location.href = infoSehatLink.href; // Redirect after hover is shown
+                }
+            });
+
+            infoSehatLink.addEventListener("mouseover", function() {
+                const dropdownMenu = this.nextElementSibling;
+                dropdownMenu.style.display = "block";
+            });
+
+            infoSehatLink.addEventListener("mouseout", function() {
+                const dropdownMenu = this.nextElementSibling;
+                dropdownMenu.style.display = "none";
+            });
+
+            const dropdownMenu = infoSehatLink.nextElementSibling;
+            dropdownMenu.addEventListener("mouseover", function() {
+                this.style.display = "block";
+            });
+
+            dropdownMenu.addEventListener("mouseout", function() {
+                this.style.display = "none";
+            });
+        });
     </script>
 
 

@@ -149,17 +149,29 @@
             margin-top: 20px;
         }
 
-        .login-form .google-btn {
-            display: flex;
+        .form-footer a {
+            text-decoration: none;
+            color: #3a3a3a;
+        }
+
+        .login-form {
             align-items: center;
-            justify-content: center;
+            text-align: center;
+        }
+
+        .login-form .google-btn {
             margin-bottom: 15px;
             padding: 10px;
-            border-radius: 5px;
-            background-color: #4285f4;
-            color: white;
+            border-radius: 50px;
+            background-color: transparent;
+            border: #1aa6b7 1px solid !important;
+            color: #1aa6b7;
             font-weight: 700;
             border: none;
+            width: 100%;
+            text-align: center;
+            line-height: 20px;
+            transition: 0.3s;
         }
 
         .login-form .google-btn img {
@@ -169,7 +181,8 @@
         }
 
         .login-form .google-btn:hover {
-            background-color: #357ae8;
+            background-color: #1aa6b7;
+            color: #ffffff;
         }
 
         .separator {
@@ -316,12 +329,12 @@
                 <h2>Login</h2>
                 <form action="/login" method="post">
                     <div class="form-group">
-                        <label for="username">Username or Email</label>
-                        <input type="text" id="username" name="username" class="form-control" required>
+                        {{-- <label for="username">Username or Email</label> --}}
+                        <input type="text" id="username" name="username" class="form-control" required placeholder="Username or Email">
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" class="form-control" required>
+                        {{-- <label for="password">Password</label> --}}
+                        <input type="password" id="password" name="password" class="form-control" required placeholder="Password">
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Login" class="btn btn-primary btn-block">

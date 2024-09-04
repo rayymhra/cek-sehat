@@ -9,15 +9,8 @@ use App\Http\Controllers\ForgetController;
 Route::get('/', function () {
     return view('Frontend.main');
 });
-Route::get('/info-sehat', function () {
-    return view('Frontend.info-sehat');
-})->name('info-sehat');
-Route::get('/penyakit', function () {
-    return view('Frontend.penyakit');
-})->name('penyakit');
-Route::get('/info-obat', function () {
-    return view('Frontend.info-obat');
-})->name('info-obat');
+
+
 Route::get('/login-style', function () {
     return view('Frontend.login-style');
 })->name('login-style');
@@ -39,6 +32,22 @@ Route::get('/love', function () { // artikel s6 & lov
 Route::get('/lifestyle', function () { // artikel lifestyle
     return view('Frontend.lifestyle');
 })->name('lifestyle');
+
+
+// route for info sehat
+Route::get('/info-sehat', function () { // info sehat
+    return view('Frontend.info-sehat');
+})->name('info-sehat');
+Route::get('/fokus-sehat', function () { // fokus sehat
+    return view('Frontend.fokus-sehat');
+})->name('fokus-sehat');
+Route::get('/ragam-penyakit', function () { // ragam penyakit
+    return view('Frontend.ragam-penyakit');
+})->name('ragam-penyakit');
+Route::get('/ragam-obat', function () { // ragam obat
+    return view('Frontend.ragam-obat');
+})->name('ragam-obat');
+
 
 
 Route::get('/dashboard', [\App\Http\Controllers\AuthController::class, 'dahboard']);
