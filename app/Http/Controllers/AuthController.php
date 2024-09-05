@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -14,36 +15,34 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
 
-        if (!Auth::attempt($credentials)) {
-            $errors = [];
-        
-            if (!$request->input('email')) {
-                $errors['email'] = 'Email is required';
-            } elseif (!filter_var($request->input('email'), FILTER_VALIDATE_EMAIL)) {
-                $errors['email'] = 'Email Tidak Ditemukan';
-            } else {
-                // jika email salah
-                $errors['password'] = 'Password yang Anda masukkan salah.';
-            }
-        
-            if (!$request->input('password')) {
-                $errors['password'] = 'Password is required';
-            } elseif (strlen($request->input('password')) < 8) {
-                $errors['password'] = 'Password Yang Dimasukan Salah';
-            } else {
-                // jika kata sandi
-                $errors['email'] = 'Email Tidak Ditemukan';
-            }
-        
-            return back()->withErrors($errors);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
         }
 
-        $request->session()->regenerate();
-        return redirect()->intended('/dashboard');
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Log the user in
+            $user = Auth::user(); 
+            Auth::login($user); 
+    
+            // Redirect to the desired page
+            return redirect()->intended('/dashboard'); // Or any other intended route
+        } else {
+            // Handle authentication failure
+            return back()->withErrors(['email' => 'Invalid email or password'])->withInput();
+        }
+    }
+
+    public function backendDashboard()
+    {
+        // Your logic to handle the backend dashboard goes here
+        // Example:
+        return view('backend.dashboard');
     }
 }

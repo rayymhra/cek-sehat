@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\ForgetController;
+use App\Http\Controllers\FrontendController;
 
 Route::get('/', function () {
     return view('Frontend.main');
@@ -14,9 +15,7 @@ Route::get('/main', function () {
 });
 
 
-Route::get('/login-style', function () {
-    return view('Frontend.login-style');
-})->name('login-style');
+route::get('/login', [FrontendController::class, ' showLoginFormUser'])->name('login-user');
 
 Route::get('/about-us', function () {
     return view('Frontend.tentang');
@@ -56,14 +55,10 @@ Route::get('/ragam-obat', function () { // ragam obat
 })->name('ragam-obat');
 
 
+route::get('/forget', [ForgetController::class, 'showForgetForm'])->name('forget');
 
-Route::get('/dashboard', [\App\Http\Controllers\AuthController::class, 'dahboard']);
-
+//admin-login
+Route::get('/dashboard', [AuthController::class, 'backendDashboard']);
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/register', function () {
-    return view('auth.ragister');
-});
-
-route::get('/forget', [ForgetController::class, 'showForgetForm'])->name('forget');

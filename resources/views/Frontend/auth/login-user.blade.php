@@ -24,7 +24,7 @@
         }
 
         /* btn in navbar */
-        @media {
+        
             .btn-primary {
                 background-color: #1aa6b7;
                 /* border: none; */
@@ -58,10 +58,10 @@
             .btn-outline-primary:hover {
                 background-color: #1aa6b7;
             }
-        }
+        
 
         /* NAVBAR */
-        @media {
+        
 
             /* sticky */
             .navbar {
@@ -90,7 +90,7 @@
                 display: block;
             }
 
-        }
+        
 
         /* login */
 
@@ -98,14 +98,6 @@
             display: flex;
             height: 100vh;
             background-color: #f6f6f6;
-        }
-
-        .login-container .image-section {
-            flex: 1;
-            background: url('{{ asset('assets/Frontend/img/login.jpg') }}') no-repeat center center;
-            background-size: cover;
-            margin: 10px;
-            border-radius: 10px;
         }
 
         .login-container .form-section {
@@ -220,7 +212,6 @@
     
 
         /* footer */
-        @media {
             .footer-section {
                 background-color: #1aa6b7;
                 color: #ffffff;
@@ -292,7 +283,6 @@
                 margin: 0;
                 font-size: 1rem;
             }
-        }
     </style>
 </head>
 
