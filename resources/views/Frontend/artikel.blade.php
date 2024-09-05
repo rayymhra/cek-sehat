@@ -151,6 +151,10 @@
                 padding-bottom: 20px;
             }
 
+            .news-title {
+                text-decoration: none;
+                font-weight: 600;
+            }
         }
 
         /* footer */

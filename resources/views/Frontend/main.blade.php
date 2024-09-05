@@ -13,6 +13,8 @@
     {{-- bootstrap icon --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    {{-- CSS File --}}
+    <link rel="stylesheet" href="../../../../public/assets/Frontend/css/responsive.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -22,11 +24,6 @@
 
         * {
             font-family: "Montserrat", sans-serif;
-        }
-
-        .container {
-            /* margin-right: 75px;
-            margin-left: 75px; */
         }
 
         /* search */
@@ -71,7 +68,6 @@
             }
         }
 
-
         /* title */
         .title {
             font-size: 23px;
@@ -79,8 +75,6 @@
             text-transform: uppercase;
             color: #3a3a3a;
         }
-
-
 
 
         /* NAVBAR */
@@ -163,7 +157,7 @@
             .search-modal {
                 display: none;
                 position: fixed;
-                z-index: 100000;
+                z-index: 100000000000000000000000000000000000;
                 left: 0;
                 top: 0;
                 width: 100%;
@@ -182,16 +176,6 @@
                 max-width: 600px;
                 background-color: white;
                 border-radius: 8px;
-            }
-
-            .close-search {
-                position: absolute;
-                top: 10px;
-                right: 20px;
-                font-size: 28px;
-                font-weight: bold;
-                color: #333;
-                cursor: pointer;
             }
 
             .search-bar {
@@ -213,9 +197,6 @@
                 color: #333;
             }
         }
-
-
-
 
         /* CAROUSEL */
         @media {
@@ -242,11 +223,6 @@
                 z-index: 100000;
             }
         }
-
-
-
-
-
 
 
         /* categories */
@@ -282,10 +258,6 @@
                 color: #333;
             }
         }
-
-
-
-
 
 
 
@@ -783,10 +755,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="searchIcon"><i class='bx bx-search'></i></a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about-us">ABOUT US</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('artikel') }}">ARTIKEL</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="{{ route('info-sehat') }}" id="infoKesehatanDropdown">
@@ -794,13 +763,14 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="infoKesehatanDropdown">
                             <li><a class="dropdown-item" href="{{ route('fokus-sehat') }}">Fokus Sehat</a></li>
-                            <li><a class="dropdown-item" href="#">Ragam Penyakit</a></li>
-                            <li><a class="dropdown-item" href="#">Ragam Obat</a></li>
+                            <li><a class="dropdown-item" href="/ragam-penyakit">Ragam Penyakit</a></li>
+                            <li><a class="dropdown-item" href="/ragam-obat">Ragam Obat</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="btn btn-outline-primary" href="#">LOGIN</a></li>
-                    <li class="nav-item"><a class="btn btn-primary" href="#">TULIS ARTIKEL <i
-                                class='bx bxs-edit'></i></a></li>
+                    <li class="nav-item"><a class="btn btn-outline-primary rounded-5" id="searchIcon" href="#"><i class="bx bx-search"></i> SEARCH</a></li>
+                    <li class="nav-item"><a class="btn btn-primary" href="#">LOGIN</a></li>
+                    {{-- <li class="nav-item"><a class="btn btn-primary" href="#">TULIS ARTIKEL <i
+                                class='bx bxs-edit'></i></a></li> --}}
                 </ul>
             </div>
         </div>
@@ -810,7 +780,7 @@
     {{-- search modal --}}
     <div id="searchModal" class="search-modal">
         <div class="search-modal-content">
-            <span id="closeSearch" class="close-search">&times;</span>
+            <span id="closeSearch" class="close-search"></span>
             <input type="text" id="searchInput" class="search-bar" placeholder="Cari gejala...">
             <div id="searchResults" class="search-results"></div>
         </div>
@@ -831,7 +801,7 @@
             <!-- carousel item 1 -->
             <div class="carousel-item active cItem">
                 <img src="{{ asset('assets/Frontend/img/c1.jpg') }}" class="d-block w-100 cImg" alt="...">
-                <div class="carousel-caption top-0 mt-4 d-none d-md-block">
+                <div class="carousel-caption top-0 mt-4 d-block d-md-block">
                     <p class="mt-4 text-uppercase cr-artikel">selamat datang</p>
                     <h1 class="carousel-text text-uppercase">Pahami gejala Anda dan jelajahi kemungkinan kondisi di Cek
                         Sehat</h1>
@@ -841,7 +811,7 @@
             <!-- carousel item 2 -->
             <div class="carousel-item cItem">
                 <img src="{{ asset('assets/Frontend/img/c2.jpg') }}" class="d-block w-100 cImg" alt="...">
-                <div class="carousel-caption top-0 mt-4 d-none d-md-block">
+                <div class="carousel-caption top-0 mt-4 d-block d-md-block">
                     <p class="mt-4 text-uppercase cr-artikel">selamat datang</p>
                     <h1 class="carousel-text text-uppercase">Tetap Terinformasi dengan Berita Kesehatan Terbaru</h1>
                 </div>
@@ -850,7 +820,7 @@
             <!-- carousel item 3 -->
             <div class="carousel-item cItem">
                 <img src="{{ asset('assets/Frontend/img/c3.jpg') }}" class="d-block w-100 cImg" alt="...">
-                <div class="carousel-caption top-0 mt-4 d-none d-md-block">
+                <div class="carousel-caption top-0 mt-4 d-block d-md-block">
                     <p class="mt-4 text-uppercase cr-artikel">selamat datang</p>
                     <h1 class="carousel-text text-uppercase">Kesehatan Anda dalam Genggaman Tangan</h1>
                 </div>
@@ -1238,7 +1208,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Cek Sehat. All rights reserved.</p>
+                <p>&copy; 2024 Rayya & Aldizar. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1246,10 +1216,10 @@
 
 
 
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
-
-
+    
     {{-- faq --}}
     <script>
         document.querySelectorAll('.faq-question').forEach((button) => {

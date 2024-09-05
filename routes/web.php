@@ -9,11 +9,18 @@ use App\Http\Controllers\ForgetController;
 Route::get('/', function () {
     return view('Frontend.main');
 });
+Route::get('/main', function () {
+    return view('Frontend.main');
+});
 
 
 Route::get('/login-style', function () {
     return view('Frontend.login-style');
 })->name('login-style');
+
+Route::get('/about-us', function () {
+    return view('Frontend.tentang');
+})->name('/about-us');
 
 
 // route for artikel

@@ -93,10 +93,11 @@
         }
 
         /* login */
-        @media {
-            .login-container {
+
+        .login-container {
             display: flex;
             height: 100vh;
+            background-color: #f6f6f6;
         }
 
         .login-container .image-section {
@@ -112,15 +113,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* background-color: #fff; */
             padding: 20px;
         }
 
         .login-container .form-section .login-form {
             max-width: 400px;
             width: 100%;
-            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
         }
 
@@ -133,12 +132,9 @@
             margin-bottom: 15px;
         }
 
-        .form-group label {
-            font-weight: 600;
-        }
-
         .form-group input {
-            border-radius: 5px;
+            border-radius: 50px;
+            width: 100%
         }
 
         .form-group input[type="submit"] {
@@ -157,6 +153,7 @@
         .login-form {
             align-items: center;
             text-align: center;
+            background-color: #ffffff;
         }
 
         .login-form .google-btn {
@@ -212,7 +209,15 @@
             color: #777;
         }
 
+        .forgot-pass {
+            text-decoration: none;
+            font-size: 14px;
+            color: #3a3a3a;
+            float: right;
+            margin-bottom: 15px;
         }
+
+    
 
         /* footer */
         @media {
@@ -321,67 +326,41 @@
 
     <div class="login-container">
         <!-- Image Section -->
-        <div class="image-section"></div>
+        {{-- <div class="image-section"></div> --}}
 
         <!-- Form Section -->
         <div class="form-section">
             <div class="login-form">
                 <h2>Login</h2>
+                <p class="mb-4">Dengan login, kalian bisa menikmati semua fitur di Cek Sehat</p>
                 <form action="/login" method="post">
                     <div class="form-group">
                         {{-- <label for="username">Username or Email</label> --}}
-                        <input type="text" id="username" name="username" class="form-control" required placeholder="Username or Email">
+                        <input type="text" id="username" name="username" class="form-control" required
+                            placeholder="Username or Email">
                     </div>
                     <div class="form-group">
                         {{-- <label for="password">Password</label> --}}
-                        <input type="password" id="password" name="password" class="form-control" required placeholder="Password">
+                        <input type="password" id="password" name="password" class="form-control" required
+                            placeholder="Password">
                     </div>
+                    {{-- <a href="#" class="forgot-pass">Forgot Password?</a><br> --}}
                     <div class="form-group">
                         <input type="submit" value="Login" class="btn btn-primary btn-block">
-                    </div>
-                    <div class="form-footer">
-                        <a href="#">Forgot Password?</a><br>
-                        <a href="#">Sign Up</a>
                     </div>
                 </form>
                 <div class="separator"><span>or</span></div>
                 <button class="google-btn">
-                    <img src="{{ asset("assets/Frontend/img/google.png") }}" alt="Google Logo">
+                    <img src="{{ asset('assets/Frontend/img/google.png') }}" alt="Google Logo">
                     Login with Google
                 </button>
+                <div class="sign-up d-flex justify-content-center">
+                    <p>Don't have an account? &nbsp;</p>
+                    <a href="">Sign Up</a>
+                </div>
             </div>
         </div>
     </div>
-
-    {{-- footer --}}
-    <footer class="footer-section">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="{{ asset('assets/Frontend/img/cek sehat white.png') }}" alt="Logo" />
-                </div>
-                <div class="footer-links">
-                    <h4 class="footer-heading">Navigasi</h4>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#symptoms">Gejala</a></li>
-                        <li><a href="#advice">Saran</a></li>
-                        <li><a href="#educational-resources">Sumber Daya</a></li>
-                        <li><a href="#faqs">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4 class="footer-heading">Hubungi Kami</h4>
-                    <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
-                    <p>Telepon: +62 123 456 789</p>
-                    <p>Alamat: Jl. Contoh No.123, Jakarta, Indonesia</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Cek Sehat. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
