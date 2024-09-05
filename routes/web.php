@@ -4,6 +4,7 @@ use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use Illuminate\Container\Attributes\Auth;
+use App\Http\Controllers\DiasesController;
 use App\Http\Controllers\ForgetController;
 use App\Http\Controllers\FrontendController;
 
@@ -55,10 +56,16 @@ Route::get('/ragam-obat', function () { // ragam obat
 })->name('ragam-obat');
 
 
-route::get('/forget', [ForgetController::class, 'showForgetForm'])->name('forget');
 
 //admin-login
 Route::get('/dashboard', [AuthController::class, 'backendDashboard']);
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
+//diases
+Route::get('diases', [DiasesController::class, 'index'])->name('backend.diases.index');
+Route::get('diases/create', [DiasesController::class, 'create'])->name('diases.create');
+Route::post('diases/store', [DiasesController::class, 'store'])->name('diases.store');
+Route::get('diases/{nama}/edit', [DiasesController::class, 'edit'])->name('diases.edit');
+Route::put('diases/{nama}/update', [DiasesController::class, 'update'])->name('diases.update');
+Route::get('diases/{nama}/delete', [DiasesController::class, 'destroy'])->name('diases.delete');
