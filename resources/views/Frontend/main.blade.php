@@ -746,7 +746,7 @@
     {{-- navbar --}}
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/main">
                 <img src="{{ asset('assets/Frontend/img/cek sehat.png') }}" alt="Cek Sehat" width="110">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -764,13 +764,11 @@
                         <ul class="dropdown-menu" aria-labelledby="infoKesehatanDropdown">
                             <li><a class="dropdown-item" href="{{ route('fokus-sehat') }}">Fokus Sehat</a></li>
                             <li><a class="dropdown-item" href="/ragam-penyakit">Ragam Penyakit</a></li>
-                            <li><a class="dropdown-item" href="/ragam-obat">Ragam Obat</a></li>
+                            <li><a class="dropdown-item" href="/ragam-obat">Ragam Gejala</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="btn btn-outline-primary rounded-5" id="searchIcon" href="#"><i class="bx bx-search"></i> SEARCH</a></li>
                     <li class="nav-item"><a class="btn btn-primary" href="#">LOGIN</a></li>
-                    {{-- <li class="nav-item"><a class="btn btn-primary" href="#">TULIS ARTIKEL <i
-                                class='bx bxs-edit'></i></a></li> --}}
                 </ul>
             </div>
         </div>
@@ -965,7 +963,7 @@
 
 
     {{-- common --}}
-    <div id="symptoms-conditions" class="symptoms-conditions-section">
+    <div id="common" class="symptoms-conditions-section">
         <div class="container">
             <h2 class="title text-center mb-5">Gejala Umum dan Kondisi Kemungkinan</h2>
             <table class="comparison-table">
@@ -1193,8 +1191,8 @@
                 <div class="footer-links">
                     <h4 class="footer-heading">Navigasi</h4>
                     <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#symptoms">Gejala</a></li>
+                        <li><a href="#hero-carousel">Beranda</a></li>
+                        <li><a href="#common">Gejala</a></li>
                         <li><a href="#advice">Saran</a></li>
                         <li><a href="#educational-resources">Sumber Daya</a></li>
                         <li><a href="#faqs">FAQ</a></li>
@@ -1202,9 +1200,9 @@
                 </div>
                 <div class="footer-contact">
                     <h4 class="footer-heading">Hubungi Kami</h4>
-                    <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+                    <p>Email: <a href="mailto:contact@example.com">bm3@gmail.com</a></p>
                     <p>Telepon: +62 123 456 789</p>
-                    <p>Alamat: Jl. Contoh No.123, Jakarta, Indonesia</p>
+                    <p>Alamat: Jl. Cileungsi No.1, Kab.Bogor, Indonesia</p>
                 </div>
             </div>
             <div class="footer-bottom">

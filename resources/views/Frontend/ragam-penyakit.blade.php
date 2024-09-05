@@ -193,37 +193,6 @@
             }
         }
 
-
-        /* .illness-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .illness-list-item {
-            width: 45%;
-            background-color: #fff;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .illness-list-item h4 {
-            margin-bottom: 10px;
-            font-size: 18px;
-            font-weight: 700;
-            color: #127681;
-        }
-
-        .illness-list-item p {
-            margin-bottom: 0;
-            color: #666;
-        }
-
-        
-        } */
-
         @media (max-width: 768px) {
             .hero-text {
                 padding-left: 15px !important;
@@ -345,12 +314,11 @@
                         <ul class="dropdown-menu" aria-labelledby="infoKesehatanDropdown">
                             <li><a class="dropdown-item" href="{{ route('fokus-sehat') }}">Fokus Sehat</a></li>
                             <li><a class="dropdown-item" href="{{ route('ragam-penyakit') }}">Ragam Penyakit</a></li>
-                            <li><a class="dropdown-item" href="{{ route('ragam-obat') }}">Ragam Obat</a></li>
+                            <li><a class="dropdown-item" href="{{ route('ragam-gejala') }}">Ragam Gejala</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="btn btn-primary" href="#">LOGIN</a></li>
-                    {{-- <li class="nav-item"><a class="btn btn-primary" href="#">TULIS ARTIKEL <i
-                                class='bx bxs-edit'></i></a></li> --}}
+                    
                 </ul>
             </div>
         </div>

@@ -135,27 +135,30 @@
 
 
         /* berita & faq */
-        @media {
-            .faq-section {
-                position: -webkit-sticky;
-                position: sticky;
-                top: 80px;
-                /* Adjust this value if needed to ensure it's below the navbar */
-                z-index: 1000;
-                background-color: #fff;
-                padding: 15px;
-                border: 1px solid #ddd;
-            }
 
-            .news-section {
-                padding-bottom: 20px;
-            }
-
-            .news-title {
-                text-decoration: none;
-                font-weight: 600;
-            }
+        .faq-section {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 80px;
+            /* Adjust this value if needed to ensure it's below the navbar */
+            z-index: 1000;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
         }
+
+        .news-section {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-title {
+            text-decoration: none;
+            font-weight: 600;
+        }
+
 
         /* footer */
         @media {
@@ -238,7 +241,7 @@
     {{-- navbar --}}
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/main">
                 <img src="{{ asset('assets/Frontend/img/cek sehat.png') }}" alt="Cek Sehat" width="110">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -248,10 +251,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="searchIcon"><i class='bx bx-search'></i></a>
+                        <a class="nav-link" href="" id="searchIcon"><i class='bx bx-search'></i></a>
 
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">ABOUT US</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('artikel') }}">ARTIKEL</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">INFO KESEHATAN</a></li>
                     <li class="nav-item"><a class="btn btn-outline-primary" href="#">LOGIN</a></li>
@@ -365,7 +368,7 @@
 
     {{-- deskripsi --}}
     <div class="container">
-        <h1 class="title text-center mt-5">Selamat Datang di Halaman Artikel Cek Sehat</h1>
+        <h1 class="title text-center mt-5 mb-5">Selamat Datang di Halaman Artikel Cek Sehat</h1>
         <p>Di halaman Artikel kami, Anda dapat menemukan berbagai macam informasi dan panduan kesehatan yang dirancang
             untuk membantu Anda memahami gejala dan kondisi medis dengan lebih baik. Kami telah mengkategorikan
             artikel-artikel kami menjadi beberapa kategori utama, yaitu Semua, Medis, Sex & Love, dan Lifestyle, untuk

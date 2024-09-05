@@ -353,33 +353,110 @@
 
         /* WHAT WE OFFER */
         .offer-card {
-            background-color: #f8f9fa;
             border: 1px solid #ddd;
             border-radius: 10px;
+            padding: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
+            display: flex;
         }
 
-        .offer-card:hover {
-            transform: translateY(-10px);
+        .offer-image {
+            max-width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
         }
 
-        .offer-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 10px;
+        .offer-content {
+            padding-left: 15px;
+        }
+
+        .offer-content h3 {
+            font-size: 22px;
+            font-weight: bold;
             color: #127681;
         }
 
-        .offer-card img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
+        .offer-content p {
+            font-size: 16px;
+            color: #333;
+            margin-top: 10px;
         }
 
-        .offer-card p {
-            color: #555;
+        /* footer */
+        @media {
+            .footer-section {
+                background-color: #1aa6b7;
+                color: #ffffff;
+                padding: 50px 0;
+            }
+
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
+            .footer-logo img {
+                max-width: 150px;
+            }
+
+            .footer-links,
+            .footer-contact {
+                flex: 1;
+                margin: 0 20px;
+            }
+
+            .footer-links h4,
+            .footer-contact h4 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                color: #ffffff;
+            }
+
+            .footer-links ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .footer-links ul li {
+                margin-bottom: 10px;
+            }
+
+            .footer-links ul li a {
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-links ul li a:hover {
+                color: #d1e0e0;
+            }
+
+            .footer-contact p {
+                margin: 10px 0;
+            }
+
+            .footer-contact a {
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-contact a:hover {
+                color: #d1e0e0;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .footer-bottom p {
+                margin: 0;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -492,8 +569,46 @@
     </section>
 
 
+    {{-- WHAT WE OFFER --}}
+    <div class="container py-5">
+        <h2 class="text-center mb-5 title">What We Offer</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="offer-card d-flex align-items-center mb-4">
+                    <img src="{{ asset('assets/Frontend/img/service1.jpg') }}" class="offer-image me-3"
+                        alt="Service 1">
+                    <div class="offer-content">
+                        <h3>Konsultasi Kesehatan</h3>
+                        <p>Dapatkan konsultasi kesehatan dari para ahli dan dokter yang berpengalaman.</p>
+                    </div>
+                </div>
+
+                <div class="offer-card d-flex align-items-center mb-4">
+                    <img src="{{ asset('assets/Frontend/img/service2.jpg') }}" class="offer-image me-3"
+                        alt="Service 2">
+                    <div class="offer-content">
+                        <h3>Informasi Penyakit</h3>
+                        <p>Pelajari gejala, penyebab, dan penanganan berbagai penyakit.</p>
+                    </div>
+                </div>
+
+                <div class="offer-card d-flex align-items-center mb-4">
+                    <img src="{{ asset('assets/Frontend/img/service3.jpg') }}" class="offer-image me-3"
+                        alt="Service 3">
+                    <div class="offer-content">
+                        <h3>Rencana Kesehatan</h3>
+                        <p>Buat rencana kesehatan yang sesuai dengan kebutuhan Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     {{-- testimonials --}}
     <div class="container">
+        <h1 class="title text-center mb-5">testimoni</h1>
         <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -592,36 +707,35 @@
     </div>
 
 
-
-    {{-- WHAT WE OFFER --}}
-    <div class="container my-5">
-        <h1 class="title text-center mb-5">What We Offer</h1>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="offer-card text-center p-4">
-                    <img src="your-image-1.jpg" alt="Service 1" class="img-fluid mb-3">
-                    <h4 class="offer-title">Service 1</h4>
-                    <p>We provide high-quality medical services to ensure your health is in top condition.</p>
+    {{-- footer --}}
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{ asset('assets/Frontend/img/cek sehat white.png') }}" alt="Logo" />
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Navigasi</h4>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#symptoms">Gejala</a></li>
+                        <li><a href="#advice">Saran</a></li>
+                        <li><a href="#educational-resources">Sumber Daya</a></li>
+                        <li><a href="#faqs">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Hubungi Kami</h4>
+                    <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+                    <p>Telepon: +62 123 456 789</p>
+                    <p>Alamat: Jl. Contoh No.123, Jakarta, Indonesia</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="offer-card text-center p-4">
-                    <img src="your-image-2.jpg" alt="Service 2" class="img-fluid mb-3">
-                    <h4 class="offer-title">Service 2</h4>
-                    <p>Our team offers a wide range of health and wellness services for everyone.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="offer-card text-center p-4">
-                    <img src="your-image-3.jpg" alt="Service 3" class="img-fluid mb-3">
-                    <h4 class="offer-title">Service 3</h4>
-                    <p>We help you stay informed with the latest health news and tips.</p>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rayya & Aldizar. All rights reserved.</p>
             </div>
         </div>
-    </div>
-
-
+    </footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>

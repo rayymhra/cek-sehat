@@ -51,9 +51,9 @@ Route::get('/fokus-sehat', function () { // fokus sehat
 Route::get('/ragam-penyakit', function () { // ragam penyakit
     return view('Frontend.ragam-penyakit');
 })->name('ragam-penyakit');
-Route::get('/ragam-obat', function () { // ragam obat
-    return view('Frontend.ragam-obat');
-})->name('ragam-obat');
+Route::get('/ragam-gejala', function () { // ragam gejala
+    return view('Frontend.ragam-gejala');
+})->name('ragam-gejala');
 
 
 
