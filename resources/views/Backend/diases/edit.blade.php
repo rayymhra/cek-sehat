@@ -44,6 +44,16 @@
                     <label for="description">Description Gejala</label>
                 </div>
             </div>
+            <h5 class="card-header">Symtomps</h5>
+            <div class="card-body">
+                <div class="mt-2 mb-3">
+                    <select id="" class="form-select form-select-lg" name="symtomp_id">
+                        @foreach($symtomps as $symtom)
+                        <option value="{{ $symtom->id}}">{{ $symtom->nama}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
             <div class="demo-inline-spacing ms-auto mb-4 me-4">
                 <button type="button" class="btn rounded-pill btn-primary" onclick="window.history.back()">Kembali</button>
                 <button href="" type="submit    " class="btn rounded-pill btn-primary">Save</button>

@@ -13,6 +13,7 @@
           <th>Nama</th>
           <th>Description</th>
           <th>treatment</th>
+          <th>symtomp</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -21,8 +22,9 @@
         <tr>
           <td>{{ $loop->iteration }}</td>
           <td>{{ $diases->nama }}</td>
-          <td>{{ $diases->description }}</td>
-          <td>{{ $diases->treatment }}</td>
+          <td>{{ Str::limit($diases->description, 30) }}</td>
+          <td>{{ Str::limit($diases->treatment, 30) }}</td>
+          <td>{{ $diases->symtomp->nama}}</td>
           <td>
             <div class="dropdown">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

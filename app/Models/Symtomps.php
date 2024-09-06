@@ -10,4 +10,9 @@ class Symtomps extends Model
         'nama',
         'description',
     ];
+
+    public function diases()
+    {
+        return $this->hasOne(Diases::class);
+    }
 }
