@@ -53,7 +53,7 @@ class DiasesController extends Controller
     {
         $diases = Diases::find($id);
         $symtomps = Symtomps::all();
-        return view('backend.diases.edit', compact('diases'));
+        return view('backend.diases.edit', compact('diases', 'symtomps'));
     }
 
     public function update(Request $request, $id)

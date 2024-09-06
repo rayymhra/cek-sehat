@@ -322,7 +322,7 @@
                                     <h5 class="card-header">Symtomps</h5>
                                     <div class="card-body">
                                         <div class="mt-2 mb-3">
-                                            <select id="" class="form-select form-select-lg" name="symptom_id">
+                                            <select id="" class="form-select form-select-lg" name="symtomp_id">
                                                 @foreach($symtomps as $symtom)
                                                 <option value="{{ $symtom->id}}">{{ $symtom->nama}}</option>
                                                 @endforeach

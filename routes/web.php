@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Diases;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -7,7 +8,7 @@ use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\DiasesController;
 use App\Http\Controllers\ForgetController;
 use App\Http\Controllers\FrontendController;
-use App\Models\Diases;
+use App\Http\Controllers\SymtompsController;
 
 Route::get('/', function () {
     return view('Frontend.main');
@@ -58,6 +59,14 @@ Route::get('/ragam-gejala', [FrontendController::class, 'ragam_gejala'])->name('
 Route::get('/dashboard', [AuthController::class, 'backendDashboard']);
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
+
+//symtomps
+Route::get('symtomps', [SymtompsController::class, 'index'])->name('backend.symtomps.index');
+Route::get('symtomps/create', [SymtompsController::class, 'create'])->name('symtomps.create');
+Route::post('symtomps/store', [SymtompsController::class, 'store'])->name('symtomps.store');
+Route::get('symtomps/{nama}/edit', [SymtompsController::class, 'edit'])->name('symtomps.edit');
+Route::put('symtomps/{nama}/update', [SymtompsController::class, 'update'])->name('symtomps.update');
+Route::get('symtomps/{nama}/delete', [SymtompsController::class, 'destroy'])->name('symtomps.delete');
 
 //diases
 Route::get('diases', [DiasesController::class, 'index'])->name('backend.diases.index');

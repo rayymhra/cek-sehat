@@ -16,7 +16,7 @@ class Diases extends Model
         'symtomp_id'
     ];
 
-    public function symtomps()
+    public function symtomp()
     {
         return $this->belongsTo(Symtomps::class);
     }
