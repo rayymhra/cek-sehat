@@ -7,6 +7,7 @@ use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\DiasesController;
 use App\Http\Controllers\ForgetController;
 use App\Http\Controllers\FrontendController;
+use App\Models\Diases;
 
 Route::get('/', function () {
     return view('Frontend.main');
@@ -15,8 +16,8 @@ Route::get('/main', function () {
     return view('Frontend.main');
 });
 
+Route::get('/search', 'FrontendController@search')->name('search');
 
-route::get('/login', [FrontendController::class, ' showLoginFormUser'])->name('login-user');
 
 Route::get('/about-us', function () {
     return view('Frontend.tentang');
@@ -48,13 +49,9 @@ Route::get('/info-sehat', function () { // info sehat
 Route::get('/fokus-sehat', function () { // fokus sehat
     return view('Frontend.fokus-sehat');
 })->name('fokus-sehat');
-Route::get('/ragam-penyakit', function () { // ragam penyakit
-    return view('Frontend.ragam-penyakit');
-})->name('ragam-penyakit');
-Route::get('/ragam-obat', function () { // ragam obat
-    return view('Frontend.ragam-obat');
-})->name('ragam-obat');
-
+Route::get('/ragam-penyakit', [FrontendController::class, 'ragam_penyakit'])->name('ragam-penyakit');
+// Route::get('/show', [FrontendController::class, 'index'])->name('ragam-penyakit');
+Route::get('/ragam-gejala', [FrontendController::class, 'ragam_gejala'])->name('ragam-gejala');
 
 
 //admin-login
@@ -69,3 +66,5 @@ Route::post('diases/store', [DiasesController::class, 'store'])->name('diases.st
 Route::get('diases/{nama}/edit', [DiasesController::class, 'edit'])->name('diases.edit');
 Route::put('diases/{nama}/update', [DiasesController::class, 'update'])->name('diases.update');
 Route::get('diases/{nama}/delete', [DiasesController::class, 'destroy'])->name('diases.delete');
+
+//ragam-penyakit

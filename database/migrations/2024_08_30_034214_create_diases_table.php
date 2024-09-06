@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->text('description');    
             $table->text('treatment');
+            $table->string('symtomp_id');
             $table->timestamps();
         });
     }

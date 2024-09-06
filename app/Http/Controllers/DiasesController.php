@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Diases;
+use App\Models\Symtomps;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,12 +12,14 @@ class DiasesController extends Controller
     public function index()
     {
         $diases = Diases::all();
-        return view('backend.diases.index', compact('diases'));
+        $symtomps = Symtomps::all(); // tambahkan kode ini 
+        return view('backend.diases.index', compact('diases', 'symtomps'));
     }
 
     public function create()
     {
-        return view('backend.diases.create');
+        $symtomps = Symtomps::all();
+        return view('backend.diases.create', compact('symtomps'));
     }
 
     public function store(Request $request)
@@ -35,6 +38,7 @@ class DiasesController extends Controller
         $diases->nama = $request->input('nama');
         $diases->description = $request->input('description');
         $diases->treatment = $request->input('treatment');
+        $diases->symtomp_id = $request->input('symtomp_id'); 
         $diases->save();
         return redirect()->route('backend.diases.index');
     }
@@ -48,6 +52,7 @@ class DiasesController extends Controller
     public function edit($id)
     {
         $diases = Diases::find($id);
+        $symtomps = Symtomps::all();
         return view('backend.diases.edit', compact('diases'));
     }
 
@@ -63,10 +68,12 @@ class DiasesController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
+
         $diases = Diases::find($id);
         $diases->nama = $request->input('nama');
         $diases->description = $request->input('description');
         $diases->treatment = $request->input('treatment');
+        $diases->symtomp_id = $request->input('symtomp_id'); 
         $diases->save();
         return redirect()->route('backend.diases.index');
     }

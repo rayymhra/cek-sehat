@@ -12,11 +12,12 @@ class Diases extends Model
     protected $fillable = [
         'nama',
         'description',
-        'treatment'
+        'treatment',
+        'symtomp_id'
     ];
 
     public function symtomps()
     {
-        return $this->belongsToMany(Symtomps::class, 'diases_symtomps');
+        return $this->belongsTo(Symtomps::class);
     }
 }

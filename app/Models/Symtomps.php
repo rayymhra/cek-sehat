@@ -10,8 +10,4 @@ class Symtomps extends Model
         'nama',
         'description',
     ];
-    public function diases()
-    {
-        return $this->belongsToMany(Diases::class, 'diases_symtomps');
-    }
 }

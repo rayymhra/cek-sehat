@@ -27,6 +27,7 @@
                         type="text"
                         class="form-control"
                         id="description"
+                        name="description"
                         aria-describedby="floatingInputHelp" value="{{ $diases->description }}" />
                     <label for="description">Description Gejala</label>
                 </div>

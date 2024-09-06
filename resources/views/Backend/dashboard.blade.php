@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="/assets/Backend/assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
-
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- Helpers -->
     <script src="/assets/Backend/assets/vendor/js/helpers.js"></script>
 
@@ -310,6 +310,7 @@
    
 
     <!-- Core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- build:js assets/vendor/js/core.js -->
     <script src="/assets/Backend/assets/vendor/libs/jquery/jquery.js"></script>
     <script src="/assets/Backend/assets/vendor/libs/popper/popper.js"></script>
@@ -330,5 +331,15 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <script>
+      $(document).ready(function(){
+
+        $("#selectSym").select2({
+          placeholder:"pilih Gejala",
+          
+        })
+      })
+    </script>
   </body>
 </html>
