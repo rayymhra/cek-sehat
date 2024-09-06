@@ -116,6 +116,43 @@
             font-weight: 500;
         }
 
+        /* btn in navbar */
+        @media {
+            .btn-primary {
+                background-color: #1aa6b7;
+                /* border: none; */
+                border-color: #1aa6b7;
+            }
+
+            .btn-primary:hover {
+                background-color: #127681;
+                border-color: #127681;
+            }
+
+            .btn-primary:active {
+                background-color: #e63946;
+            }
+
+            .btn {
+                margin-right: 10px;
+                font-size: 15px;
+                border-radius: 50px;
+            }
+
+            .btn:active {
+                background-color: #e63946;
+            }
+
+            .btn-outline-primary {
+                border-color: #1aa6b7;
+                color: #1aa6b7
+            }
+
+            .btn-outline-primary:hover {
+                background-color: #1aa6b7;
+            }
+        }
+
         /* NAVBAR */
         @media {
             .navbar {
@@ -344,7 +381,7 @@
 
                     <li class="nav-item">
                         <a class="btn btn-outline-primary rounded-5 py-1" id="searchIcon" href="#">
-                            <span style="font-size: 20px; margin-right: 5px;"><i class="bx bx-search"></i></span> SEARCH
+                            <span style="font-size: 20px; margin-right: 5px;"><i class="bx bx-search py-1"></i></span> SEARCH
                         </a>
                     </li>
                 </ul>
@@ -361,41 +398,17 @@
             </div>
 
             <div class="article-content">
-                <h1 class="title">Cara Memperlambat Perkembangan Kanker</h1>
-                <img src="{{ asset('assets/Frontend/img/medis1.jpeg') }}" alt="" class="w-100 mb-3 mt-1"
+                <h1 class="title">Cedera Ginjal Akut Meningkatkan Risiko Demensia, Termasuk Demensia Lewy Body dan Parkinson</h1>
+                <img src="{{ asset('assets/Frontend/img/medis1.webp') }}" alt="" class="w-100 mb-3 mt-1"
                     style="max-height: 300px; object-fit: cover;">
-                <p class="text-news">Kanker adalah pertumbuhan sel abnormal yang dapat menyerang berbagai organ tubuh dan membuat
-                    fungsi organ tersebut tidak bekerja dengan optimal.</p>
+                <p class="text-news">Sebuah studi terbaru menemukan bahwa cedera ginjal akut (AKI) dapat meningkatkan risiko seseorang terkena demensia, terutama demensia Lewy body dan demensia yang terkait dengan penyakit Parkinson. Studi ini dilakukan oleh peneliti dari Karolinska Institutet di Swedia menggunakan data dari Stockholm CREAtinine Measurement (SCREAM), yang mempelajari penyakit ginjal. Data menunjukkan bahwa orang yang mengalami AKI memiliki 49% risiko lebih tinggi untuk terkena demensia dibandingkan mereka yang tidak mengalaminya.</p>
             
-                <h5 class="title-sub">Diet dan Olahraga</h5>
-                <p class="text-news text-justify">Beberapa penelitian menunjukkan bahwa pola makan sehat dan olahraga teratur bisa membantu memperlambat perkembangan berbagai jenis kanker. Kurangi konsumsi gula, pilih daging yang lebih ramping, dan makan banyak buah serta sayuran berwarna. Hindari produk susu berlemak tinggi. Lakukan latihan kardio dan angkat beban secara rutin untuk menjaga kesehatan tubuh secara menyeluruh.</p>
+                <p class="text-news text-justify">Demensia, yang memengaruhi jutaan orang di Indonesia, menyebabkan penurunan kognitif seperti kehilangan memori, keterampilan bahasa, dan masalah emosional. Peningkatan risiko demensia ini, khususnya jenis demensia tertentu, ditemukan lebih tinggi pada pasien yang mengalami AKI berat atau yang memerlukan rawat inap.</p>
             
-                <h5 class="title-sub">Yoga</h5>
-                <p class="text-news text-justify">Stres bisa mempengaruhi saraf dan sistem kekebalan tubuh yang berperan dalam penyebaran kanker. Aktivitas yang dapat mengurangi stres, seperti yoga, mungkin dapat membantu memperlambat perkembangan kanker.</p>
-            
-                <h5 class="title-sub">Biji Rami</h5>
-                <p class="text-news text-justify">Biji rami telah lama dikenal memiliki manfaat kesehatan. Meskipun belum ada kepastian tentang efeknya terhadap berbagai jenis kanker, beberapa peneliti percaya bahwa biji rami bisa membantu memperlambat pertumbuhan tumor. Namun, hindari mengonsumsi minyak biji rami secara berlebihan.</p>
-            
-                <h5 class="title-sub">Teh Hijau</h5>
-                <p class="text-news text-justify">Senyawa dalam teh hijau, seperti EGCG, dipercaya dapat membantu mengurangi dan membunuh sel kanker. Penelitian masih berlangsung, tetapi hasil awalnya cukup menjanjikan untuk berbagai jenis kanker.</p>
-            
-                <h5 class="title-sub">Vitamin D</h5>
-                <p class="text-news text-justify">Orang yang memiliki kanker sering kali memiliki kadar vitamin D yang rendah. Meningkatkan kadar vitamin D, baik melalui suplemen maupun paparan sinar matahari, mungkin membantu memperlambat pertumbuhan sel kanker. Penelitian lebih lanjut masih dibutuhkan.</p>
-            
-                <h5 class="title-sub">Jus Delima</h5>
-                <p class="text-news text-justify">Penelitian awal menunjukkan bahwa mengonsumsi jus delima setiap hari bisa membantu memperlambat perkembangan beberapa jenis kanker. Namun, penelitian lebih lanjut masih diperlukan, terutama untuk mengetahui efektivitasnya pada stadium kanker yang berbeda.</p>
-            
-                <h5 class="title-sub">Likopen</h5>
-                <p class="text-news text-justify">Likopen, pigmen alami dalam tomat dan beberapa makanan lainnya, telah banyak diteliti untuk efeknya pada kanker. Meskipun hasil penelitian masih beragam, makanan yang mengandung likopen seperti tomat tetap merupakan bagian dari diet sehat dan dapat membantu memperlambat perkembangan kanker.</p>
-            
-                <h5 class="title-sub">Kunyit</h5>
-                <p class="text-news text-justify">Kunyit, yang merupakan bahan dapur tradisional, memiliki potensi dalam mencegah kanker dan meredakan peradangan. Meskipun penelitian lebih lanjut masih diperlukan, kunyit dapat dikonsumsi bersama terapi lain. Pastikan untuk memberitahu dokter jika Anda menambahkannya dalam diet Anda.</p>
-
-                <p class="text-news text-justify mt-4">Meskipun tidak ada cara pasti untuk mencegah atau menyembuhkan kanker, mengadopsi gaya hidup sehat dengan pola makan yang baik, olahraga teratur, dan pengelolaan stres dapat membantu memperlambat perkembangan penyakit. Setiap langkah kecil yang Anda ambil menuju kesehatan yang lebih baik dapat memberikan dampak besar pada tubuh Anda. Selalu konsultasikan dengan dokter sebelum memulai perubahan besar dalam diet atau perawatan untuk memastikan bahwa metode yang Anda pilih sesuai dengan kondisi Anda. Penelitian lebih lanjut masih diperlukan untuk memastikan efektivitas dari berbagai pendekatan ini, namun menjaga kesehatan secara menyeluruh selalu menjadi langkah yang bijak.</p>
+                <p class="text-news text-justify">Penelitian ini menyoroti pentingnya memantau kesehatan kognitif pada pasien dengan riwayat AKI, terutama karena kerusakan ginjal dapat memengaruhi penghalang darah-otak. Beberapa faktor risiko seperti hipertensi, obesitas, dan konsumsi alkohol juga dikaitkan dengan demensia. Para ahli menyarankan bahwa deteksi dini pada pasien AKI dan intervensi melalui gaya hidup sehat dapat membantu menurunkan risiko ini.</p>
             
                 <div class="news-separator"></div>
-                <p class="text-muted text-justify">Dengan pemahaman yang lebih baik tentang faktor-faktor yang mempengaruhi perkembangan kanker, diharapkan penderita kanker dapat meningkatkan kualitas hidupnya dan memiliki kendali lebih dalam perjalanan pengobatan mereka.
-                </p>
+                <p class="text-news text-justify">Penemuan ini diharapkan akan mengubah praktik klinis dengan meningkatkan perhatian terhadap pemantauan fungsi kognitif pada pasien AKI, serta mendorong pendekatan multidisiplin dalam perawatan pasien untuk memastikan kesehatan ginjal dan otak mereka tetap terjaga secara bersamaan.</p>
             </div>
             
 

@@ -239,6 +239,29 @@
         .badge {
             background-color: #127681;
         }
+
+        /* biar ga kelewatan */
+        .news-title {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to 2 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .news-description {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to 3 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .news-image img {
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -296,95 +319,153 @@
     {{-- artikel & faq --}}
     <div class="container mt-5">
         <div class="row">
-            {{-- News Section (Left) --}}
             <div class="col-lg-8 news-section">
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                {{-- medis1 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
+                        <a href="/medis1">
+                            <img src="{{ asset('assets/Frontend/img/medis1.webp') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
                         <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
-                    </div>
-                </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
-                    <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
-                    </div>
-                </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
-                    <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
-                    </div>
-                </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
-                    <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
-                    </div>
-                </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
-                    <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
-                    </div>
-                </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
-                    <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
+                        <h3><a href="/medis" class="news-title">Cedera Ginjal Akut Meningkatkan Risiko Demensia,
+                                Termasuk Demensia Lewy Body dan Parkinson</a></h3>
+                        <p class="news-description">Penelitian terbaru banyak menyoroti dampak negatif paparan cahaya
+                            terang di malam hari terhadap kesehatan. </p>
                     </div>
                 </div>
 
-                
+                {{-- medis2 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="/medis2">
+                            <img src="{{ asset('assets/Frontend/img/medis2.jpg') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Medis</span>
+                        <h3><a href="/medis2" class="news-title">Pengurangan Paparan Cahaya Malam Dapat Menurunkan Risiko Diabetes Tipe 2</a></h3>
+                        <p class="news-description">Penelitian terbaru banyak menyoroti dampak negatif paparan cahaya terang di malam hari terhadap kesehatan. Beberapa studi menemukan adanya kemungkinan hubungan antara paparan cahaya di malam hari dengan risiko diabetes. </p>
+                    </div>
+                </div>
 
+                {{-- medis3 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="/medis3">
+                            <img src="{{ asset('assets/Frontend/img/medis3.jpg') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                        </a>
+                    </div>
+
+                    <div class="news-content">
+                        <span class="badge mb-2">Medis</span>
+                        <h3><a href="/medis3" class="news-title">Kemajuan Teknologi dalam Industri Medis dan Pertumbuhan AI </a></h3>
+                        <p class="news-description">Pasar robot medis global diproyeksikan mengalami pertumbuhan pesat dalam dekade mendatang. Ukuran pasar ini diperkirakan melonjak dari USD 11,502.4 juta pada tahun 2024 menjadi USD 38,701.5 juta </p>
+                    </div>
+                </div>
+
+                {{-- love1 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="/love1">
+                            <img src="{{ asset('assets/Frontend/img/love1.webp') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Sex & Love</span>
+                        <h3><a href="/love1" class="news-title">Apa yang Perlu Diketahui tentang Gonore</a></h3>
+                        <p class="news-description">Gonore adalah infeksi menular seksual (IMS) yang umum disebabkan oleh bakteri Neisseria gonorrhoeae. Gejala awal gonore bisa berupa keluarnya nanah (putih, hijau, atau kuning) dan nyeri saat berkemih, meskipun banyak orang tidak menunjukkan gejala sama sekali. Diagnosis dan pengobatan antibiotik yang cepat sangat penting untuk mencegah komplikasi.</p>
+                    </div>
+                </div>
+
+                {{-- love2 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="/love2">
+                            <img src="{{ asset('assets/Frontend/img/love2.jpg') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Sex & Love</span>
+                        <h3><a href="/love2" class="news-title">Apakah Ada Hubungan antara Pil KB dan Kanker Payudara?</a></h3>
+                        <p class="news-description">Penggunaan kontrasepsi hormonal bisa sedikit meningkatkan risiko terkena kanker payudara. Risiko ini bervariasi tergantung pada jenis kontrasepsi yang digunakan. </p>
+                    </div>
+                </div>
+
+                {{-- love3 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="/love3">
+                            <img src="{{ asset('assets/Frontend/img/love3.jpg') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Sex & Love</span>
+                        <h3><a href="/love3" class="news-title">Tips untuk Seks Setelah Menopause</a></h3>
+                        <p class="news-description">Perubahan hormonal selama menopause dapat mempengaruhi fisik dan emosional yang berdampak pada gairah dan kehidupan seksual. Berikut adalah beberapa tips untuk mengelola dan meningkatkan kehidupan seksual setelah menopaus</p>
+                    </div>
+                </div>
+
+                {{-- lifestyle1 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="/lifestyle1">
+                            <img src="{{ asset('assets/Frontend/img/lifestyle1.jpeg') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Lifestyle</span>
+                        <h3><a href="/lifestyle1" class="news-title">Cara Memperlambat Perkembangan Kanker</a></h3>
+                        <p class="news-description">Meskipun masih dalam tahap awal, beberapa penelitian menunjukkan bahwa makan dengan pola makan sehat dan berolahraga secara teratur bisa membantu memperlambat perkembangan kanker prostat.</p>
+                    </div>
+                </div>
+
+                {{-- lifestyle2 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="/lifestyle2">
+                            <img src="{{ asset('assets/Frontend/img/lifestyle2.jpg') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Lifestyle</span>
+                        <h3><a href="/lifestyle2" class="news-title">Penelitian Membuktikan: Makan Sayur Memang Bikin Panjang Umur</a></h3>
+                        <p class="news-description">Kamu mungkin sudah tahu bahwa pola makan yang kaya akan buah, sayur, dan makanan berbasis tumbuhan lainnya lebih baik daripada yang didominasi oleh daging dan produk susu. Namun, hingga saat ini, penelitian masih belum menjelaskan secara pasti dampak lemak dari makanan tertentu terhadap kesehatan.</p>
+                    </div>
+                </div>
+
+                {{-- lifestyle3 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="/lifestyle3">
+                            <img src="{{ asset('assets/Frontend/img/lifestyle3.jpg') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Lifestyle</span>
+                        <h3><a href="/lifestyle3" class="news-title">Kapan Waktu Terbaik untuk Minum Air?</a></h3>
+                        <p class="news-description">Saat Kamu Merasa Lapar Mungkin sebenarnya kamu sedang haus. Banyak orang tidak sadar bahwa rasa lapar sering kali disebabkan oleh haus. Otak kita mengenali kedua sinyal ini dengan cara yang sama. Jadi, sebelum kamu mencari camilan, coba minum air terlebih dahulu dan tunggu beberapa menit untuk melihat apakah rasa lapar itu hilang.</p>
+                    </div>
+                </div>
             </div>
 
             {{-- FAQ Section (Right) --}}
@@ -449,8 +530,9 @@
 
     {{-- deskripsi --}}
     <div class="container">
-        <h1 class="title text-center mt-5 mb-5">Selamat Datang di Halaman Artikel Cek Sehat</h1>
-        <p class="text-muted" style="text-align: justify;">Di halaman Artikel kami, Anda dapat menemukan berbagai macam informasi dan panduan kesehatan yang dirancang
+        <h1 class="title text-center mt-5 mb-4">Selamat Datang di Halaman Artikel Cek Sehat</h1>
+        <p class="text-muted" style="text-align: justify;">Di halaman Artikel kami, Anda dapat menemukan berbagai
+            macam informasi dan panduan kesehatan yang dirancang
             untuk membantu Anda memahami gejala dan kondisi medis dengan lebih baik. Kami telah mengkategorikan
             artikel-artikel kami menjadi beberapa kategori utama, yaitu Semua, Medis, Sex & Love, dan Lifestyle, untuk
             memudahkan Anda dalam mencari topik yang paling relevan dengan kebutuhan Anda.

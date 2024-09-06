@@ -239,6 +239,29 @@
         .badge {
             background-color: #127681;
         }
+
+        /* biar ga kelewatan */
+        .news-title {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to 2 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .news-description {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to 3 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .news-image img {
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -298,88 +321,51 @@
         <div class="row">
             {{-- News Section (Left) --}}
             <div class="col-lg-8 news-section">
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                {{-- lifestyle1 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
+                        <a href="/lifestyle1">
+                            <img src="{{ asset('assets/Frontend/img/lifestyle1.jpeg') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
+                        <span class="badge mb-2">Lifestyle</span>
+                        <h3><a href="/lifestyle1" class="news-title">Cara Memperlambat Perkembangan Kanker</a></h3>
+                        <p class="news-description">Meskipun masih dalam tahap awal, beberapa penelitian menunjukkan bahwa makan dengan pola makan sehat dan berolahraga secara teratur bisa membantu memperlambat perkembangan kanker prostat.</p>
                     </div>
                 </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+
+                {{-- lifestyle2 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
+                        <a href="/lifestyle2">
+                            <img src="{{ asset('assets/Frontend/img/lifestyle2.jpg') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
+                        <span class="badge mb-2">Lifestyle</span>
+                        <h3><a href="/lifestyle2" class="news-title">Penelitian Membuktikan: Makan Sayur Memang Bikin Panjang Umur</a></h3>
+                        <p class="news-description">Kamu mungkin sudah tahu bahwa pola makan yang kaya akan buah, sayur, dan makanan berbasis tumbuhan lainnya lebih baik daripada yang didominasi oleh daging dan produk susu. Namun, hingga saat ini, penelitian masih belum menjelaskan secara pasti dampak lemak dari makanan tertentu terhadap kesehatan.</p>
                     </div>
                 </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+
+                {{-- lifestyle3 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
+                        <a href="/lifestyle3">
+                            <img src="{{ asset('assets/Frontend/img/lifestyle3.jpg') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
-                    </div>
-                </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
-                    <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
-                    </div>
-                </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
-                    <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
-                    </div>
-                </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
-                    <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
+                        <span class="badge mb-2">Lifestyle</span>
+                        <h3><a href="/lifestyle3" class="news-title">Kapan Waktu Terbaik untuk Minum Air?</a></h3>
+                        <p class="news-description">Saat Kamu Merasa Lapar Mungkin sebenarnya kamu sedang haus. Banyak orang tidak sadar bahwa rasa lapar sering kali disebabkan oleh haus. Otak kita mengenali kedua sinyal ini dengan cara yang sama. Jadi, sebelum kamu mencari camilan, coba minum air terlebih dahulu dan tunggu beberapa menit untuk melihat apakah rasa lapar itu hilang.</p>
                     </div>
                 </div>
 

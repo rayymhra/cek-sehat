@@ -239,6 +239,29 @@
         .badge {
             background-color: #127681;
         }
+
+        /* biar ga kelewatan */
+        .news-title {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to 2 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .news-description {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to 3 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .news-image img {
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -298,90 +321,54 @@
         <div class="row">
             {{-- News Section (Left) --}}
             <div class="col-lg-8 news-section">
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                {{-- love1 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
+                        <a href="/love1">
+                            <img src="{{ asset('assets/Frontend/img/love1.webp') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
+                        <span class="badge mb-2">Sex & Love</span>
+                        <h3><a href="/love1" class="news-title">Apa yang Perlu Diketahui tentang Gonore</a></h3>
+                        <p class="news-description">Gonore adalah infeksi menular seksual (IMS) yang umum disebabkan oleh bakteri Neisseria gonorrhoeae. Gejala awal gonore bisa berupa keluarnya nanah (putih, hijau, atau kuning) dan nyeri saat berkemih, meskipun banyak orang tidak menunjukkan gejala sama sekali. Diagnosis dan pengobatan antibiotik yang cepat sangat penting untuk mencegah komplikasi.</p>
                     </div>
                 </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+
+                {{-- love2 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
+                        <a href="/love2">
+                            <img src="{{ asset('assets/Frontend/img/love2.jpg') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
+                        <span class="badge mb-2">Sex & Love</span>
+                        <h3><a href="/love2" class="news-title">Apakah Ada Hubungan antara Pil KB dan Kanker Payudara?</a></h3>
+                        <p class="news-description">Penggunaan kontrasepsi hormonal bisa sedikit meningkatkan risiko terkena kanker payudara. Risiko ini bervariasi tergantung pada jenis kontrasepsi yang digunakan. </p>
                     </div>
                 </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+
+                {{-- love3 --}}
+                <div class="news-item mb-4 d-flex align-items-start"
+                    style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
+                        <a href="/love3">
+                            <img src="{{ asset('assets/Frontend/img/love3.jpg') }}"
+                                class="img-fluid" style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
+                        <span class="badge mb-2">Sex & Love</span>
+                        <h3><a href="/love3" class="news-title">Tips untuk Seks Setelah Menopause</a></h3>
+                        <p class="news-description">Perubahan hormonal selama menopause dapat mempengaruhi fisik dan emosional yang berdampak pada gairah dan kehidupan seksual. Berikut adalah beberapa tips untuk mengelola dan meningkatkan kehidupan seksual setelah menopaus</p>
                     </div>
                 </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
-                    <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
-                    </div>
-                </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
-                    <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
-                    </div>
-                </div>
-                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
-                    <div class="news-image me-3">
-                        <a href="">
-                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
-                                style="max-width: 200px;">
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <span class="badge mb-2">Medis</span>
-                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
-                        </p>
-                    </div>
-                </div>
+                
 
                 
 

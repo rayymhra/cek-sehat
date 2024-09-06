@@ -4,7 +4,10 @@ use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use Illuminate\Container\Attributes\Auth;
+use App\Http\Controllers\DiasesController;
 use App\Http\Controllers\ForgetController;
+use App\Http\Controllers\FrontendController;
+use App\Models\Diases;
 
 Route::get('/', function () {
     return view('Frontend.main');
@@ -14,9 +17,6 @@ Route::get('/main', function () {
 });
 
 
-Route::get('/login-style', function () {
-    return view('Frontend.login-style');
-})->name('login-style');
 
 Route::get('/about-us', function () {
     return view('Frontend.tentang');
@@ -48,6 +48,9 @@ Route::get('/info-sehat', function () { // info sehat
 Route::get('/fokus-sehat', function () { // fokus sehat
     return view('Frontend.fokus-sehat');
 })->name('fokus-sehat');
+Route::get('/ragam-penyakit', [FrontendController::class, 'ragam_penyakit'])->name('ragam-penyakit');
+// Route::get('/show', [FrontendController::class, 'index'])->name('ragam-penyakit');
+Route::get('/ragam-gejala', [FrontendController::class, 'ragam_gejala'])->name('ragam-gejala');
 Route::get('/ragam-penyakit', function () { // ragam penyakit
     return view('Frontend.ragam-penyakit');
 })->name('ragam-penyakit');
@@ -71,16 +74,43 @@ Route::get('/medis3', function () { // ragam gejala
 })->name('medis3');
 
 
+// lifestyle
+Route::get('/lifestyle1', function () { // ragam gejala
+    return view('Frontend.lifestyle1');
+})->name('lifestyle1');
+Route::get('/lifestyle2', function () { // ragam gejala
+    return view('Frontend.lifestyle2');
+})->name('lifestyle2');
+Route::get('/lifestyle3', function () { // ragam gejala
+    return view('Frontend.lifestyle3');
+})->name('lifestyle3');
+
+
+// s6 and love
+Route::get('/love1', function () { // ragam gejala
+    return view('Frontend.love1');
+})->name('love1');
+Route::get('/love2', function () { // ragam gejala
+    return view('Frontend.love2');
+})->name('love2');
+Route::get('/love3', function () { // ragam gejala
+    return view('Frontend.love3');
+})->name('love3');
 
 
 
-Route::get('/dashboard', [\App\Http\Controllers\AuthController::class, 'dahboard']);
 
+//admin-login
+Route::get('/dashboard', [AuthController::class, 'backendDashboard']);
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/register', function () {
-    return view('auth.ragister');
-});
+//diases
+Route::get('diases', [DiasesController::class, 'index'])->name('backend.diases.index');
+Route::get('diases/create', [DiasesController::class, 'create'])->name('diases.create');
+Route::post('diases/store', [DiasesController::class, 'store'])->name('diases.store');
+Route::get('diases/{nama}/edit', [DiasesController::class, 'edit'])->name('diases.edit');
+Route::put('diases/{nama}/update', [DiasesController::class, 'update'])->name('diases.update');
+Route::get('diases/{nama}/delete', [DiasesController::class, 'destroy'])->name('diases.delete');
 
-route::get('/forget', [ForgetController::class, 'showForgetForm'])->name('forget');
+//ragam-penyakit
