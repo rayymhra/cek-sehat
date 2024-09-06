@@ -57,6 +57,23 @@ Route::get('/ragam-gejala', function () { // ragam gejala
 
 
 
+
+
+// mwdis
+Route::get('/medis1', function () { // ragam gejala
+    return view('Frontend.medis1');
+})->name('medis1');
+Route::get('/medis2', function () { // ragam gejala
+    return view('Frontend.medis2');
+})->name('medis2');
+Route::get('/medis3', function () { // ragam gejala
+    return view('Frontend.medis3');
+})->name('medis3');
+
+
+
+
+
 Route::get('/dashboard', [\App\Http\Controllers\AuthController::class, 'dahboard']);
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

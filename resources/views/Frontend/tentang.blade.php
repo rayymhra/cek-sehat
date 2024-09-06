@@ -708,7 +708,7 @@
 
 
     {{-- footer --}}
-    <footer class="footer-section">
+    <footer class="footer-section mt-5">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">

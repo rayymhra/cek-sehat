@@ -1,5 +1,16 @@
-@media  (max-width:768px) {
+@media (max-width: 768px) {
     .carousel-text {
         font-weight: 100;
     }
 }
+
+/* @media (max-width: 768px) {
+    .cr-search {
+        position: absolute;
+        bottom: 50px;
+        width: 100%;
+        left: 0;
+        transform: translateX(0);
+        z-index: 100000;
+    }
+} */

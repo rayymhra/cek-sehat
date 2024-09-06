@@ -103,6 +103,10 @@
                 display: block;
             }
 
+            .nav-item {
+                text-align: center;
+            }
+
             .dropdown-menu {
                 display: none;
                 position: absolute;
@@ -143,6 +147,18 @@
             .dropdown-menu .dropdown-item:active {
                 background-color: #3a3a3a;
                 color: #fff;
+            }
+
+            #searchIcon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 15px;
+            }
+
+            #searchIcon i {
+                font-size: 20px;
+                margin-right: 5px;
             }
 
             @media (max-width: 767px) {
@@ -200,6 +216,10 @@
 
         /* CAROUSEL */
         @media {
+            .carousel {
+                padding-bottom: 40px;
+            }
+
             .cItem {
                 height: 400px;
             }
@@ -218,6 +238,15 @@
                 position: absolute;
                 bottom: 100px;
                 width: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 100000;
+            }
+
+            .cr-search-mobile {
+                position: absolute;
+                bottom: 48px;
+                width: 90%;
                 left: 50%;
                 transform: translateX(-50%);
                 z-index: 100000;
@@ -767,8 +796,12 @@
                             <li><a class="dropdown-item" href="/ragam-obat">Ragam Gejala</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="btn btn-outline-primary rounded-5" id="searchIcon" href="#"><i class="bx bx-search"></i> SEARCH</a></li>
-                    <li class="nav-item"><a class="btn btn-primary" href="#">LOGIN</a></li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary rounded-5 py-1" id="searchIcon" href="#">
+                            <span style="font-size: 20px; margin-right: 5px;"><i class="bx bx-search"></i></span> SEARCH
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -824,8 +857,19 @@
                 </div>
             </div>
         </div>
-        <!-- Search Bar -->
+        <!-- Search Bar for desktop screens -->
         <div class="carousel-caption d-none d-md-block cr-search">
+            <form class="mt-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search articles..."
+                        aria-label="Search articles" aria-describedby="button-search">
+                    <button class="btn btn-primary" type="button" id="button-search">Search</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Search Bar for mobile screens -->
+        <div class="carousel-caption d-block d-md-none cr-search-mobile">
             <form class="mt-4">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search articles..."
@@ -1214,10 +1258,10 @@
 
 
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
-    
+
     {{-- faq --}}
     <script>
         document.querySelectorAll('.faq-question').forEach((button) => {

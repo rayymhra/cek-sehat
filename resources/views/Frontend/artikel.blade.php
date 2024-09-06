@@ -148,7 +148,7 @@
         }
 
         .news-section {
-            background-color: #f7f7f7;
+            /* background-color: #f7f7f7; */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -157,6 +157,7 @@
         .news-title {
             text-decoration: none;
             font-weight: 600;
+            color: #1aa6b7;
         }
 
 
@@ -234,6 +235,10 @@
                 font-size: 1rem;
             }
         }
+
+        .badge {
+            background-color: #127681;
+        }
     </style>
 </head>
 
@@ -293,17 +298,93 @@
         <div class="row">
             {{-- News Section (Left) --}}
             <div class="col-lg-8 news-section">
-                <div class="news-item mb-4">
-                    <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid mb-3">
-                    <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
-                    <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...</p>
+                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="">
+                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
+                                style="max-width: 200px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Medis</span>
+                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
+                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
+                        </p>
+                    </div>
                 </div>
-                <div class="news-item mb-4">
-                    <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 2" class="img-fluid mb-3">
-                    <h3><a href="#" class="news-title">Judul Berita 2</a></h3>
-                    <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...</p>
+                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="">
+                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
+                                style="max-width: 200px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Medis</span>
+                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
+                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
+                        </p>
+                    </div>
                 </div>
-                <!-- Add more news items as needed -->
+                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="">
+                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
+                                style="max-width: 200px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Medis</span>
+                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
+                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
+                        </p>
+                    </div>
+                </div>
+                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="">
+                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
+                                style="max-width: 200px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Medis</span>
+                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
+                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
+                        </p>
+                    </div>
+                </div>
+                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="">
+                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
+                                style="max-width: 200px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Medis</span>
+                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
+                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
+                        </p>
+                    </div>
+                </div>
+                <div class="news-item mb-4 d-flex " style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
+                    <div class="news-image me-3">
+                        <a href="">
+                            <img src="{{ asset('assets/Frontend/img/c4.jpg') }}" alt="News Image 1" class="img-fluid"
+                                style="max-width: 200px;">
+                        </a>
+                    </div>
+                    <div class="news-content">
+                        <span class="badge mb-2">Medis</span>
+                        <h3><a href="#" class="news-title">Judul Berita 1</a></h3>
+                        <p class="news-description">Deskripsi singkat tentang berita ini yang menarik minat pembaca...
+                        </p>
+                    </div>
+                </div>
+
+                
+
             </div>
 
             {{-- FAQ Section (Right) --}}
@@ -369,7 +450,7 @@
     {{-- deskripsi --}}
     <div class="container">
         <h1 class="title text-center mt-5 mb-5">Selamat Datang di Halaman Artikel Cek Sehat</h1>
-        <p>Di halaman Artikel kami, Anda dapat menemukan berbagai macam informasi dan panduan kesehatan yang dirancang
+        <p class="text-muted" style="text-align: justify;">Di halaman Artikel kami, Anda dapat menemukan berbagai macam informasi dan panduan kesehatan yang dirancang
             untuk membantu Anda memahami gejala dan kondisi medis dengan lebih baik. Kami telah mengkategorikan
             artikel-artikel kami menjadi beberapa kategori utama, yaitu Semua, Medis, Sex & Love, dan Lifestyle, untuk
             memudahkan Anda dalam mencari topik yang paling relevan dengan kebutuhan Anda.
