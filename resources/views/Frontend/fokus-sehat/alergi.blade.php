@@ -1,10 +1,10 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Fokus Sehat - Alergi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- bxicons -->
@@ -14,106 +14,50 @@
     {{-- bootstrap icon --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    {{-- CSS File --}}
-    <link rel="stylesheet" href="../../../../public/assets/Frontend/css/responsive.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-        /* light color: #1aa6b7 */
-        /* primary color: #127681 */
-        /* dark color: #3a3a3a */
-
-        * {
+        body {
             font-family: "Montserrat", sans-serif;
         }
 
-        .article-page {
-            display: flex;
-            gap: 30px;
+        .hero-section {
+            background-color: #1aa6b7;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
         }
 
-        .back-button {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            color: #1aa6b7;
-            text-decoration: none;
+        .hero-section h1 {
+            font-size: 3em;
+            color: #fff;
         }
 
-        .back-button i {
-            margin-right: 10px;
+        .resources {
+            padding: 50px 0;
         }
 
-        .article-content {
-            flex: 3;
-        }
-
-        .related-news {
-            flex: 1;
-            background-color: #f7f7f7;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .related-news h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .related-news .news-item {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .related-news .news-item:last-child {
-            border-bottom: none;
-        }
-
-        .news-item img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .news-item h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .news-item a {
-            text-decoration: none;
-            color: #1aa6b7;
-        }
-
-        .news-item a:hover {
+        .resources h2 {
             color: #127681;
+            margin-bottom: 30px;
         }
 
-        .news-separator {
-            margin: 20px 0;
-            height: 1px;
-            background-color: rgba(0, 0, 0, 0.1);
+        .resource-item {
+            margin-bottom: 20px;
         }
 
-        .text-justify {
-            text-align: justify;
+        .resource-item a {
+            color: #1aa6b7;
+            text-decoration: none;
         }
 
-        .back-button {
-            padding-left: 10px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+        .resource-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* search */
+        .form-control {
             border-radius: 50px;
-            border: #127681 solid 1px;
-        }
-
-        .bx {
-            font-size: 30px;
-            font-weight: 500;
         }
 
         /* btn in navbar */
@@ -152,6 +96,15 @@
                 background-color: #1aa6b7;
             }
         }
+
+        /* title */
+        .title {
+            font-size: 23px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #3a3a3a;
+        }
+
 
         /* NAVBAR */
         @media {
@@ -290,38 +243,6 @@
             }
         }
 
-        .article-content {
-            flex: 3;
-        }
-
-        .related-news {
-            flex: 1;
-            position: sticky;
-            top: 60px;
-            height: 100vh;
-            overflow-y: auto;
-        }
-
-        .back-section {
-            position: sticky;
-            top: 70px;
-            z-index: 10;
-            height: 50px;
-        }
-
-        .text-news {
-            color: #3a3a3a;
-            font-weight: 400;
-        }
-
-        .title-sub {
-            color: #3a3a3a;
-        }
-
-        .title {
-            color: #3a3a3a;
-        }
-
         /* footer */
         @media {
             .footer-section {
@@ -397,50 +318,8 @@
             }
         }
 
-        /* Media Query for Small Screens */
-        @media (max-width: 768px) {
-            @media (max-width: 767px) {
-                .article-page {
-                    flex-direction: column;
-                }
-
-                .article-content {
-                    position: static;
-                    /* Make the article content not sticky */
-                    width: 100%;
-                    /* Ensure the article content takes full width */
-                }
-
-                .related-news {
-                    position: static;
-                    /* Make the related news section not sticky */
-                    width: 100%;
-                    /* Ensure the related news section takes full width */
-                    margin-top: 20px;
-                    /* Add margin to separate from the content */
-                }
-
-                .back-section {
-                    position: static;
-                    /* Remove sticky positioning */
-                    width: auto;
-                    /* Ensure the back button width adjusts to content */
-                    margin: 10px 0;
-                    /* Add margin to separate from other elements */
-                }
-
-                .back-button {
-                    display: inline-block;
-                    /* Ensure the button does not stretch full width */
-                    padding: 10px 20px;
-                    /* Adjust padding to fit content */
-                    border-radius: 50px;
-                    border: #127681 solid 1px;
-                    text-align: center;
-                    width: auto;
-                    /* Adjust width to fit content */
-                }
-            }
+        a {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -492,144 +371,52 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="article-page mt-5">
-            <div class="back-section">
-                <a href="/lifestyle" class="back-button">
-                    <i class='bx bx-left-arrow-alt'></i>
-                </a>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Alergi</h1>
+            <p>Mengatasi Alergi dengan Pengetahuan dan Perawatan yang Tepat</p>
+        </div>
+    </section>
 
-            <div class="article-content">
-                <h1 class="title">Kapan Waktu Terbaik untuk Minum Air?</h1>
-                <img src="{{ asset('assets/Frontend/img/lifestyle3.jpg') }}" alt="" class="w-100 mb-3 mt-1"
-                    style="max-height: 300px; object-fit: cover;">
-                <p class="text-news">Air adalah elemen esensial yang sering kali kita abaikan dalam keseharian. Banyak
-                    orang tidak menyadari bahwa tubuh membutuhkan air dalam jumlah yang cukup untuk berfungsi optimal.
-                    Dehidrasi dapat mempengaruhi berbagai aspek kesehatan, mulai dari energi, konsentrasi, hingga
-                    pengendalian nafsu makan. Artikel ini akan membahas berbagai situasi di mana tubuh sangat
-                    membutuhkan air, serta manfaat besar yang bisa diperoleh dari menjaga hidrasi yang tepat. Mulai dari
-                    saat bangun tidur, hingga berolahraga dan bahkan ketika merasa lapar, hidrasi memainkan peran
-                    penting dalam kesejahteraan kita.
-                </p>
+    <!-- Deskripsi Kategori -->
+    <section class="container my-5">
+        <h2>Deskripsi</h2>
+        <p>Alergi adalah reaksi tubuh terhadap zat asing yang biasanya tidak berbahaya. Pelajari berbagai jenis alergi,
+            penyebabnya, gejala yang umum, serta cara mengelola dan mencegah alergi untuk menjaga kualitas hidup Anda.
+        </p>
+    </section>
 
-                <h5 class="title-sub">Saat Kamu Merasa Lapar</h5>
-                <p class="text-news">Mungkin sebenarnya kamu sedang haus. Banyak orang tidak
-                    sadar bahwa rasa lapar sering kali disebabkan oleh haus. Otak kita mengenali kedua sinyal ini dengan
-                    cara yang sama. Jadi, sebelum kamu mencari camilan, coba minum air terlebih dahulu dan tunggu
-                    beberapa menit untuk melihat apakah rasa lapar itu hilang.
-                </p>
-
-                <h5 class="title-sub">Saat Bangun Tidur</h5>
-                <p class="text-news text-justify">Pagi hari adalah salah satu waktu terbaik untuk
-                    minum air. Tubuhmu baru saja melalui puasa panjang saat tidur. Untuk memberikan dorongan energi,
-                    coba tambahkan setengah lemon ke dalam segelas air di pagi hari. Ini akan memberikan suntikan
-                    antioksidan, vitamin C, dan potasium.</p>
-
-                <h5 class="title-sub">Ketika Kamu Berkeringat </h5>
-                <p class="text-news text-justify">Apapun yang membuatmu berkeringat, seperti
-                    sauna, bak mandi air panas, atau beraktivitas di luar pada hari yang panas, dapat menyebabkan tubuh
-                    kehilangan cairan. Olahraga juga membuat tubuh kehilangan cairan karena tubuh berkeringat untuk
-                    mendinginkan diri. Kamu perlu menggantinya dengan minum banyak air.</p>
-
-                <h5 class="title-sub">Sebelum, Saat, dan Setelah Berolahraga</h5>
-                <p class="text-news text-justify">Kamu perlu banyak air untuk
-                    menggantikan cairan yang hilang saat berkeringat. Berapa banyak? Sebelum berolahraga atau
-                    beraktivitas di luar, minumlah 16-20 ons air. Saat aktif, minum 6-12 ons air setiap 10-15 menit.
-                    Setelah berolahraga, minumlah lagi sebanyak 16-24 ons.
-                </p>
-
-                <h5 class="title-sub">Ketika Kamu Sakit </h5>
-                <p class="text-news text-justify">Minum air sangat penting saat kamu sakit. Gejala
-                    seperti diare, muntah, dan demam dapat menyebabkan kehilangan cairan secara ekstrem. Saat kamu
-                    merasa sakit, minumlah banyak air, terutama jika kamu tidak merasa lapar. Hindari alkohol dan
-                    minuman berkafein karena dapat membuat tubuh semakin dehidrasi.</p>
-
-                <h5 class="title-sub">Saat Berada di Pesawat </h5>
-                <p class="text-news text-justify">Pernah bertanya-tanya mengapa kamu merasa
-                    sangat haus saat terbang? Ini karena ketinggian. Semakin tinggi pesawat, semakin kering udara di
-                    kabin. Sekitar setengah udara di kabin berasal dari luar, yang sangat rendah kelembabannya. Untuk
-                    melawan udara yang kering, bawa botol air kosong dan isi ulang selama penerbangan.</p>
-
-                <h5 class="title-sub">Setelah Pijat</h5>
-                <p class="text-news text-justify">
-                    Minum air sebelum pijat dapat membantu membuat otot lebih rileks dan mudah untuk
-                    dimanipulasi oleh terapis. Setelah pijat, tubuhmu melepaskan zat yang harus dikeluarkan dengan minum
-                    banyak air, terutama setelah pijat jaringan dalam atau pijat berat lainnya.</p>
-
-                <h5 class="title-sub">Sebelum Haid</h5>
-                <p class="text-news text-justify">Minum banyak air sebelum dan selama haid dapat membantu
-                    mengurangi rasa tidak nyaman dan kembung. Salah satu penyebab utama kram atau sakit kepala adalah
-                    dehidrasi. Sebuah studi menemukan bahwa wanita muda yang minum lebih banyak air memiliki siklus yang
-                    lebih pendek, nyeri panggul yang lebih ringan, dan membutuhkan lebih sedikit obat pereda nyeri.</p>
-
-                <h5 class="title-sub">Saat Kamu Merasa Lemas di Tengah Hari </h5>
-                <p class="text-news text-justify">Ketika merasa lelah di sore
-                    hari, daripada minum kopi, cobalah minum segelas air. Kamu bisa menambahkan lemon atau perasa lain
-                    untuk menyegarkan suasana hati. Tingkat hidrasi tubuh berpengaruh langsung pada suasana hati,
-                    memori, dan persepsi visual, menurut laporan British Journal of Nutrition.</p>
-
-                <h5 class="title-sub">Ketika Kamu Sakit Kepala</h5>
-                <p class="text-news text-justify mt-4">Dehidrasi adalah salah satu pemicu utama
-                    migrain. Beberapa orang melaporkan bahwa sedikit saja penurunan cairan dapat menyebabkan sakit
-                    kepala yang parah. Jika kamu rentan terhadap migrain, selalu sediakan botol air dan perhatikan
-                    asupan air harianmu. Jika kamu merasakan sakit kepala datang, segelas air bisa jadi penyelamat.</p>
-
-
-                <h5 class="title-sub">Sebelum Makan</h5>
-                <p class="text-news text-justify mt-4">Minum air sebelum makan, atau yang disebut
-                    "preloading," dapat membantu menurunkan berat badan. Sebuah studi kecil menemukan bahwa orang yang
-                    minum 500 mililiter air (sekitar 16 ons) 30 menit sebelum makan kehilangan lebih banyak berat badan
-                    dalam 12 minggu dibandingkan mereka yang tidak mengikuti metode ini.</p>
-
-                <h5 class="title-sub">Saat Ingin Menurunkan Berat Badan</h5>
-                <p class="text-news text-justify mt-4">Air bukan hanya bebas kalori,
-                    tetapi juga dapat mempercepat metabolisme. Dalam sebuah studi, 50 gadis dengan berat badan berlebih
-                    minum sekitar 2 gelas air setengah jam sebelum sarapan, makan siang, dan makan malam. Setelah 8
-                    minggu, mereka kehilangan berat badan dan mengurangi indeks massa tubuh.</p>
-
-                <h5 class="title-sub">Saat Kamu Perlu Konsentrasi</h5>
-                <p class="text-news text-justify mt-4">Hampir tiga perempat otak kita
-                    terdiri dari cairan. Jika tubuhmu kekurangan cairan, pembuluh darah di otak menyusut. Ini dapat
-                    mempengaruhi koordinasi, memori jangka pendek, rentang perhatian, dan stamina. Jadi, jika merasa
-                    lelah dan tidak fokus, coba minum air daripada minuman berkafein.</p>
-
-                <h5 class="title-sub">Berapa Banyak Air yang Dibutuhkan?</h5>
-                <p class="text-news text-justify mt-4">Akademi Ilmu Pengetahuan,
-                    Teknik, dan Kedokteran Nasional AS merekomendasikan pria dewasa sehat untuk minum sekitar 15,5 gelas
-                    air per hari, sementara wanita cukup 11,5 gelas per hari dari makanan dan minuman. Namun,
-                    kebutuhanmu dapat bervariasi tergantung kesehatan, aktivitas, dan lingkunganmu.</p>
-
-
-
-                <div class="news-separator"></div>
-                <p class="text-news text-justify mt-4">Menjaga hidrasi tubuh yang baik adalah salah satu langkah
-                    sederhana namun sangat penting dalam menjaga kesehatan dan kesejahteraan kita sehari-hari. Air tidak
-                    hanya membantu mencegah dehidrasi, tetapi juga berperan dalam mengoptimalkan fungsi organ tubuh,
-                    meningkatkan energi, dan mendukung sistem kekebalan tubuh. Dengan memperhatikan waktu-waktu penting
-                    untuk minum air, seperti saat merasa lapar, setelah berolahraga, atau saat sakit, kamu dapat
-                    memastikan tubuhmu selalu mendapatkan cairan yang cukup. Ingatlah bahwa hidrasi yang baik adalah
-                    kunci untuk menjalani hidup yang lebih sehat dan bugar.</p>
-            </div>
-
-
-            <div class="related-news">
-                <h3>Berita Lainnya</h3>
-                <div class="news-item">
-                    <h4><a href="/lifestyle1">Cara Memperlambat Perkembangan Kanker</a></h4>
-                    <p class="text-muted">Meskipun masih dalam tahap awal, beberapa penelitian menunjukkan...</p>
+    <!-- Resources -->
+    <section class="resources bg-light">
+        <div class="container">
+            <h2>Resources</h2>
+            <div class="row">
+                <!-- Resource 1 -->
+                <div class="col-md-6 col-lg-4 resource-item">
+                    <h5>Panduan Lengkap Mengenal Alergi</h5>
+                    <p>Artikel ini membahas jenis-jenis alergi, penyebab, gejala, dan langkah-langkah penanganannya.</p>
+                    <a href="https://www.alodokter.com/alergi" target="_blank">Baca Selengkapnya</a>
                 </div>
-                <div class="news-item">
-                    <h4><a href="/lifestyle2">Penelitian Membuktikan: Makan Sayur Memang Bikin Panjang Umur</a></h4>
-                    <p class="text-muted">Kamu mungkin sudah tahu bahwa pola makan yang kaya akan...</p>
+                <!-- Resource 2 -->
+                <div class="col-md-6 col-lg-4 resource-item">
+                    <h5>Tips Menghindari Alergi Musiman</h5>
+                    <p>Pelajari cara efektif menghindari alergi yang sering terjadi pada musim tertentu.</p>
+                    <a href="https://www.sehatq.com/penyakit/alergi" target="_blank">Baca Selengkapnya</a>
+                </div>
+                <!-- Resource 3 -->
+                <div class="col-md-6 col-lg-4 resource-item">
+                    <h5>Faktor Resiko Munculnya Alergi</h5>
+                    <p>Temukan resiko yang menyebabkan munculnya alergi agar anda lebih waspada</p>
+                    <a href="https://sardjito.co.id/2022/06/20/faktor-resiko-munculnya-alergi/" target="_blank">Baca
+                        Selengkapnya</a>
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
 
     {{-- footer --}}
-    <footer class="footer-section mt-5">
+    <footer class="footer-section">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
@@ -657,6 +444,10 @@
             </div>
         </div>
     </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     {{-- search modal --}}
     <script>

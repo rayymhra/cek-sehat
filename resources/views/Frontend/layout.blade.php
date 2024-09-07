@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -33,7 +32,6 @@
         }
 
         /* btn in navbar */
-        @media {
             .btn-primary {
                 background-color: #1aa6b7;
                 /* border: none; */
@@ -67,7 +65,6 @@
             .btn-outline-primary:hover {
                 background-color: #1aa6b7;
             }
-        }
 
         /* title */
         .title {
@@ -102,6 +99,10 @@
             /* Dropdown */
             .dropdown:hover .dropdown-menu {
                 display: block;
+            }
+
+            .nav-item {
+                text-align: center;
             }
 
             .dropdown-menu {
@@ -144,6 +145,18 @@
             .dropdown-menu .dropdown-item:active {
                 background-color: #3a3a3a;
                 color: #fff;
+            }
+
+            #searchIcon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 15px;
+            }
+
+            #searchIcon i {
+                font-size: 20px;
+                margin-right: 5px;
             }
 
             @media (max-width: 767px) {
@@ -199,470 +212,6 @@
             }
         }
 
-        /* CAROUSEL */
-        @media {
-            .cItem {
-                height: 400px;
-            }
-
-            .cImg {
-                filter: brightness(0.6);
-                height: 400px;
-                object-fit: cover;
-            }
-
-            .carousel-text {
-                font-weight: 600;
-            }
-
-            .cr-search {
-                position: absolute;
-                bottom: 100px;
-                width: 50%;
-                left: 50%;
-                transform: translateX(-50%);
-                z-index: 100000;
-            }
-        }
-
-
-        /* categories */
-        @media {
-            .category-section-top {
-                padding: 40px 0;
-                background-color: #ffffff;
-                margin-top: 60px;
-                padding-top: 0;
-            }
-
-            .category-card {
-                background: #f6f6f6;
-                border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                padding: 10px;
-                transition: box-shadow 0.3s ease;
-            }
-
-            .category-card:hover {
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-
-            .category-card img {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 5px;
-            }
-
-            .category-title {
-                font-size: 16px;
-                font-weight: 500;
-                color: #333;
-            }
-        }
-
-
-
-        /* steps by step */
-        @media {
-            .steps-section {
-                background-color: #f8f9fa;
-                padding: 40px 0;
-            }
-
-            .section-title {
-                text-align: center;
-                font-size: 2rem;
-                margin-bottom: 30px;
-            }
-
-            .timeline-container {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                /* justify-content: center;
-                align-items: center; */
-            }
-
-            .timeline-step {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: #ffffff;
-                /* border-radius: 10px; */
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                position: relative;
-
-            }
-
-            .step-number {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                margin-right: 20px;
-                font-weight: bold;
-                color: #127681;
-            }
-
-            .step-number .step-text {
-                font-size: 1rem;
-                text-transform: uppercase;
-            }
-
-            .step-number .step-digit {
-                font-size: 2rem;
-            }
-
-            .step-icon {
-                width: 60px;
-                height: 60px;
-                background-color: #1aa6b7;
-                color: #ffffff;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 2rem;
-                margin-right: 20px;
-            }
-
-            .step-content {
-                flex: 1;
-            }
-
-            .step-title {
-                font-size: 1.3rem;
-                margin-bottom: 5px;
-            }
-
-            .step-description {
-                font-size: 1 rem;
-                color: #555555;
-                margin-bottom: 0;
-            }
-
-            @media (max-width: 768px) {
-                .timeline-step {
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
-
-                .step-icon {
-                    margin-right: 0;
-                    margin-bottom: 10px;
-                }
-
-                .step-number {
-                    margin-right: 0;
-                    margin-bottom: 10px;
-                }
-            }
-        }
-
-
-
-
-
-
-        /* common */
-        @media {
-            .symptoms-conditions-section {
-                background-color: #ffffff;
-                padding: 50px 0;
-            }
-
-            .comparison-table {
-                width: 100%;
-                border-collapse: collapse;
-                position: relative;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 10px;
-                text-align: left;
-                border-bottom: 1px solid #dddddd;
-                vertical-align: top;
-                position: relative;
-            }
-
-            .comparison-table th {
-                background-color: #1aa6b7;
-                font-size: 1.3rem;
-                color: #ffffff;
-                text-align: center;
-                font-weight: 600;
-            }
-
-            .comparison-table td {
-                background-color: #ffffff;
-                font-size: 1.5rem;
-                color: #333;
-            }
-
-            .item-title {
-                font-size: 1.3rem;
-                font-weight: 600;
-            }
-
-            .item-description {
-                font-size: 1rem;
-            }
-
-            .symptoms-image,
-            .conditions-image {
-                max-width: 100%;
-                height: auto;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            .comparison-table .image-cell {
-                text-align: center;
-                width: 150px;
-            }
-
-            .comparison-table .image-cell img {
-                max-width: 100%;
-                height: 100px;
-                padding: 0 !important;
-                object-fit: cover;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            @media (max-width: 768px) {
-
-                .comparison-table th,
-                .comparison-table td {
-                    display: block;
-                    width: 100%;
-                    padding: 15px;
-                }
-
-                .comparison-table th {
-                    position: sticky;
-                    top: 0;
-                    background-color: #f4f4f4;
-                    z-index: 1;
-                }
-
-                .comparison-table::before {
-                    display: none;
-                }
-            }
-        }
-
-
-
-
-
-        /* advice */
-        @media {
-            .advice-section {
-                background-color: #f6f6f6;
-                padding: 50px 0;
-            }
-
-            .advice-wrapper {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
-            }
-
-            .advice-item {
-                background-color: #1aa6b7;
-                border-radius: 8px;
-                overflow: hidden;
-                text-align: center;
-                color: #ffffff;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            .advice-item img {
-                /* width: 100%;
-                height: 150px;
-                object-fit: cover;
-                Ensure image covers the space without stretching */
-
-                width: 200px;
-                height: 200px;
-                object-fit: cover;
-                border-radius: 8px 8px 0 0;
-            }
-
-            .advice-title {
-                font-size: 1.5rem;
-                font-weight: 500;
-                margin: 15px 0 10px 0;
-                color: #ffffff;
-            }
-
-            .advice-description {
-                font-size: 1rem;
-                color: #ffffff;
-                padding: 0 10px 20px 10px;
-            }
-
-            @media (max-width: 1024px) {
-                .advice-wrapper {
-                    grid-template-columns: repeat(2, 1fr);
-                    /* Adjust to two columns on smaller screens */
-                }
-            }
-
-            @media (max-width: 768px) {
-                .advice-wrapper {
-                    grid-template-columns: 1fr;
-                    /* Adjust to one column on mobile screens */
-                }
-            }
-        }
-
-
-
-
-
-        /* education */
-        @media {
-            .educational-resources-section {
-                background-color: #ffffff;
-                padding: 50px 0;
-            }
-
-            .resource-card {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                /* Two columns: resources list on the left, large image on the right */
-                background-color: #ffffff;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                gap: 30px;
-            }
-
-            .resource-list {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .resource-item {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                /* padding: 10px 0; */
-                border-bottom: 1px solid #e0e0e0;
-            }
-
-            .resource-item:last-child {
-                border-bottom: none;
-                /* Remove the bottom border from the last item */
-            }
-
-            .resource-title a {
-                font-size: 1.4rem;
-                color: #1aa6b7;
-                text-decoration: none;
-                transition: color 0.3s ease;
-                flex-grow: 1;
-            }
-
-            .resource-title a:hover {
-                color: #127681;
-            }
-
-            .resource-link-icon {
-                font-size: 1.5rem;
-                color: #1aa6b7;
-                margin-left: 10px;
-            }
-
-            .resource-image {
-                width: 100%;
-                height: auto;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                /* Add a subtle shadow to the image */
-            }
-
-            @media (max-width: 1024px) {
-                .resource-card {
-                    grid-template-columns: 1fr;
-                    /* Stack the resources and image on smaller screens */
-                }
-
-                .resource-image {
-                    margin-top: 30px;
-                    /* Add spacing between the resources and image when stacked */
-                }
-            }
-        }
-
-
-
-        /* faq */
-        @media {
-            .faqs-section {
-                background-color: #f6f6f6;
-                padding: 50px 0;
-            }
-
-            .faq-wrapper {
-                max-width: 800px;
-                margin: 0 auto;
-            }
-
-            .faq-item {
-                margin-bottom: 10px;
-                border-bottom: 1px solid #ddd;
-                /* Add border between items */
-            }
-
-            .faq-question {
-                font-size: 19px;
-                color: #1aa6b7;
-                background: none;
-                border: none;
-                cursor: pointer;
-                text-align: left;
-                padding: 15px;
-                width: 100%;
-                border-radius: 8px;
-                transition: color 0.3s ease, background-color 0.3s ease;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .faq-question:hover {
-                color: #127681;
-                background-color: #e9ecef;
-            }
-
-            .faq-question .chevron {
-                font-size: 1.2rem;
-                transition: transform 0.3s ease;
-            }
-
-            .faq-item.active .faq-question .chevron {
-                transform: rotate(180deg);
-                /* Rotate chevron when active */
-            }
-
-            .faq-answer {
-                font-size: 1rem;
-                color: #3a3a3a;
-                line-height: 1.6;
-                padding: 0 15px;
-                display: none;
-                transition: max-height 0.3s ease, padding 0.3s ease;
-                overflow: hidden;
-            }
-
-            .faq-item.active .faq-answer {
-                display: block;
-            }
-        }
 
 
 
@@ -744,11 +293,10 @@
 </head>
 
 <body>
-
-    <!-- Navbar -->
+    {{-- navbar --}}
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="">
+            <a class="navbar-brand" href="/main">
                 <img src="{{ asset('assets/Frontend/img/cek sehat.png') }}" alt="Cek Sehat" width="110">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -765,19 +313,30 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="infoKesehatanDropdown">
                             <li><a class="dropdown-item" href="{{ route('fokus-sehat') }}">Fokus Sehat</a></li>
-                            <li><a class="dropdown-item" href="{{ route('ragam-penyakit')}}">Ragam Penyakit</a></li>
-                            <li><a class="dropdown-item" href="{{ route('ragam-gejala')}}">Ragam Obat</a></li>
+                            <li><a class="dropdown-item" href="/ragam-penyakit">Ragam Penyakit</a></li>
+                            <li><a class="dropdown-item" href="/ragam-obat">Ragam Gejala</a></li>
                         </ul>
                     </li>
-                    <form action="/pegawai/cari" method="GET">
-                    <li class="nav-item"><a class="btn btn-outline-primary rounded-5" id="searchIcon" href="#"><i class="bx bx-search"></i> SEARCH</a></li>
-                    <!-- <li class="nav-item"><a class="btn btn-primary" href="#">LOGIN</a></li> -->
-                    <!-- {{-- <li class="nav-item"><a class="btn btn-primary" href="#">TULIS ARTIKEL <i
-                                class='bx bxs-edit'></i></a></li> --}} -->
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary rounded-5 py-1" id="searchIcon" href="#">
+                            <span style="font-size: 20px; margin-right: 5px;"><i class="bx bx-search py-1"></i></span> SEARCH
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
+    {{-- search modal --}}
+    <div id="searchModal" class="search-modal">
+        <div class="search-modal-content">
+            <span id="closeSearch" class="close-search"></span>
+            <input type="text" id="searchInput" class="search-bar" placeholder="Cari gejala...">
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </div>
 
     @yield('content')
 
@@ -814,28 +373,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
 
-    {{-- faq --}}
-    <script>
-        document.querySelectorAll('.faq-question').forEach((button) => {
-            button.addEventListener('click', () => {
-                const faqItem = button.closest('.faq-item');
-                const answer = faqItem.querySelector('.faq-answer');
-
-                // Toggle the active class and answer visibility
-                if (faqItem.classList.contains('active')) {
-                    faqItem.classList.remove('active');
-                    answer.style.display = 'none';
-                } else {
-                    document.querySelectorAll('.faq-item').forEach(item => {
-                        item.classList.remove('active');
-                        item.querySelector('.faq-answer').style.display = 'none';
-                    });
-                    faqItem.classList.add('active');
-                    answer.style.display = 'block';
-                }
-            });
-        });
-    </script>
 
     {{-- search modal --}}
     <script>

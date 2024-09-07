@@ -244,6 +244,52 @@
             }
         }
 
+        /* search modal */
+        @media {
+            .search-modal {
+                display: none;
+                position: fixed;
+                z-index: 100000000000000000000000000000000000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                overflow: auto;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .search-modal-content {
+                position: relative;
+                margin: 15% auto;
+                padding: 20px;
+                width: 80%;
+                max-width: 600px;
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            .search-bar {
+                width: 100%;
+                padding: 15px;
+                font-size: 1.2rem;
+                border: 2px solid #ddd;
+                border-radius: 8px;
+                outline: none;
+            }
+
+            .search-bar:focus {
+                border-color: #127681;
+            }
+
+            .search-results {
+                margin-top: 20px;
+                font-size: 1rem;
+                color: #333;
+            }
+        }
+
         .article-content {
             flex: 3;
         }
@@ -350,6 +396,52 @@
                 font-size: 1rem;
             }
         }
+
+        /* Media Query for Small Screens */
+        @media (max-width: 768px) {
+            @media (max-width: 767px) {
+                .article-page {
+                    flex-direction: column;
+                }
+
+                .article-content {
+                    position: static;
+                    /* Make the article content not sticky */
+                    width: 100%;
+                    /* Ensure the article content takes full width */
+                }
+
+                .related-news {
+                    position: static;
+                    /* Make the related news section not sticky */
+                    width: 100%;
+                    /* Ensure the related news section takes full width */
+                    margin-top: 20px;
+                    /* Add margin to separate from the content */
+                }
+
+                .back-section {
+                    position: static;
+                    /* Remove sticky positioning */
+                    width: auto;
+                    /* Ensure the back button width adjusts to content */
+                    margin: 10px 0;
+                    /* Add margin to separate from other elements */
+                }
+
+                .back-button {
+                    display: inline-block;
+                    /* Ensure the button does not stretch full width */
+                    padding: 10px 20px;
+                    /* Adjust padding to fit content */
+                    border-radius: 50px;
+                    border: #127681 solid 1px;
+                    text-align: center;
+                    width: auto;
+                    /* Adjust width to fit content */
+                }
+            }
+        }
     </style>
 </head>
 
@@ -375,20 +467,29 @@
                         <ul class="dropdown-menu" aria-labelledby="infoKesehatanDropdown">
                             <li><a class="dropdown-item" href="{{ route('fokus-sehat') }}">Fokus Sehat</a></li>
                             <li><a class="dropdown-item" href="/ragam-penyakit">Ragam Penyakit</a></li>
-                            <li><a class="dropdown-item" href="/ragam-obat">Ragam Gejala</a></li>
+                            <li><a class="dropdown-item" href="/ragam-gejala">Ragam Gejala</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
                         <a class="btn btn-outline-primary rounded-5 py-1" id="searchIcon" href="#">
-                            <span style="font-size: 20px; margin-right: 5px;"><i class="bx bx-search py-1"></i></span>
-                            SEARCH
+                            <span style="font-size: 20px; margin-right: 5px;"><i class="bx bx-search py-1"></i></span> SEARCH
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
+    {{-- search modal --}}
+    <div id="searchModal" class="search-modal">
+        <div class="search-modal-content">
+            <span id="closeSearch" class="close-search"></span>
+            <input type="text" id="searchInput" class="search-bar" placeholder="Cari gejala...">
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="article-page mt-5">
@@ -456,36 +557,37 @@
                     penurunan risiko kematian keseluruhan sebesar 4% hingga 24%, dan penurunan risiko kematian akibat
                     penyakit jantung sebesar 5% hingga 30%.</p>
 
-                    <p class="text-news text-justify">Kesimpulan lain: Mengganti lemak nabati dengan lemak ikan dan daging
-                        putih tidak menurunkan risiko kematian.</p>
-                        
-                    <p class="text-news text-justify mt-4">Karena plak lemak dapat menumpuk di arteri manusia seiring waktu,
-                        mengubah pola makan dapat memiliki dampak berbeda pada kesehatan jantung tergantung pada kapan
-                        seseorang melakukan perubahan tersebut, kata Walter Willett, MD, profesor epidemiologi dan nutrisi
-                        di Harvard T.H. Chan School of Public Health. “Butuh waktu lama bagi plak tersebut untuk berkurang,
-                        jadi semakin cepat seseorang beralih ke diet berbasis tumbuhan, semakin baik,” katanya.</p>
-                    
-                        
+                <p class="text-news text-justify">Kesimpulan lain: Mengganti lemak nabati dengan lemak ikan dan daging
+                    putih tidak menurunkan risiko kematian.</p>
 
-                    <div class="news-separator"></div>
-                    <h5 class="title-sub">Rekomendasi Diet</h5>
-                    <p class="text-news text-justify mt-4">Dr. Demetrius Albanes, salah satu penulis studi dan peneliti senior di Divisi Epidemiologi dan Genetika Kanker Institut Kanker Nasional, setuju. "Lebih baik mengubah diet lebih awal, di bawah pengawasan dokter, sambil menghindari jenis diet yang terlalu drastis." Data dari studi ini cukup kuat untuk digunakan dalam rekomendasi diet, tambahnya. Di antara sumber lemak nabati yang dia rekomendasikan, selain buah dan sayur, adalah lemak dari makanan biji-bijian (seperti roti, pasta) dan minyak nabati, termasuk minyak zaitun, canola, dan jagung.</p>
+                <p class="text-news text-justify mt-4">Karena plak lemak dapat menumpuk di arteri manusia seiring waktu,
+                    mengubah pola makan dapat memiliki dampak berbeda pada kesehatan jantung tergantung pada kapan
+                    seseorang melakukan perubahan tersebut, kata Walter Willett, MD, profesor epidemiologi dan nutrisi
+                    di Harvard T.H. Chan School of Public Health. “Butuh waktu lama bagi plak tersebut untuk berkurang,
+                    jadi semakin cepat seseorang beralih ke diet berbasis tumbuhan, semakin baik,” katanya.</p>
+
+
+
+                <div class="news-separator"></div>
+                <h5 class="title-sub">Rekomendasi Diet</h5>
+                <p class="text-news text-justify mt-4">Dr. Demetrius Albanes, salah satu penulis studi dan peneliti
+                    senior di Divisi Epidemiologi dan Genetika Kanker Institut Kanker Nasional, setuju. "Lebih baik
+                    mengubah diet lebih awal, di bawah pengawasan dokter, sambil menghindari jenis diet yang terlalu
+                    drastis." Data dari studi ini cukup kuat untuk digunakan dalam rekomendasi diet, tambahnya. Di
+                    antara sumber lemak nabati yang dia rekomendasikan, selain buah dan sayur, adalah lemak dari makanan
+                    biji-bijian (seperti roti, pasta) dan minyak nabati, termasuk minyak zaitun, canola, dan jagung.</p>
             </div>
 
 
             <div class="related-news">
                 <h3>Berita Lainnya</h3>
                 <div class="news-item">
-                    <h4><a href="#">Judul Berita 1</a></h4>
-                    <p class="text-muted">Deskripsi singkat berita terkait yang menarik minat pembaca...</p>
+                    <h4><a href="/lifestyle1">Cara Memperlambat Perkembangan Kanker</a></h4>
+                    <p class="text-muted">Meskipun masih dalam tahap awal, beberapa penelitian menunjukkan...</p>
                 </div>
                 <div class="news-item">
-                    <h4><a href="#">Judul Berita 2</a></h4>
-                    <p class="text-muted">Deskripsi singkat berita terkait yang menarik minat pembaca...</p>
-                </div>
-                <div class="news-item">
-                    <h4><a href="#">Judul Berita 3</a></h4>
-                    <p class="text-muted">Deskripsi singkat berita terkait yang menarik minat pembaca...</p>
+                    <h4><a href="/lifestyle3">Kapan Waktu Terbaik untuk Minum Air?</a></h4>
+                    <p class="text-muted">Saat Kamu Merasa Lapar Mungkin sebenarnya kamu sedang haus...</p>
                 </div>
             </div>
         </div>
@@ -521,6 +623,80 @@
             </div>
         </div>
     </footer>
+
+    {{-- search modal --}}
+    <script>
+        document.getElementById('searchIcon').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('searchModal').style.display = 'flex';
+        });
+
+        document.getElementById('closeSearch').addEventListener('click', function() {
+            document.getElementById('searchModal').style.display = 'none';
+        });
+
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const query = this.value;
+
+            if (query.length > 2) {
+                // Update URL without reloading the page
+                const newUrl = window.location.origin + window.location.pathname + '?search=' + encodeURIComponent(
+                    query);
+                window.history.pushState({
+                    path: newUrl
+                }, '', newUrl);
+
+                // Simulate search result fetching
+                document.getElementById('searchResults').innerHTML = '<p>Mencari gejala: ' + query +
+                    '</p><p>Hasil pencarian akan muncul di sini...</p>';
+
+                // In real implementation, perform an AJAX request to fetch results
+            } else {
+                document.getElementById('searchResults').innerHTML = '';
+            }
+        });
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('searchModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+
+    {{-- navbar hover --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const infoSehatLink = document.getElementById("infoKesehatanDropdown");
+
+            infoSehatLink.addEventListener("click", function(event) {
+                if (window.innerWidth >= 768) { // Only prevent default on desktop screens
+                    event.preventDefault(); // Prevent default click behavior
+                    window.location.href = infoSehatLink.href; // Redirect after hover is shown
+                }
+            });
+
+            infoSehatLink.addEventListener("mouseover", function() {
+                const dropdownMenu = this.nextElementSibling;
+                dropdownMenu.style.display = "block";
+            });
+
+            infoSehatLink.addEventListener("mouseout", function() {
+                const dropdownMenu = this.nextElementSibling;
+                dropdownMenu.style.display = "none";
+            });
+
+            const dropdownMenu = infoSehatLink.nextElementSibling;
+            dropdownMenu.addEventListener("mouseover", function() {
+                this.style.display = "block";
+            });
+
+            dropdownMenu.addEventListener("mouseout", function() {
+                this.style.display = "none";
+            });
+        });
+    </script>
 </body>
 
 </html>

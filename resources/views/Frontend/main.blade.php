@@ -388,6 +388,40 @@
             }
         }
 
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .step-icon {
+                display: none;
+                /* Hide icon on smaller screens */
+            }
+
+            .timeline-step {
+                flex-direction: row;
+                /* Align step number and title horizontally */
+                align-items: center;
+                /* Center items vertically */
+            }
+
+            .step-number {
+                margin-right: 20px;
+            }
+
+            .step-content {
+                text-align: left;
+                /* Align text to the left */
+            }
+
+            .step-title {
+                margin-bottom: 0;
+                /* Remove margin bottom to avoid extra space */
+            }
+
+            .step-description {
+                margin-top: 10px;
+                /* Add space above the description */
+            }
+        }
+
 
 
 
@@ -400,33 +434,21 @@
                 padding: 50px 0;
             }
 
-            .comparison-table {
-                width: 100%;
-                border-collapse: collapse;
-                position: relative;
+            .table-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
             }
 
-            .comparison-table th,
-            .comparison-table td {
-                padding: 10px;
-                text-align: left;
-                border-bottom: 1px solid #dddddd;
-                vertical-align: top;
-                position: relative;
+            .table-column {
+                flex: 1;
+                min-width: 300px;
+                /* Adjust as needed */
             }
 
-            .comparison-table th {
-                background-color: #1aa6b7;
+            .table-column h3 {
                 font-size: 1.3rem;
-                color: #ffffff;
-                text-align: center;
-                font-weight: 600;
-            }
-
-            .comparison-table td {
-                background-color: #ffffff;
-                font-size: 1.5rem;
-                color: #333;
+                margin-bottom: 15px;
             }
 
             .item-title {
@@ -438,45 +460,37 @@
                 font-size: 1rem;
             }
 
-            .symptoms-image,
-            .conditions-image {
-                max-width: 100%;
-                height: auto;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            .comparison-table .image-cell {
-                text-align: center;
-                width: 150px;
-            }
-
-            .comparison-table .image-cell img {
-                max-width: 100%;
-                height: 100px;
-                padding: 0 !important;
-                object-fit: cover;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
             @media (max-width: 768px) {
-
-                .comparison-table th,
-                .comparison-table td {
-                    display: block;
-                    width: 100%;
-                    padding: 15px;
+                .table-container {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 20px;
                 }
 
-                .comparison-table th {
-                    position: sticky;
-                    top: 0;
-                    background-color: #f4f4f4;
-                    z-index: 1;
+                .table-column {
+                    flex: none;
+                    min-width: auto;
                 }
 
-                .comparison-table::before {
-                    display: none;
+                .table-column h3 {
+                    font-size: 1.2rem;
+                    /* Adjust font size as needed */
                 }
+
+                .item-title {
+                    font-size: 1.1rem;
+                    /* Adjust font size as needed */
+                }
+
+                .item-description {
+                    font-size: 0.9rem;
+                    /* Adjust font size as needed */
+                }
+            }
+
+            .table-title {
+                background-color: #1aa6b7;
+                font-weight: 600;
             }
         }
 
@@ -763,6 +777,10 @@
                 font-size: 1rem;
             }
         }
+
+        a {
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -788,13 +806,14 @@
                         <ul class="dropdown-menu" aria-labelledby="infoKesehatanDropdown">
                             <li><a class="dropdown-item" href="{{ route('fokus-sehat') }}">Fokus Sehat</a></li>
                             <li><a class="dropdown-item" href="/ragam-penyakit">Ragam Penyakit</a></li>
-                            <li><a class="dropdown-item" href="/ragam-obat">Ragam Gejala</a></li>
+                            <li><a class="dropdown-item" href="/ragam-gejala">Ragam Gejala</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
                         <a class="btn btn-outline-primary rounded-5 py-1" id="searchIcon" href="#">
-                            <span style="font-size: 20px; margin-right: 5px;"><i class="bx bx-search py-1"></i></span> SEARCH
+                            <span style="font-size: 20px; margin-right: 5px;"><i class="bx bx-search py-1"></i></span>
+                            SEARCH
                         </a>
                     </li>
                 </ul>
@@ -889,58 +908,73 @@
         <div class="container">
             <h2 class="text-center mb-5 title">fokus Sehat</h2>
             <div class="row">
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <div class="category-card text-center">
-                        <img src="{{ asset('assets/Frontend/img/diabetes.png') }}" alt="Diabetes">
-                        <h3 class="category-title">Diabetes</h3>
-                    </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <a href="/fs-alergi" title="Alergi">
+                        <div class="category-card text-center">
+                            <img src="{{ asset('assets/Frontend/img/alergi.png') }}" alt="Alergi">
+                            <h3 class="category-title">Alergi</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <div class="category-card text-center">
-                        <img src="{{ asset('assets/Frontend/img/hipertensi.png') }}" alt="Hipertensi">
-                        <h3 class="category-title">Hipertensi</h3>
-                    </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <a href="/fs-bayi" title="Bayi & Balita">
+                        <div class="category-card text-center">
+                            <img src="{{ asset('assets/Frontend/img/bayi & balita.png') }}" alt="Bayi & Balita">
+                            <h3 class="category-title">Bayi & Balita</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <div class="category-card text-center">
-                        <img src="{{ asset('assets/Frontend/img/kanker.png') }}" alt="Kanker">
-                        <h3 class="category-title">Kanker</h3>
-                    </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <a href="/fs-diabetes" title="Diabetes">
+                        <div class="category-card text-center">
+                            <img src="{{ asset('assets/Frontend/img/diabetes.png') }}" alt="Diabetes">
+                            <h3 class="category-title">Diabetes</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <div class="category-card text-center">
-                        <img src="{{ asset('assets/Frontend/img/kehamilan.png') }}" alt="Kehamilan">
-                        <h3 class="category-title">Kehamilan</h3>
-                    </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <a href="/fs-hipertensi" title="Hipertensi">
+                        <div class="category-card text-center">
+                            <img src="{{ asset('assets/Frontend/img/hipertensi.png') }}" alt="Hipertensi">
+                            <h3 class="category-title">Hipertensi</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <div class="category-card text-center">
-                        <img src="{{ asset('assets/Frontend/img/mata.png') }}" alt="Mata">
-                        <h3 class="category-title">Mata</h3>
-                    </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <a href="/fs-kanker" title="Kanker">
+                        <div class="category-card text-center">
+                            <img src="{{ asset('assets/Frontend/img/kanker.png') }}" alt="Kanker">
+                            <h3 class="category-title">Kanker</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <div class="category-card text-center">
-                        <img src="{{ asset('assets/Frontend/img/pencernaan.png') }}" alt="Pencernaan">
-                        <h3 class="category-title">Pencernaan</h3>
-                    </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <a href="/fs-kardiovaskular" title="Kardiovaskular">
+                        <div class="category-card text-center">
+                            <img src="{{ asset('assets/Frontend/img/kardiovaskular.png') }}" alt="Kardiovaskular">
+                            <h3 class="category-title">Kardiovaskular</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <div class="category-card text-center">
-                        <img src="{{ asset('assets/Frontend/img/nutrisi.png') }}" alt="Nutrisi">
-                        <h3 class="category-title">Nutrisi</h3>
-                    </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <a href="/fs-kecantikan" title="Kecantikan">
+                        <div class="category-card text-center">
+                            <img src="{{ asset('assets/Frontend/img/kecantikan.png') }}" alt="Kecantikan">
+                            <h3 class="category-title">Kecantikan</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <div class="category-card text-center">
-                        <img src="{{ asset('assets/Frontend/img/lainnya.png') }}" alt="Lainnya">
-                        <h3 class="category-title">Lainnya</h3>
-                    </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <a href="/fokus-sehat">
+                        <div class="category-card text-center">
+                            <img src="{{ asset('assets/Frontend/img/lainnya.png') }}" alt="Lainnya">
+                            <h3 class="category-title">Lainnya</h3>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-
 
 
     {{-- step by step --}}
@@ -1005,78 +1039,43 @@
     <div id="common" class="symptoms-conditions-section">
         <div class="container">
             <h2 class="title text-center mb-5">Gejala Umum dan Kondisi Kemungkinan</h2>
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Gejala Umum</th>
-                        <th></th>
-                        <th>Kondisi Kemungkinan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="item-content">
-                                <h4 class="item-title">Batuk</h4>
-                                <p class="item-description">Batuk adalah refleks tubuh untuk membersihkan saluran
-                                    pernapasan dari iritan.</p>
-                            </div>
-                        </td>
-                        <td class="image-cell">
-                            <img src="{{ asset('assets/Frontend/img/batuk.jpg') }}" alt="Batuk"
-                                class="symptoms-image">
-                        </td>
-                        <td>
-                            <div class="item-content">
-                                <h4 class="item-title">Flu</h4>
-                                <p class="item-description">Flu sering disertai dengan batuk, demam, dan nyeri otot.
-                                </p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="item-content">
-                                <h4 class="item-title">Demam</h4>
-                                <p class="item-description">Demam merupakan peningkatan suhu tubuh, sering kali sebagai
-                                    respons terhadap infeksi.</p>
-                            </div>
-                        </td>
-                        <td class="image-cell">
-                            <img src="{{ asset('assets/Frontend/img/demam.jpg') }}" alt="Demam"
-                                class="symptoms-image">
-                        </td>
-                        <td>
-                            <div class="item-content">
-                                <h4 class="item-title">Bronkitis</h4>
-                                <p class="item-description">Biasanya, Demam Berkepanjangan disebabkan oleh infeksi
-                                    kronis, seperti tuberkulosis paru atau bronkitis.</p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="item-content">
-                                <h4 class="item-title">Pusing</h4>
-                                <p class="item-description">Pusing dapat disebabkan oleh berbagai faktor, termasuk
-                                    dehidrasi atau gangguan keseimbangan.</p>
-                            </div>
-                        </td>
-                        <td class="image-cell">
-                            <img src="{{ asset('assets/Frontend/img/pusing.jpg') }}" alt="Pusing"
-                                class="symptoms-image">
-                        </td>
-                        <td>
-                            <div class="item-content">
-                                <h4 class="item-title">Migrain</h4>
-                                <p class="item-description">Migrain adalah jenis sakit kepala yang parah dan sering
-                                    kali disertai mual.</p>
-                            </div>
-                        </td>
-                    </tr>
-                    <!-- Add more symptom-condition pairs as needed -->
-                </tbody>
-            </table>
+            <div class="table-container">
+                <div class="table-column">
+                    <h3 class="table-title p-2 text-white rounded">Gejala Umum</h3>
+                    <div class="item-content">
+                        <h4 class="item-title">Batuk</h4>
+                        <p class="item-description">Batuk adalah refleks tubuh untuk membersihkan saluran pernapasan
+                            dari iritan.</p>
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">Demam</h4>
+                        <p class="item-description">Demam merupakan peningkatan suhu tubuh, sering kali sebagai respons
+                            terhadap infeksi.</p>
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">Pusing</h4>
+                        <p class="item-description">Pusing dapat disebabkan oleh berbagai faktor, termasuk dehidrasi
+                            atau gangguan keseimbangan.</p>
+                    </div>
+                </div>
+                <div class="table-column">
+                    <h3 class="table-title p-2 text-white rounded">Kondisi Kemungkinan</h3>
+                    <div class="item-content">
+                        <h4 class="item-title">Flu</h4>
+                        <p class="item-description">Flu sering disertai dengan batuk, demam, dan nyeri otot.</p>
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">Bronkitis</h4>
+                        <p class="item-description">Biasanya, Demam Berkepanjangan disebabkan oleh infeksi kronis,
+                            seperti tuberkulosis paru atau bronkitis.</p>
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">Migrain</h4>
+                        <p class="item-description">Migrain adalah jenis sakit kepala yang parah dan sering kali
+                            disertai mual.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1136,34 +1135,30 @@
             <div class="resource-card">
                 <div class="resource-list">
                     <div class="resource-item">
-                        <h3 class="resource-title"><a href="#">Panduan Gejala Umum</a></h3>
-                        <a href=""><i class="fas fa-link resource-link-icon"></i></a>
-
+                        <h3 class="resource-title"><a href="https://hellosehat.com/sehat/gejala-umum/gejala-penyakit-berbahaya-diabaikan/" target="_blank">Panduan Gejala Umum</a></h3>
+                        <a href="https://hellosehat.com/sehat/gejala-umum/gejala-penyakit-berbahaya-diabaikan/" target="_blank"><i class="fas fa-link resource-link-icon"></i></a>
                     </div>
                     <div class="resource-item">
-                        <h3 class="resource-title"><a href="#">Informasi Penyakit Kronis</a></h3>
-                        <a href=""><i class="fas fa-link resource-link-icon"></i></a>
+                        <h3 class="resource-title"><a href="https://baliroyalhospital.co.id/penyakit-kronis-gejala-dan-penyebabnya/" target="_blank">Informasi Penyakit Kronis</a></h3>
+                        <a href="https://baliroyalhospital.co.id/penyakit-kronis-gejala-dan-penyebabnya/" target="_blank"><i class="fas fa-link resource-link-icon"></i></a>
                     </div>
                     <div class="resource-item">
-                        <h3 class="resource-title"><a href="#">Tips Menjaga Kesehatan Mental</a></h3>
-                        <a href=""><i class="fas fa-link resource-link-icon"></i></a>
+                        <h3 class="resource-title"><a href="https://www.rspp.co.id/artikel-detail-275-Menjaga-Kesehatan-Mental-Tips-dan-Trik-Harian.html" target="_blank">Tips Menjaga Kesehatan Mental</a></h3>
+                        <a href="https://www.rspp.co.id/artikel-detail-275-Menjaga-Kesehatan-Mental-Tips-dan-Trik-Harian.html" target="_blank"><i class="fas fa-link resource-link-icon"></i></a>
                     </div>
                     <div class="resource-item">
-                        <h3 class="resource-title"><a href="#">Kapan Harus Menemui Dokter?</a></h3>
-                        <a href=""><i class="fas fa-link resource-link-icon"></i></a>
-                    </div>
-                    <div class="resource-item">
-                        <h3 class="resource-title"><a href="#">Kapan Harus Menemui Dokter?</a></h3>
-                        <a href=""><i class="fas fa-link resource-link-icon"></i></a>
+                        <h3 class="resource-title"><a href="https://www.alodokter.com/komunitas/topic/konsultasi-pada-dokter-apa--" target="_blank">Kapan Harus Menemui Dokter?</a></h3>
+                        <a href="https://www.alodokter.com/komunitas/topic/konsultasi-pada-dokter-apa--" target="_blank"><i class="fas fa-link resource-link-icon"></i></a>
                     </div>
                 </div>
                 <div>
-                    <img src="{{ asset('assets/Frontend/img/education.jpg') }}" alt="Educational Resources Image"
-                        class="resource-image">
+                    <img src="{{ asset('assets/Frontend/img/education.jpg') }}" alt="Educational Resources Image" class="resource-image">
                 </div>
             </div>
         </div>
     </div>
+    
+
 
 
 

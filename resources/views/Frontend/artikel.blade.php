@@ -26,6 +26,8 @@
         }
 
 
+
+
         /* title */
         .title {
             font-size: 23px;
@@ -74,34 +76,139 @@
 
         /* NAVBAR */
         @media {
-
-            /* sticky */
             .navbar {
                 position: -webkit-sticky;
-                /* For Safari */
                 position: sticky;
                 top: 0;
                 z-index: 10000000000000000000000000000000;
-                /* Ensure the navbar stays on top of other content */
                 border-bottom: 1px solid #ddd;
-                /* Optional: Adds a border at the bottom */
             }
 
             .navbar-nav .nav-link {
                 margin-right: 15px;
                 color: #333;
                 transition: color 0.3s ease-in-out;
-                font-size: 15px
+                font-size: 15px;
             }
 
             .navbar-nav .nav-link:hover {
                 color: #127681;
             }
 
-            .navbar-nav .nav-item:hover {
+            /* Dropdown */
+            .dropdown:hover .dropdown-menu {
                 display: block;
             }
 
+            .nav-item {
+                text-align: center;
+            }
+
+            .dropdown-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 1000;
+                float: left;
+                min-width: 160px;
+                padding: .5rem 0;
+                margin: .125rem 0 0;
+                font-size: .875rem;
+                color: #333;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: .25rem;
+                box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+            }
+
+            .dropdown-item {
+                display: block;
+                width: 100%;
+                padding: .25rem 1.5rem;
+                clear: both;
+                font-weight: 400;
+                color: #333;
+                text-align: inherit;
+                white-space: nowrap;
+                background-color: transparent;
+                border: 0;
+                transition: color .15s ease-in-out, background-color .15s ease-in-out;
+            }
+
+            .dropdown-item:hover {
+                background-color: #f8f9fa;
+                color: #127681;
+            }
+
+            .dropdown-menu .dropdown-item:active {
+                background-color: #3a3a3a;
+                color: #fff;
+            }
+
+            #searchIcon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 15px;
+            }
+
+            #searchIcon i {
+                font-size: 20px;
+                margin-right: 5px;
+            }
+
+            @media (max-width: 767px) {
+                .navbar-nav {
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+        /* search modal */
+        @media {
+            .search-modal {
+                display: none;
+                position: fixed;
+                z-index: 100000000000000000000000000000000000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                overflow: auto;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .search-modal-content {
+                position: relative;
+                margin: 15% auto;
+                padding: 20px;
+                width: 80%;
+                max-width: 600px;
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            .search-bar {
+                width: 100%;
+                padding: 15px;
+                font-size: 1.2rem;
+                border: 2px solid #ddd;
+                border-radius: 8px;
+                outline: none;
+            }
+
+            .search-bar:focus {
+                border-color: #127681;
+            }
+
+            .search-results {
+                margin-top: 20px;
+                font-size: 1rem;
+                color: #333;
+            }
         }
 
         /* artikel categories */
@@ -253,7 +360,6 @@
         .news-description {
             display: -webkit-box;
             -webkit-line-clamp: 2;
-            /* Limit to 3 lines */
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -261,6 +367,61 @@
 
         .news-image img {
             object-fit: cover;
+        }
+
+
+        /* Responsive for smaller screens */
+        @media (max-width: 768px) {
+            .news-item {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .news-image {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .news-image img {
+                width: 100% @important;
+                height: auto;
+                object-fit: cover;
+            }
+
+            .news-content {
+                text-align: center;
+            }
+        }
+
+        /* For extra small screens */
+        @media (max-width: 576px) {
+            .nav-pills .nav-link {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+
+            .news-image img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+
+            .news-item {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .news-image {
+                margin-bottom: 10px;
+            }
+
+            .news-content h3 {
+                font-size: 16px;
+            }
+
+            .news-description {
+                text-align: justify;
+            }
         }
     </style>
 </head>
@@ -278,20 +439,37 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="" id="searchIcon"><i class='bx bx-search'></i></a>
-
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about-us">ABOUT US</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('artikel') }}">ARTIKEL</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">INFO KESEHATAN</a></li>
-                    <li class="nav-item"><a class="btn btn-outline-primary" href="#">LOGIN</a></li>
-                    <li class="nav-item"><a class="btn btn-primary" href="#">TULIS ARTIKEL <i
-                                class='bx bxs-edit'></i></a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="{{ route('info-sehat') }}" id="infoKesehatanDropdown">
+                            INFO SEHAT
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="infoKesehatanDropdown">
+                            <li><a class="dropdown-item" href="{{ route('fokus-sehat') }}">Fokus Sehat</a></li>
+                            <li><a class="dropdown-item" href="/ragam-penyakit">Ragam Penyakit</a></li>
+                            <li><a class="dropdown-item" href="/ragam-gejala">Ragam Gejala</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary rounded-5 py-1" id="searchIcon" href="#">
+                            <span style="font-size: 20px; margin-right: 5px;"><i class="bx bx-search py-1"></i></span>
+                            SEARCH
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+    {{-- search modal --}}
+    <div id="searchModal" class="search-modal">
+        <div class="search-modal-content">
+            <span id="closeSearch" class="close-search"></span>
+            <input type="text" id="searchInput" class="search-bar" placeholder="Cari gejala...">
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </div>
 
     {{-- title --}}
     <div class="container">
@@ -325,8 +503,8 @@
                     style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
                         <a href="/medis1">
-                            <img src="{{ asset('assets/Frontend/img/medis1.webp') }}"
-                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                            <img src="{{ asset('assets/Frontend/img/medis1.webp') }}" class="img-fluid"
+                                style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
@@ -343,14 +521,17 @@
                     style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
                         <a href="/medis2">
-                            <img src="{{ asset('assets/Frontend/img/medis2.jpg') }}"
-                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                            <img src="{{ asset('assets/Frontend/img/medis2.jpg') }}" class="img-fluid"
+                                style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
                         <span class="badge mb-2">Medis</span>
-                        <h3><a href="/medis2" class="news-title">Pengurangan Paparan Cahaya Malam Dapat Menurunkan Risiko Diabetes Tipe 2</a></h3>
-                        <p class="news-description">Penelitian terbaru banyak menyoroti dampak negatif paparan cahaya terang di malam hari terhadap kesehatan. Beberapa studi menemukan adanya kemungkinan hubungan antara paparan cahaya di malam hari dengan risiko diabetes. </p>
+                        <h3><a href="/medis2" class="news-title">Pengurangan Paparan Cahaya Malam Dapat Menurunkan
+                                Risiko Diabetes Tipe 2</a></h3>
+                        <p class="news-description">Penelitian terbaru banyak menyoroti dampak negatif paparan cahaya
+                            terang di malam hari terhadap kesehatan. Beberapa studi menemukan adanya kemungkinan
+                            hubungan antara paparan cahaya di malam hari dengan risiko diabetes. </p>
                     </div>
                 </div>
 
@@ -359,15 +540,18 @@
                     style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
                         <a href="/medis3">
-                            <img src="{{ asset('assets/Frontend/img/medis3.jpg') }}"
-                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                            <img src="{{ asset('assets/Frontend/img/medis3.jpg') }}" class="img-fluid"
+                                style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
 
                     <div class="news-content">
                         <span class="badge mb-2">Medis</span>
-                        <h3><a href="/medis3" class="news-title">Kemajuan Teknologi dalam Industri Medis dan Pertumbuhan AI </a></h3>
-                        <p class="news-description">Pasar robot medis global diproyeksikan mengalami pertumbuhan pesat dalam dekade mendatang. Ukuran pasar ini diperkirakan melonjak dari USD 11,502.4 juta pada tahun 2024 menjadi USD 38,701.5 juta </p>
+                        <h3><a href="/medis3" class="news-title">Kemajuan Teknologi dalam Industri Medis dan
+                                Pertumbuhan AI </a></h3>
+                        <p class="news-description">Pasar robot medis global diproyeksikan mengalami pertumbuhan pesat
+                            dalam dekade mendatang. Ukuran pasar ini diperkirakan melonjak dari USD 11,502.4 juta pada
+                            tahun 2024 menjadi USD 38,701.5 juta </p>
                     </div>
                 </div>
 
@@ -376,14 +560,18 @@
                     style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
                         <a href="/love1">
-                            <img src="{{ asset('assets/Frontend/img/love1.webp') }}"
-                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                            <img src="{{ asset('assets/Frontend/img/love1.webp') }}" class="img-fluid"
+                                style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
                         <span class="badge mb-2">Sex & Love</span>
                         <h3><a href="/love1" class="news-title">Apa yang Perlu Diketahui tentang Gonore</a></h3>
-                        <p class="news-description">Gonore adalah infeksi menular seksual (IMS) yang umum disebabkan oleh bakteri Neisseria gonorrhoeae. Gejala awal gonore bisa berupa keluarnya nanah (putih, hijau, atau kuning) dan nyeri saat berkemih, meskipun banyak orang tidak menunjukkan gejala sama sekali. Diagnosis dan pengobatan antibiotik yang cepat sangat penting untuk mencegah komplikasi.</p>
+                        <p class="news-description">Gonore adalah infeksi menular seksual (IMS) yang umum disebabkan
+                            oleh bakteri Neisseria gonorrhoeae. Gejala awal gonore bisa berupa keluarnya nanah (putih,
+                            hijau, atau kuning) dan nyeri saat berkemih, meskipun banyak orang tidak menunjukkan gejala
+                            sama sekali. Diagnosis dan pengobatan antibiotik yang cepat sangat penting untuk mencegah
+                            komplikasi.</p>
                     </div>
                 </div>
 
@@ -392,14 +580,17 @@
                     style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
                         <a href="/love2">
-                            <img src="{{ asset('assets/Frontend/img/love2.jpg') }}"
-                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                            <img src="{{ asset('assets/Frontend/img/love2.jpg') }}" class="img-fluid"
+                                style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
                         <span class="badge mb-2">Sex & Love</span>
-                        <h3><a href="/love2" class="news-title">Apakah Ada Hubungan antara Pil KB dan Kanker Payudara?</a></h3>
-                        <p class="news-description">Penggunaan kontrasepsi hormonal bisa sedikit meningkatkan risiko terkena kanker payudara. Risiko ini bervariasi tergantung pada jenis kontrasepsi yang digunakan. </p>
+                        <h3><a href="/love2" class="news-title">Apakah Ada Hubungan antara Pil KB dan Kanker
+                                Payudara?</a></h3>
+                        <p class="news-description">Penggunaan kontrasepsi hormonal bisa sedikit meningkatkan risiko
+                            terkena kanker payudara. Risiko ini bervariasi tergantung pada jenis kontrasepsi yang
+                            digunakan. </p>
                     </div>
                 </div>
 
@@ -408,14 +599,16 @@
                     style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
                         <a href="/love3">
-                            <img src="{{ asset('assets/Frontend/img/love3.jpg') }}"
-                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                            <img src="{{ asset('assets/Frontend/img/love3.jpg') }}" class="img-fluid"
+                                style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
                         <span class="badge mb-2">Sex & Love</span>
                         <h3><a href="/love3" class="news-title">Tips untuk Seks Setelah Menopause</a></h3>
-                        <p class="news-description">Perubahan hormonal selama menopause dapat mempengaruhi fisik dan emosional yang berdampak pada gairah dan kehidupan seksual. Berikut adalah beberapa tips untuk mengelola dan meningkatkan kehidupan seksual setelah menopaus</p>
+                        <p class="news-description">Perubahan hormonal selama menopause dapat mempengaruhi fisik dan
+                            emosional yang berdampak pada gairah dan kehidupan seksual. Berikut adalah beberapa tips
+                            untuk mengelola dan meningkatkan kehidupan seksual setelah menopaus</p>
                     </div>
                 </div>
 
@@ -424,14 +617,16 @@
                     style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
                         <a href="/lifestyle1">
-                            <img src="{{ asset('assets/Frontend/img/lifestyle1.jpeg') }}"
-                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                            <img src="{{ asset('assets/Frontend/img/lifestyle1.jpeg') }}" class="img-fluid"
+                                style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
                         <span class="badge mb-2">Lifestyle</span>
                         <h3><a href="/lifestyle1" class="news-title">Cara Memperlambat Perkembangan Kanker</a></h3>
-                        <p class="news-description">Meskipun masih dalam tahap awal, beberapa penelitian menunjukkan bahwa makan dengan pola makan sehat dan berolahraga secara teratur bisa membantu memperlambat perkembangan kanker prostat.</p>
+                        <p class="news-description">Meskipun masih dalam tahap awal, beberapa penelitian menunjukkan
+                            bahwa makan dengan pola makan sehat dan berolahraga secara teratur bisa membantu
+                            memperlambat perkembangan kanker prostat.</p>
                     </div>
                 </div>
 
@@ -440,14 +635,18 @@
                     style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
                         <a href="/lifestyle2">
-                            <img src="{{ asset('assets/Frontend/img/lifestyle2.jpg') }}"
-                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                            <img src="{{ asset('assets/Frontend/img/lifestyle2.jpg') }}" class="img-fluid"
+                                style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
                         <span class="badge mb-2">Lifestyle</span>
-                        <h3><a href="/lifestyle2" class="news-title">Penelitian Membuktikan: Makan Sayur Memang Bikin Panjang Umur</a></h3>
-                        <p class="news-description">Kamu mungkin sudah tahu bahwa pola makan yang kaya akan buah, sayur, dan makanan berbasis tumbuhan lainnya lebih baik daripada yang didominasi oleh daging dan produk susu. Namun, hingga saat ini, penelitian masih belum menjelaskan secara pasti dampak lemak dari makanan tertentu terhadap kesehatan.</p>
+                        <h3><a href="/lifestyle2" class="news-title">Penelitian Membuktikan: Makan Sayur Memang Bikin
+                                Panjang Umur</a></h3>
+                        <p class="news-description">Kamu mungkin sudah tahu bahwa pola makan yang kaya akan buah,
+                            sayur, dan makanan berbasis tumbuhan lainnya lebih baik daripada yang didominasi oleh daging
+                            dan produk susu. Namun, hingga saat ini, penelitian masih belum menjelaskan secara pasti
+                            dampak lemak dari makanan tertentu terhadap kesehatan.</p>
                     </div>
                 </div>
 
@@ -456,14 +655,17 @@
                     style="border-bottom: 1px solid rgba(221, 221, 221, 0.5); padding-bottom: 10px;">
                     <div class="news-image me-3">
                         <a href="/lifestyle3">
-                            <img src="{{ asset('assets/Frontend/img/lifestyle3.jpg') }}"
-                                class="img-fluid" style="max-width: 200px; height: 150px;">
+                            <img src="{{ asset('assets/Frontend/img/lifestyle3.jpg') }}" class="img-fluid"
+                                style="max-width: 200px; height: 150px;">
                         </a>
                     </div>
                     <div class="news-content">
                         <span class="badge mb-2">Lifestyle</span>
                         <h3><a href="/lifestyle3" class="news-title">Kapan Waktu Terbaik untuk Minum Air?</a></h3>
-                        <p class="news-description">Saat Kamu Merasa Lapar Mungkin sebenarnya kamu sedang haus. Banyak orang tidak sadar bahwa rasa lapar sering kali disebabkan oleh haus. Otak kita mengenali kedua sinyal ini dengan cara yang sama. Jadi, sebelum kamu mencari camilan, coba minum air terlebih dahulu dan tunggu beberapa menit untuk melihat apakah rasa lapar itu hilang.</p>
+                        <p class="news-description">Saat Kamu Merasa Lapar Mungkin sebenarnya kamu sedang haus. Banyak
+                            orang tidak sadar bahwa rasa lapar sering kali disebabkan oleh haus. Otak kita mengenali
+                            kedua sinyal ini dengan cara yang sama. Jadi, sebelum kamu mencari camilan, coba minum air
+                            terlebih dahulu dan tunggu beberapa menit untuk melihat apakah rasa lapar itu hilang.</p>
                     </div>
                 </div>
             </div>
@@ -548,7 +750,7 @@
 
 
     {{-- footer --}}
-    <footer class="footer-section mt-5">
+    <footer class="footer-section">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
@@ -557,8 +759,8 @@
                 <div class="footer-links">
                     <h4 class="footer-heading">Navigasi</h4>
                     <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#symptoms">Gejala</a></li>
+                        <li><a href="#hero-carousel">Beranda</a></li>
+                        <li><a href="#common">Gejala</a></li>
                         <li><a href="#advice">Saran</a></li>
                         <li><a href="#educational-resources">Sumber Daya</a></li>
                         <li><a href="#faqs">FAQ</a></li>
@@ -566,16 +768,17 @@
                 </div>
                 <div class="footer-contact">
                     <h4 class="footer-heading">Hubungi Kami</h4>
-                    <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+                    <p>Email: <a href="mailto:contact@example.com">bm3@gmail.com</a></p>
                     <p>Telepon: +62 123 456 789</p>
-                    <p>Alamat: Jl. Contoh No.123, Jakarta, Indonesia</p>
+                    <p>Alamat: Jl. Cileungsi No.1, Kab.Bogor, Indonesia</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Cek Sehat. All rights reserved.</p>
+                <p>&copy; 2024 Rayya & Aldizar. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -611,6 +814,79 @@
                 updateFAQPosition(); // Initial call
             });
         });
+    </script>
+    {{-- navbar hover --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const infoSehatLink = document.getElementById("infoKesehatanDropdown");
+
+            infoSehatLink.addEventListener("click", function(event) {
+                if (window.innerWidth >= 768) { // Only prevent default on desktop screens
+                    event.preventDefault(); // Prevent default click behavior
+                    window.location.href = infoSehatLink.href; // Redirect after hover is shown
+                }
+            });
+
+            infoSehatLink.addEventListener("mouseover", function() {
+                const dropdownMenu = this.nextElementSibling;
+                dropdownMenu.style.display = "block";
+            });
+
+            infoSehatLink.addEventListener("mouseout", function() {
+                const dropdownMenu = this.nextElementSibling;
+                dropdownMenu.style.display = "none";
+            });
+
+            const dropdownMenu = infoSehatLink.nextElementSibling;
+            dropdownMenu.addEventListener("mouseover", function() {
+                this.style.display = "block";
+            });
+
+            dropdownMenu.addEventListener("mouseout", function() {
+                this.style.display = "none";
+            });
+        });
+    </script>
+
+    {{-- search modal --}}
+    <script>
+        document.getElementById('searchIcon').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('searchModal').style.display = 'flex';
+        });
+
+        document.getElementById('closeSearch').addEventListener('click', function() {
+            document.getElementById('searchModal').style.display = 'none';
+        });
+
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const query = this.value;
+
+            if (query.length > 2) {
+                // Update URL without reloading the page
+                const newUrl = window.location.origin + window.location.pathname + '?search=' + encodeURIComponent(
+                    query);
+                window.history.pushState({
+                    path: newUrl
+                }, '', newUrl);
+
+                // Simulate search result fetching
+                document.getElementById('searchResults').innerHTML = '<p>Mencari gejala: ' + query +
+                    '</p><p>Hasil pencarian akan muncul di sini...</p>';
+
+                // In real implementation, perform an AJAX request to fetch results
+            } else {
+                document.getElementById('searchResults').innerHTML = '';
+            }
+        });
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('searchModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
     </script>
 
 </body>

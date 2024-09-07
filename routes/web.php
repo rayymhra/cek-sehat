@@ -88,13 +88,13 @@ Route::get('/lifestyle3', function () { // ragam gejala
 
 
 // s6 and love
-Route::get('/love1', function () { // ragam gejala
+Route::get('/love1', function () { 
     return view('Frontend.love1');
 })->name('love1');
-Route::get('/love2', function () { // ragam gejala
+Route::get('/love2', function () { 
     return view('Frontend.love2');
 })->name('love2');
-Route::get('/love3', function () { // ragam gejala
+Route::get('/love3', function () { 
     return view('Frontend.love3');
 })->name('love3');
 
@@ -123,3 +123,82 @@ Route::put('diases/{nama}/update', [DiasesController::class, 'update'])->name('d
 Route::get('diases/{nama}/delete', [DiasesController::class, 'destroy'])->name('diases.delete');
 
 //ragam-penyakit
+
+
+//fokus sehat
+Route::get('/fs-alergi', function () { 
+    return view('Frontend.fokus-sehat.alergi');
+})->name('fs-alergi');
+
+Route::get('/fs-bayi', function () { 
+    return view('Frontend.fokus-sehat.bayi');
+})->name('fs-bayi');
+
+Route::get('/fs-diabetes', function () { 
+    return view('Frontend.fokus-sehat.diabetes');
+})->name('fs-diabetes');
+
+Route::get('/fs-hipertensi', function () { 
+    return view('Frontend.fokus-sehat.hipertensi');
+})->name('fs-hipertensi');
+
+Route::get('/fs-kanker', function () { 
+    return view('Frontend.fokus-sehat.kanker');
+})->name('fs-kanker');
+
+Route::get('/fs-kardiovaskular', function () { 
+    return view('Frontend.fokus-sehat.kardiovaskular');
+})->name('fs-kardiovaskular');
+
+Route::get('/fs-kecantikan', function () { 
+    return view('Frontend.fokus-sehat.kecantikan');
+})->name('fs-kecantikan');
+
+Route::get('/fs-kehamilan', function () { 
+    return view('Frontend.fokus-sehat.kehamilan');
+})->name('fs-kehamilan');
+
+Route::get('/fs-kulit', function () { 
+    return view('Frontend.fokus-sehat.kulit');
+})->name('fs-kulit');
+
+Route::get('/fs-mata', function () { 
+    return view('Frontend.fokus-sehat.mata');
+})->name('fs-mata');
+
+Route::get('/fs-mental', function () { 
+    return view('Frontend.fokus-sehat.mental');
+})->name('fs-mental');
+
+Route::get('/fs-mulut', function () { 
+    return view('Frontend.fokus-sehat.mulut');
+})->name('fs-mulut');
+
+Route::get('/fs-nutrisi', function () { 
+    return view('Frontend.fokus-sehat.nutrisi');
+})->name('fs-nutrisi');
+
+Route::get('/fs-olahraga', function () { 
+    return view('Frontend.fokus-sehat.olahraga');
+})->name('fs-olahraga');
+
+Route::get('/fs-pencernaan', function () { 
+    return view('Frontend.fokus-sehat.pencernaan');
+})->name('fs-pencernaan');
+
+Route::get('/fs-pria', function () { 
+    return view('Frontend.fokus-sehat.pria');
+})->name('fs-pria');
+
+Route::get('/fs-relationships', function () { 
+    return view('Frontend.fokus-sehat.relationships');
+})->name('fs-relationships');
+
+Route::get('/fs-turunbb', function () { 
+    return view('Frontend.fokus-sehat.turunbb');
+})->name('fs-turunbb');
+
+Route::get('/fs-wanita', function () { 
+    return view('Frontend.fokus-sehat.wanita');
+})->name('fs-wanita');
+
