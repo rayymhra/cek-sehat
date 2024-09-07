@@ -375,7 +375,6 @@
                         <ul class="dropdown-menu" aria-labelledby="infoKesehatanDropdown">
                             <li><a class="dropdown-item" href="{{ route('fokus-sehat') }}">Fokus Sehat</a></li>
                             <li><a class="dropdown-item" href="/ragam-penyakit">Ragam Penyakit</a></li>
-                            <li><a class="dropdown-item" href="/ragam-obat">Ragam Gejala</a></li>
                         </ul>
                     </li>
 
