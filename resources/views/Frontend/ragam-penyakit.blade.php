@@ -1,11 +1,10 @@
 @extends('Frontend.layout')
 @section('content')
 {{-- hero section --}}
-<div class="container-fluid hero-container">
-    <div class="row hero-section align-items-center">
-        <div class="col-md-6 hero-text">
-            <h1 class="hero-title">Ragam Penyakit</h1>
-            <a href=""></a>
+<div class="container-fluid hero-container" style="background-color: #1aa6b7; padding: 100px 0;">
+    <div class="row hero-section align-items-center text-center">
+        <div class="col-md-12 hero-text">
+            <h1 class="hero-title" style="color: white; font-size: 48px; font-weight: bold;">Ragam Penyakit</h1>
         </div>
     </div>
 </div>
