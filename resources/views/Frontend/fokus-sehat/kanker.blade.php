@@ -371,46 +371,46 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1>Hipertensi</h1>
-            <p>Berfokus pada pemahaman dan pengelolaan hipertensi untuk kesehatan jantung yang lebih baik</p>
+            <h1>Kanker</h1>
+            <p>Berfokus pada pencegahan, deteksi, dan pengelolaan kanker</p>
         </div>
     </section>
     
     <!-- Deskripsi Kategori -->
     <section class="container my-5">
         <h2>Deskripsi</h2>
-        <p>Hipertensi, atau tekanan darah tinggi, adalah kondisi medis di mana tekanan darah dalam arteri meningkat secara konsisten. Penanganan dan pengelolaan yang tepat sangat penting untuk mencegah komplikasi serius.</p>
+        <p>Kanker adalah sekelompok penyakit yang melibatkan pertumbuhan sel yang tidak terkendali yang dapat menyerang jaringan dan organ tubuh. Penanganan kanker memerlukan pendekatan multidisiplin dan deteksi dini untuk meningkatkan peluang kesembuhan.</p>
     </section>
     
     <!-- Resources -->
     <section class="resources bg-light">
         <div class="container">
-            <h2>Resources</h2>
+            <h2>Sumber Daya Edukasi</h2>
             <div class="row">
                 <!-- Resource 1 -->
                 <div class="col-md-6 col-lg-4 resource-item">
-                    <h5>Pengenalan Hipertensi</h5>
-                    <p>Informasi dasar mengenai apa itu hipertensi dan bagaimana cara pengelolaannya.</p>
-                    <a href="https://www.sehatq.com/penyakit/hipertensi" target="_blank">Baca Selengkapnya</a>
+                    <h5>Pengenalan Kanker</h5>
+                    <p>Informasi dasar mengenai apa itu kanker dan jenis-jenisnya.</p>
+                    <a href="https://www.alodokter.com/apa-itu-kanker" target="_blank">Baca Selengkapnya</a>
                 </div>
                 <!-- Resource 2 -->
                 <div class="col-md-6 col-lg-4 resource-item">
-                    <h5>Diet untuk Hipertensi</h5>
-                    <p>Tips dan panduan mengenai diet yang tepat untuk mengelola hipertensi.</p>
-                    <a href="https://hellosehat.com/penyakit/hipertensi/diet-untuk-hipertensi/" target="_blank">Baca Selengkapnya</a>
+                    <h5>Deteksi Dini Kanker</h5>
+                    <p>Tips dan panduan mengenai deteksi dini kanker untuk meningkatkan kemungkinan pengobatan yang sukses.</p>
+                    <a href="https://hellosehat.com/penyakit/kanker/deteksi-dini-kanker/" target="_blank">Baca Selengkapnya</a>
                 </div>
                 <!-- Resource 3 -->
                 <div class="col-md-6 col-lg-4 resource-item">
-                    <h5>Manajemen Hipertensi</h5>
-                    <p>Langkah-langkah penting untuk manajemen dan pengendalian hipertensi sehari-hari.</p>
-                    <a href="https://www.alodokter.com/hipertensi" target="_blank">Baca Selengkapnya</a>
+                    <h5>Perawatan Kanker</h5>
+                    <p>Informasi mengenai berbagai opsi perawatan untuk kanker dan bagaimana memilih yang tepat.</p>
+                    <a href="https://www.sehatq.com/kanker" target="_blank">Baca Selengkapnya</a>
                 </div>
             </div>
         </div>
     </section>
+    
     
     
 
