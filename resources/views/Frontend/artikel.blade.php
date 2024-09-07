@@ -509,7 +509,7 @@
                     </div>
                     <div class="news-content">
                         <span class="badge mb-2">Medis</span>
-                        <h3><a href="/medis" class="news-title">Cedera Ginjal Akut Meningkatkan Risiko Demensia,
+                        <h3><a href="/medis1" class="news-title">Cedera Ginjal Akut Meningkatkan Risiko Demensia,
                                 Termasuk Demensia Lewy Body dan Parkinson</a></h3>
                         <p class="news-description">Penelitian terbaru banyak menyoroti dampak negatif paparan cahaya
                             terang di malam hari terhadap kesehatan. </p>

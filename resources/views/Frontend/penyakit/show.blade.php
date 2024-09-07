@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cek Sehat</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- bxicons -->
@@ -26,12 +27,97 @@
             font-family: "Montserrat", sans-serif;
         }
 
-        /* search */
-        .form-control {
+        .article-page {
+            display: flex;
+            gap: 30px;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: #1aa6b7;
+            text-decoration: none;
+        }
+
+        .back-button i {
+            margin-right: 10px;
+        }
+
+        .article-content {
+            flex: 3;
+        }
+
+        .related-news {
+            flex: 1;
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .related-news h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .related-news .news-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .related-news .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .news-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .news-item a {
+            text-decoration: none;
+            color: #1aa6b7;
+        }
+
+        .news-item a:hover {
+            color: #127681;
+        }
+
+        .news-separator {
+            margin: 20px 0;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .text-justify {
+            text-align: justify;
+        }
+
+        .back-button {
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             border-radius: 50px;
+            border: #127681 solid 1px;
+        }
+
+        .bx {
+            font-size: 30px;
+            font-weight: 500;
         }
 
         /* btn in navbar */
+        @media {
             .btn-primary {
                 background-color: #1aa6b7;
                 /* border: none; */
@@ -65,15 +151,7 @@
             .btn-outline-primary:hover {
                 background-color: #1aa6b7;
             }
-
-        /* title */
-        .title {
-            font-size: 23px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #3a3a3a;
         }
-
 
         /* NAVBAR */
         @media {
@@ -166,54 +244,37 @@
             }
         }
 
-        /* search modal */
-        @media {
-            .search-modal {
-                display: none;
-                position: fixed;
-                z-index: 100000000000000000000000000000000000;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.8);
-                overflow: auto;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .search-modal-content {
-                position: relative;
-                margin: 15% auto;
-                padding: 20px;
-                width: 80%;
-                max-width: 600px;
-                background-color: white;
-                border-radius: 8px;
-            }
-
-            .search-bar {
-                width: 100%;
-                padding: 15px;
-                font-size: 1.2rem;
-                border: 2px solid #ddd;
-                border-radius: 8px;
-                outline: none;
-            }
-
-            .search-bar:focus {
-                border-color: #127681;
-            }
-
-            .search-results {
-                margin-top: 20px;
-                font-size: 1rem;
-                color: #333;
-            }
+        .article-content {
+            flex: 3;
         }
 
+        .related-news {
+            flex: 1;
+            position: sticky;
+            top: 60px;
+            height: 100vh;
+            overflow-y: auto;
+        }
 
+        .back-section {
+            position: sticky;
+            top: 70px;
+            z-index: 10;
+            height: 50px;
+        }
 
+        .text-news {
+            color: #3a3a3a;
+            font-weight: 400;
+        }
+
+        .title-sub {
+            color: #3a3a3a;
+        }
+
+        .title {
+            color: #3a3a3a;
+        }
 
         /* footer */
         @media {
@@ -297,7 +358,6 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="/main">
-            <a class="navbar-brand" href="/main">
                 <img src="{{ asset('assets/Frontend/img/cek sehat.png') }}" alt="Cek Sehat" width="110">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -329,20 +389,34 @@
         </div>
     </nav>
 
-
-    {{-- search modal --}}
-    <div id="searchModal" class="search-modal">
-        <div class="search-modal-content">
-            <span id="closeSearch" class="close-search"></span>
-            <input type="text" id="searchInput" class="search-bar" placeholder="Cari gejala...">
-            <div id="searchResults" class="search-results"></div>
+    <div class="container">
+        <div class="article-page mt-5">
+            <div class="back-section">
+                <a href="/ragam-penyakit" class="back-button">
+                    <i class='bx bx-left-arrow-alt'></i>
+                </a>
+            </div>
+                    
+            <div class="article-content">
+                <h6 class="title">Penyakit</h6>
+                <h1 class="title">{{$diases->nama}}</h1>
+                
+                <h6 class="title">Deskripsi</h6>
+                <p class="text-news">{{$diases->description}}.</p>
+                
+                <h6 class="title">Tretment</h6>
+                <p class="text-news text-justify">{{$diases->treatment}}</p>
+                        
+                <h6>Symtomp</h6>
+                <div class="news-separator"></div>
+                <p class="text-news text-justify"></p>
+            </div>
         </div>
     </div>
 
-    @yield('content')
 
-    <!-- footer -->
-    <footer class="footer-section">
+    {{-- footer --}}
+    <footer class="footer-section mt-5">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
@@ -351,8 +425,8 @@
                 <div class="footer-links">
                     <h4 class="footer-heading">Navigasi</h4>
                     <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#symptoms">Gejala</a></li>
+                        <li><a href="#hero-carousel">Beranda</a></li>
+                        <li><a href="#common">Gejala</a></li>
                         <li><a href="#advice">Saran</a></li>
                         <li><a href="#educational-resources">Sumber Daya</a></li>
                         <li><a href="#faqs">FAQ</a></li>
@@ -360,9 +434,9 @@
                 </div>
                 <div class="footer-contact">
                     <h4 class="footer-heading">Hubungi Kami</h4>
-                    <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+                    <p>Email: <a href="mailto:contact@example.com">bm3@gmail.com</a></p>
                     <p>Telepon: +62 123 456 789</p>
-                    <p>Alamat: Jl. Contoh No.123, Jakarta, Indonesia</p>
+                    <p>Alamat: Jl. Cileungsi No.1, Kab.Bogor, Indonesia</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -370,84 +444,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
-
-
-    {{-- search modal --}}
-    <script>
-        document.getElementById('searchIcon').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('searchModal').style.display = 'flex';
-        });
-
-        document.getElementById('closeSearch').addEventListener('click', function() {
-            document.getElementById('searchModal').style.display = 'none';
-        });
-
-        document.getElementById('searchInput').addEventListener('input', function() {
-            const query = this.value;
-
-            if (query.length > 2) {
-                // Update URL without reloading the page
-                const newUrl = window.location.origin + window.location.pathname + '?search=' + encodeURIComponent(
-                    query);
-                window.history.pushState({
-                    path: newUrl
-                }, '', newUrl);
-
-                // Simulate search result fetching
-                document.getElementById('searchResults').innerHTML = '<p>Mencari gejala: ' + query +
-                    '</p><p>Hasil pencarian akan muncul di sini...</p>';
-
-                // In real implementation, perform an AJAX request to fetch results
-            } else {
-                document.getElementById('searchResults').innerHTML = '';
-            }
-        });
-
-        // Close modal on outside click
-        window.onclick = function(event) {
-            const modal = document.getElementById('searchModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        };
-    </script>
-
-    {{-- navbar hover --}}
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const infoSehatLink = document.getElementById("infoKesehatanDropdown");
-
-            infoSehatLink.addEventListener("click", function(event) {
-                if (window.innerWidth >= 768) { // Only prevent default on desktop screens
-                    event.preventDefault(); // Prevent default click behavior
-                    window.location.href = infoSehatLink.href; // Redirect after hover is shown
-                }
-            });
-
-            infoSehatLink.addEventListener("mouseover", function() {
-                const dropdownMenu = this.nextElementSibling;
-                dropdownMenu.style.display = "block";
-            });
-
-            infoSehatLink.addEventListener("mouseout", function() {
-                const dropdownMenu = this.nextElementSibling;
-                dropdownMenu.style.display = "none";
-            });
-
-            const dropdownMenu = infoSehatLink.nextElementSibling;
-            dropdownMenu.addEventListener("mouseover", function() {
-                this.style.display = "block";
-            });
-
-            dropdownMenu.addEventListener("mouseout", function() {
-                this.style.display = "none";
-            });
-        });
-    </script>
 </body>
 
 </html>

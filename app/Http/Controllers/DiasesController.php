@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Diases;
 use App\Models\Symtomps;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -38,15 +39,15 @@ class DiasesController extends Controller
         $diases->nama = $request->input('nama');
         $diases->description = $request->input('description');
         $diases->treatment = $request->input('treatment');
-        $diases->symtomp_id = $request->input('symtomp_id'); 
+        $diases->symtomp_id = $request->input('symtomp_id');
         $diases->save();
         return redirect()->route('backend.diases.index');
     }
 
-    public function show($id)
+    public function show($id): View
     {
         $diases = Diases::find($id);
-        return view('backend.diases.show', compact('diases'));
+        return view('Frontend.penyakit.show', compact('diases'));
     }
 
     public function edit($id)
@@ -55,7 +56,7 @@ class DiasesController extends Controller
         $symtomps = Symtomps::all();
         return view('backend.diases.edit', compact('diases', 'symtomps'));
     }
-
+    
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
@@ -73,14 +74,23 @@ class DiasesController extends Controller
         $diases->nama = $request->input('nama');
         $diases->description = $request->input('description');
         $diases->treatment = $request->input('treatment');
-        $diases->symtomp_id = $request->input('symtomp_id'); 
+        $diases->symtomp_id = $request->input('symtomp_id');
         $diases->save();
         return redirect()->route('backend.diases.index');
     }
-
+    
     public function destroy($id)
     {
         Diases::destroy($id);
         return redirect()->route('backend.diases.index');
+    }
+    
+    public function search(Request $request)
+    {
+        $search = $request->input('diases');
+        $diases = Diases::where('nama', 'like', '%' . $search . '%')
+            ->orWhere('description', 'like', '%' . $search . '%')
+            ->get();
+            return view('Frontend.main', compact('diases'));
     }
 }
