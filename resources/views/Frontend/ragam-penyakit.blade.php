@@ -1,26 +1,25 @@
 @extends('Frontend.layout')
 @section('content')
->>>>>>> a5ee0a6e6bb4c36c6a6eec2c22b2ff8a6acea58f
-    {{-- hero section --}}
-    <div class="container-fluid hero-container">
-        <div class="row hero-section align-items-center">
-            <div class="col-md-6 hero-text">
-                <h1 class="hero-title">Ragam Penyakit</h1>
-                <a href=""></a>
-            </div>
+{{-- hero section --}}
+<div class="container-fluid hero-container">
+    <div class="row hero-section align-items-center">
+        <div class="col-md-6 hero-text">
+            <h1 class="hero-title">Ragam Penyakit</h1>
+            <a href=""></a>
         </div>
     </div>
+</div>
 
-    <div class="container mt-5">
-        <h1 class="title text-center mb-5">Nama Penyakit A-Z</h1>
+<div class="container mt-5">
+    <h1 class="title text-center mb-5">Nama Penyakit A-Z</h1>
 
-        <div class="input-group mb-5">
-            <input type="text" class="form-control" placeholder="Search articles..." aria-label="Search articles"
-                aria-describedby="button-search">
-            <button class="btn btn-primary" type="button" id="button-search">Search</button>
-        </div>
+    <div class="input-group mb-5">
+        <input type="text" class="form-control" placeholder="Search articles..." aria-label="Search articles"
+            aria-describedby="button-search">
+        <button class="btn btn-primary" type="button" id="button-search">Search</button>
+    </div>
 
-        <!-- {{-- <div class="alphabet-filter">
+    <!-- {{-- <div class="alphabet-filter">
             <a href="?prefix=a" class="active">A</a>
             <a href="?prefix=b">B</a>
             <a href="?prefix=c">C</a>
@@ -29,7 +28,7 @@
             <a href="?prefix=z">Z</a>
         </div> --}} -->
 
-        {{-- <div class="illness-list">
+    {{-- <div class="illness-list">
             <!-- Example illness items (repeat as needed) -->
             <div class="illness-list-item">
                 <h4>Asthma</h4> 
@@ -42,12 +41,12 @@
             <!-- Add more illness items as needed -->
         </div> --}}
 
-        <div class="row">
-            @foreach ($diases as $diase)
-            <div class="col-4 mb-5" class="illness-item">
-                <a href="" class="illness-name">{{ $diase->nama }}</a>
-            </div>
-            @endforeach
+    <div class="row">
+        @foreach ($diases as $diase)
+        <div class="col-4 mb-5" class="illness-item">
+            <a href="{{ route('penyakit.show', $diase->id) }}" class="illness-name">{{ $diase->nama }}</a>
         </div>
+        @endforeach
     </div>
+</div>
 @stop

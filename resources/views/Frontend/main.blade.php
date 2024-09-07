@@ -792,11 +792,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="btn btn-outline-primary rounded-5 py-1" id="searchIcon" href="#">
-                            <span style="font-size: 20px; margin-right: 5px;"><i class="bx bx-search py-1"></i></span> SEARCH
-                        </a>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -804,13 +800,15 @@
 
 
     {{-- search modal --}}
-    <div id="searchModal" class="search-modal">
-        <div class="search-modal-content">
-            <span id="closeSearch" class="close-search"></span>
-            <input type="text" id="searchInput" class="search-bar" placeholder="Cari gejala...">
-            <div id="searchResults" class="search-results"></div>
+    <form action="{{ route('search') }}" method="POST">
+        <div id="searchModal" class="search-modal">
+            <div class="search-modal-content">
+                <span id="closeSearch" class="close-search"></span>
+                <input type="text" id="searchInput" class="search-bar" placeholder="Cari gejala...">
+                <div id="searchResults" class="search-results"></div>
+            </div>
         </div>
-    </div>
+    </form>
 
 
 
@@ -854,9 +852,10 @@
         </div>
         <!-- Search Bar for desktop screens -->
         <div class="carousel-caption d-none d-md-block cr-search">
-            <form class="mt-4">
+            <form action="{{ route('search') }}" method="POST" class="mt-4">
+                @csrf
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search articles..."
+                    <input type="text" name="diases" class="form-control" placeholder="Search articles..."
                         aria-label="Search articles" aria-describedby="button-search">
                     <button class="btn btn-primary" type="button" id="button-search">Search</button>
                 </div>
@@ -865,9 +864,10 @@
 
         <!-- Search Bar for mobile screens -->
         <div class="carousel-caption d-block d-md-none cr-search-mobile">
-            <form class="mt-4">
+            <form action="{{ route('search') }}" method="POST" class="mt-4">
+                @csrf
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search articles..."
+                    <input type="text" name="diases" class="form-control" placeholder="Search articles..."
                         aria-label="Search articles" aria-describedby="button-search">
                     <button class="btn btn-primary" type="button" id="button-search">Search</button>
                 </div>
@@ -883,6 +883,24 @@
         </button>
     </div>
 
+    @if(isset($diases))
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0 fw-bold">Hasil Pencarian :</h5>
+                    </div>
+                    <div class="card-body">
+                        @foreach($diases as $diase)
+                        <a href="{{ route('penyakit.show', $diase->id) }}" class="btn">{{ $diase->nama }}</a>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
 
     {{-- category --}}
     <div class="category-section-top">

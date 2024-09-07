@@ -748,7 +748,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="">
+            <a class="navbar-brand" href="/main">
                 <img src="{{ asset('assets/Frontend/img/cek sehat.png') }}" alt="Cek Sehat" width="110">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -769,8 +769,6 @@
                             <li><a class="dropdown-item" href="{{ route('ragam-gejala')}}">Ragam Obat</a></li>
                         </ul>
                     </li>
-                    <form action="/pegawai/cari" method="GET">
-                    <li class="nav-item"><a class="btn btn-outline-primary rounded-5" id="searchIcon" href="#"><i class="bx bx-search"></i> SEARCH</a></li>
                     <!-- <li class="nav-item"><a class="btn btn-primary" href="#">LOGIN</a></li> -->
                     <!-- {{-- <li class="nav-item"><a class="btn btn-primary" href="#">TULIS ARTIKEL <i
                                 class='bx bxs-edit'></i></a></li> --}} -->

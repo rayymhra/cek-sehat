@@ -52,12 +52,13 @@ Route::get('/fokus-sehat', function () { // fokus sehat
 Route::get('/ragam-penyakit', [FrontendController::class, 'ragam_penyakit'])->name('ragam-penyakit');
 // Route::get('/show', [FrontendController::class, 'index'])->name('ragam-penyakit');
 Route::get('/ragam-gejala', [FrontendController::class, 'ragam_gejala'])->name('ragam-gejala');
-Route::get('/ragam-penyakit', function () { // ragam penyakit
-    return view('Frontend.ragam-penyakit');
-})->name('ragam-penyakit');
+// Route::get('/ragam-penyakit', function () { // ragam penyakit
+//     return view('Frontend.ragam-penyakit');
+// })->name('ragam-penyakit');
 Route::get('/ragam-gejala', function () { // ragam gejala
     return view('Frontend.ragam-gejala');
 })->name('ragam-gejala');
+
 
 
 
@@ -73,6 +74,7 @@ Route::get('/medis2', function () { // ragam gejala
 Route::get('/medis3', function () { // ragam gejala
     return view('Frontend.medis3');
 })->name('medis3');
+
 
 
 // lifestyle
@@ -98,12 +100,13 @@ Route::get('/love3', function () { // ragam gejala
     return view('Frontend.love3');
 })->name('love3');
 
-
+// Route::get('/diase/{id}', [FrontendController::class, 'show'])->name('penyakit.show');
 
 
 //admin-login
 Route::get('/dashboard', [AuthController::class, 'backendDashboard']);
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::get('/penyakit/{id}/show', [FrontendController::class, 'showPenyakitForm'])->name('penyakit.show');
 Route::post('/login', [AuthController::class, 'login']);
 
 //symtomps
@@ -123,3 +126,6 @@ Route::put('diases/{nama}/update', [DiasesController::class, 'update'])->name('d
 Route::get('diases/{nama}/delete', [DiasesController::class, 'destroy'])->name('diases.delete');
 
 //ragam-penyakit
+
+// Search
+Route::post('search', [DiasesController::class, 'search'])->name('search');
